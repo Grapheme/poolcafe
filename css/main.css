@@ -88,6 +88,20 @@ textarea {
     color: #000;
     padding: 0.2em 0;
 }
+/* ==========================================================================
+   Navigation styles
+   ========================================================================== */
+
+.nav-light,
+.nav-dark { position: fixed; left: 30px; top: 60px; z-index: 9999; height: 400px; }
+.nav-containter { position: relative }
+.navigationLinksList { margin: 2em 0 0 0; padding: 0; }
+.navigationLinksList .navigationLink { text-align: center;}
+.nav-light .navigationLink a { display: block; width: 130px; margin: 0; padding: 0 0 0.55em 0; color: #FFF; font-size: 1.1em; font-weight: 500; text-decoration: none; }
+.nav-dark .navigationLink a { display: block; width: 130px; margin: 0; padding: 0 0 0.55em 0;  color: #535353; font-size: 1.1em; font-weight: 500; text-decoration: none; }
+.nav-light .logo { width: 130px; height: 102px; text-indent: -9999px; background-image: url('../img/white_logo.png'); }
+.nav-dark .logo { width: 130px; height: 102px; text-indent: -9999px; background-image: url('../img/color_logo.png'); }
+.selected { border: 1px solid black; background: url('../img/anchor.png'); }
 
 /* ==========================================================================
    Author's custom styles

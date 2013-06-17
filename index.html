@@ -14,16 +14,63 @@
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/fotorama.css">
         <link rel="stylesheet" href="css/main.css">
-        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+        <script src="js/vendor/modernizr-2.6.2.min.js"></script>       
     </head>
     <body>
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
+		<div class="nav-containter">
+			<div class="mask_container">
 
+				<nav class="nav-dark">
+					<h1 class="logo"></h1>
+					<ul class="navigationLinksList">
+						<li class="navigationLink">
+							<a class="navLink-1" href="#top">ГЛАВНАЯ</a>
+						</li>
+						<li class="navigationLink">
+							<a class="navLink-2" href="#news">НОВОСТИ</a>
+						</li>
+						<li class="navigationLink">
+							<a class="navLink-3" href="#restaurant">РЕСТОРАН</a>
+						</li>
+						<li class="navigationLink">
+							<a class="navLink-4" href="#pool">БАССЕЙН</a>
+						</li>
+						<li class="navigationLink">
+							<a class="navLink-5" href="#contacts">КОНТАКТЫ</a>
+						</li>
+					</ul>
+				</nav>
+
+				<nav class="nav-light">
+					<h1 class="logo"></h1>
+					<ul class="navigationLinksList">
+						<li class="navigationLink">
+							<a class="navLink-1" href="#top">ГЛАВНАЯ</a>
+						</li>
+						<li class="navigationLink">
+							<a class="navLink-2" href="#news">НОВОСТИ</a>
+						</li>
+						<li class="navigationLink">
+							<a class="navLink-3" href="#restaurant">РЕСТОРАН</a>
+						</li>
+						<li class="navigationLink">
+							<a class="navLink-4" href="#pool">БАССЕЙН</a>
+						</li>
+						<li class="navigationLink">
+							<a class="navLink-5" href="#contacts">КОНТАКТЫ</a>
+						</li>
+					</ul>
+				</nav>
+
+			</div>
+			
+		</div>
         <!-- Add your site or application content here -->
         <article id="skrollr-body">
-			<section id="about" class="slider" data-0="top:0%;" data-2000="top:-200%;" style="z-index:9998;">
+			<section id="about" class="slider" data-0="top:0%;" data-2000="top:-200%;" style="z-index:9998;" data-menu="light">
         		<header>
         			<h2>
         				<span>Шезлонги, пальмы, бассейн, курортная атмосфера <br/>   
@@ -38,7 +85,7 @@
         		</div>
         	</section>
         	
-        	<section id="news" data-1600="top:0%;" data-4800="top:-200%;" style="z-index:9997;">
+        	<section id="news" data-1600="top:0%;" data-4800="top:-200%;" style="z-index:9997;" data-menu="dark" >
         		<div class="container clearfix">
 	        		<h2><span>Новости&amp;События</span></h2>
 	        		<div class="events-list">
@@ -122,7 +169,7 @@
         		</div> <!-- /container -->
         	</section>
         	
-        	<section id="restaurant" class="slider" data-4600="top:0%;" data-6400="top:-200%;" style="z-index:9996;">
+        	<section id="restaurant" class="slider" data-4600="top:0%;" data-6400="top:-200%;" style="z-index:9996;" data-menu="light">
         		<header>
         			<h2>
         				<span>Ресторан с аквариумом <br/>
@@ -137,7 +184,7 @@
         		</div>
         	</section>
         	
-        	<section id="restaurant-info" data-6200="top:0%;" data-8000="top:-250%;" style="z-index:9995;">
+        	<section id="restaurant-info" data-6200="top:0%;" data-8000="top:-250%;" style="z-index:9995;" data-menu="dark">
         		<div class="container clearfix">
 	        		<h2><span>Ресторан</span></h2>
 	        		<ul class="rest-list">
@@ -219,7 +266,7 @@
         		</div> <!-- /container -->
         	</section>
         	
-        	<section id="pool" class="slider" data-7800="top:0%;" data-9600="top:-200%;" style="z-index:9994;">
+        	<section id="pool" class="slider" data-7800="top:0%;" data-9600="top:-200%;" style="z-index:9994;" data-menu="light">
         		<header>
         			<h2>
         				<span>Открытый бассейн в живописном уголке парка <br/> 
@@ -234,7 +281,7 @@
         		</div>
         	</section>
         	
-        	<section id="pool-info" data-9400="top:0%;" data-10800="top:-250%;" style="z-index:9993;">
+        	<section id="pool-info" data-9400="top:0%;" data-10800="top:-250%;" style="z-index:9993;" data-menu="dark">
         		<div class="container clearfix">
 	        		<h2><span>Бассейн</span></h2>
 	        		<div class="rest-list">
@@ -319,11 +366,13 @@
 		</article>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script src="js/navscript.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
-
+ 		
         <script src="js/vendor/skrollr.min.js"></script>
+       
     	<script src="js/vendor/fotorama.js"></script>
-		    
+		   
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
 
