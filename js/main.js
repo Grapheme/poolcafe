@@ -2,6 +2,7 @@ $(function(){
 
 	var wh = $(window).height();
 	
+	$('section').height(wh);
 	$('section.slider').height(wh);
 	
 	$('#map-canvas').height(wh - 140);
