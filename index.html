@@ -11,6 +11,7 @@
         <meta name="viewport" content="width=device-width">
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <link rel="icon" type="image/png" href="favicon.png" />
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/fotorama.css">
         <link rel="stylesheet" href="css/main.css">
@@ -23,69 +24,47 @@
 		<div class="nav-containter">
 			<div class="mask_container">
 				<!--  -->
-				<nav class="nav-dark" 
-					data-0="height:0%;z-index:10001;" 
-					
-					data-2000="height:100%;z-index:10002;" 
-					
-					data-4800="" 
-					data-4810="" 
-					
-					data-6400="" 
-					
-					data-8000="" 
-					data-8010=""
-				>
+				<nav class="nav-dark" data-0="height:0%;z-index:10001;" data-2000="height:100%;z-index:10002;" data-4800="height:0%;" data-4810="height:100%; z-index:10001;" data-6400="z-index:10002;" data-8000="height:0%;" data-8010="height:100%;z-index:10001;" data-9600="z-index:10002;top:0%;" data-10800="top:-100%;" >
 					<h1 class="logo"> </h1>
+					<div class="anchor" data-0="top:201px;" data-2000="top:232px;" data-4800="top:259px;" data-8000="top:287px;" data-9600="top:287px;" data-10020="top:-21px;" > </div>
 					<ul class="navigationLinksList">
 						<li class="navigationLink">
-							<a class="navLink-1" href="#top">ГЛАВНАЯ</a>
+							<a class="navLink-1" href="#" data-scroll="0">ГЛАВНАЯ</a>
 						</li>
 						<li class="navigationLink">
-							<a class="navLink-2" href="#news">НОВОСТИ</a>
+							<a class="navLink-2" href="#" data-scroll="2000">НОВОСТИ</a>
 						</li>
 						<li class="navigationLink">
-							<a class="navLink-3" href="#restaurant">РЕСТОРАН</a>
+							<a class="navLink-3" href="#" data-scroll="4800">РЕСТОРАН</a>
 						</li>
 						<li class="navigationLink">
-							<a class="navLink-4" href="#pool">БАССЕЙН</a>
+							<a class="navLink-4" href="#" data-scroll="8000">БАССЕЙН</a>
 						</li>
 						<li class="navigationLink">
-							<a class="navLink-5" href="#contacts">КОНТАКТЫ</a>
+							<a class="navLink-5" href="#" data-scroll="10800">КОНТАКТЫ</a>
 						</li>
 					</ul>
 				</nav>
 				<!-- -->
 
-				<nav class="nav-light" 
-					data-0="height:100%;z-index:10002;" 
-					
-					data-2000="height:0%;z-index:10001;" 
-					data-2010="height:100%;" 
-					
-					data-4800="" 
-					
-					data-6400="" 
-					data-6410="" 
-					
-					data-8000=""
-				>
+				<nav class="nav-light" data-0="height:100%;z-index:10002;" data-2000="height:0%;z-index:10001;" data-2010="height:100%;" data-4800="z-index:10002;" data-6400="height:0%;z-index:10001;" data-6410="height:100%;" data-8000="z-index:10002;" data-9600="height:0%;z-index:10001;" data-9610="height:100%;top:0%;" data-10800="top:-100%;" >
 					<h1 class="logo"> </h1>
+					<div class="anchor" data-0="top:201px;" data-2000="top:232px;" data-4800="top:259px;" data-8000="top:287px;" data-9600="top:287px;" data-10020="top:-21px;" > </div>
 					<ul class="navigationLinksList">
 						<li class="navigationLink">
-							<a class="navLink-1" href="#top">ГЛАВНАЯ</a>
+							<a class="navLink-1" href="#top" data-scroll="0">ГЛАВНАЯ</a>
 						</li>
 						<li class="navigationLink">
-							<a class="navLink-2" href="#news">НОВОСТИ</a>
+							<a class="navLink-2" href="#" data-scroll="2000">НОВОСТИ</a>
 						</li>
 						<li class="navigationLink">
-							<a class="navLink-3" href="#restaurant">РЕСТОРАН</a>
+							<a class="navLink-3" href="#" data-scroll="4800">РЕСТОРАН</a>
 						</li>
 						<li class="navigationLink">
-							<a class="navLink-4" href="#pool">БАССЕЙН</a>
+							<a class="navLink-4" href="#" data-scroll="8000">БАССЕЙН</a>
 						</li>
 						<li class="navigationLink">
-							<a class="navLink-5" href="#contacts">КОНТАКТЫ</a>
+							<a class="navLink-5" href="#" data-scroll="10800">КОНТАКТЫ</a>
 						</li>
 					</ul>
 				</nav>
@@ -124,8 +103,17 @@
 	        					<span class="date">15 <strong>июня</strong> 2013</span>
 	        				</div>
 	        				<div class="event-content clearfix">
-	        					<figure>
-	        						<img class="avatar" src="img/events/parfenov.jpg" alt="DJ VLADIMIR PARFENOV" />
+	        					<figure class="card">
+	        						<div class="card__front">
+	        							<img class="avatar" src="img/events/parfenov.jpg" alt="DJ VLADIMIR PARFENOV" />
+	        						</div>
+	        						<div class="card__back">
+	        							<div class="back__circle">
+	        								<div class="back__age">+18</div>
+	        								<div class="back__time">НАЧАЛО <strong>21:00</strong></div>
+	        								<div class="back__price">1500 руб</div>
+	        							</div>
+	        						</div>
 	        					</figure>
 	        					<div class="event-text">
 		        					<h3><strong>DJ</strong> Vladimir Parfenov</h3>
@@ -146,8 +134,17 @@
 	        					<span class="date">15 <strong>июня</strong> 2013</span>
 	        				</div>
 	        				<div class="event-content">
-	        					<figure>
-	        						<img class="avatar" src="img/events/minkina.jpg" alt="DJ VLADIMIR PARFENOV" />
+	        					<figure class="card">
+	        						<div class="card__front">
+	        							<img class="avatar" src="img/events/minkina.jpg" alt="Минкина и оркестр" />
+	        						</div>
+	        						<div class="card__back">
+	        							<div class="back__circle">
+	        								<div class="back__age">+18</div>
+	        								<div class="back__time">НАЧАЛО <strong>20:30</strong></div>
+	        								<div class="back__price">1200 руб</div>
+	        							</div>
+	        						</div>
 	        					</figure>
 	        					<div class="event-text">
 		        					<h3>Концерт <strong>Минкиной</strong> и <strong>Humane Orchestra</strong></h3>
@@ -307,7 +304,7 @@
         		</div>
         	</section>
         	
-        	<section id="pool-info" data-9400="top:0%;" data-10800="top:-250%;" style="z-index:9993;" data-menu="dark" data-offset="4822.5625">
+        	<section id="pool-info" data-9600="top:0%;" data-10800="top:-100%;" style="z-index:9993;" data-menu="dark" data-offset="4822.5625">
         		<div class="container clearfix">
 	        		<h2><span>Бассейн</span></h2>
 	        		<div class="rest-list">
@@ -376,7 +373,7 @@
         		</div> <!-- /container -->
         	</section>
         	
-        	<section id="contacts" data-9600="top:40%;" data-10800="top:-8em;" style="z-index:9992;">
+        	<section id="contacts" data-10000="top:40%;" data-11000="top:-8em;" style="z-index:9992;">
         		<header>
         			<h2>
         				<span>пр. Стачки, 213 (парк им. г.Плевен) <br/> 

@@ -6,7 +6,7 @@ $(function(){
 	$('section.slider').height(wh);
 	
 	$('#map-canvas').height(wh - 140);
-	//initialize();
+	initialize();
 		
 	$('.__fotorama').fotorama({
 		nav: 'dots', 
@@ -22,5 +22,15 @@ $(function(){
 		arrowPrev: '<div class="arrows left_arrow"></div>'
 	});
 
+
+	$('ul.navigationLinksList li a').click(function(e){
+		e.preventDefault();
+		
+		var scrollTop = $(this).attr('data-scroll');
+		$('html, body').animate({ 'scrollTop': scrollTop }, 1500);
+		
+		$('ul.navigationLinksList li a').removeClass('current-section');
+		$(this).addClass('current-section');
+	});
 });
 

@@ -102,6 +102,7 @@ textarea {
 .nav-light .logo { width: 130px; height: 162px; text-indent: -9999px; background: url('../img/white_logo.png') 0 60px no-repeat; }
 .nav-dark .logo { width: 130px; height: 162px; text-indent: -9999px; background: url('../img/color_logo.png') 0 60px no-repeat; }
 .selected { border: 1px solid black; background: url('../img/anchor.png'); }
+.nav-dark .anchor, .nav-light .anchor { width: 20px; height: 21px; background: url('../img/anchor.png') no-repeat; position: fixed; top: 201px; left: 60px; } 
 
 /* ==========================================================================
    Author's custom styles
@@ -117,7 +118,7 @@ body { overflow: auto; }
 #skrollr-body > section { min-height: 100%; width: 100%; background: #fff; overflow: hidden; position: fixed; }
 #skrollr-body > section header { position: absolute; top: 2em; right: 2em; z-index: 99; text-align: right; }
 #skrollr-body > #contacts header { top: 12.5em; }
-section header h2 { font-size: 2.5em; line-height: 1.57em; font-weight: normal; }
+section header h2 { font-size: 2.8125em; line-height: 1.57em; font-weight: normal; }
 section header h2 span { background: #000; padding: 0 0.25em; color: #fff; text-transform: uppercase; font-style: normal; }
 #contacts header h2 span { background: #fff; color: #353535; }
 
@@ -191,6 +192,37 @@ footer a { color: #bcdfef; }
 .left_arrow { background: url("../img/arrows2.png") no-repeat scroll 0 0 transparent; }
 .fotorama__arr_next { top: 85%; left: 75%; }
 .fotorama__arr_prev { top: 85%; left: 25%; }
+
+
+/* ==========================================================================
+   Card CSS3 styles
+   ========================================================================== */
+
+.card { position: relative; text-align: center; width: 15em; height: 15em; cursor: default; -webkit-perspective: 1000px; -moz-perspective: 1000px; -ms-perspective: 1000px; -o-perspective: 1000px; perspective: 1000px; }
+
+.card__back, .card__front {
+	position: absolute; top: 0; left: 0; 
+	-webkit-backface-visibility: hidden; -moz-backface-visibility: hidden; -ms-backface-visibility: hidden; -o-backface-visibility: hidden; backface-visibility: hidden; 
+	-webkit-transition: -webkit-transform 0.4s ease-out, opacity 0.3s ease-out; -moz-transition: -moz-transform 0.4s ease-out, opacity 0.3s ease-out; -o-transition: -o-transform 0.4s ease-out, opacity 0.3s ease-out; transition: transform 0.4s ease-out, opacity 0.3s ease-out;
+	-webkit-transform-style: preserve-3d; -moz-transform-style: preserve-3d; -ms-transform-style: preserve-3d; -o-transform-style: preserve-3d; transform-style: preserve-3d; 
+}
+.card__front {
+	opacity: 1;
+	-webkit-transform: rotateY(0deg) translateZ(0); -moz-transform: rotateY(0deg); -ms-transform: rotateY(0deg); -o-transform: rotateY(0deg); transform: rotateY(0deg);
+}
+
+.card__back { 
+	top: 50%; left: 50%; opacity: 1;
+	-webkit-transform: rotateY(-180deg) translateZ(0); -moz-transform: rotateY(-180deg); -ms-transform: rotateY(-180deg); -o-transform: rotateY(-180deg); transform: rotateY(-180deg); 
+}
+.card:hover .card__back {
+	opacity: 1;
+	-webkit-transform: rotateY(0deg) translateZ(0); -moz-transform: rotateY(0deg); -ms-transform: rotateY(0deg); -o-transform: rotateY(0deg); transform: rotateY(0deg); 
+}
+.card__back .back__circle { background: #fff; width: 12em; height: 12em; -webkit-border-radius: 12em; -moz-border-radius: 12em; border-radius: 12em; text-align: center; top: 50%; left: 50%; margin: -6em 0 0 -6em; }
+.card__back .back__circle .back__age { font-size: 3.5em; padding: 0.35em 0 0; }
+.card__back .back__circle .back__time { font-size: 1.3em; text-transform: uppercase; line-height: 1.1em; padding: 0.1em 0; }
+.card__back .back__circle .back__price { font-size: 1.3em; font-weight: bold; }
 
 
 /* ==========================================================================
