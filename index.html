@@ -22,7 +22,7 @@
         <![endif]-->
 		<div class="nav-containter">
 			<div class="mask_container">
-
+				<!-- -->
 				<nav class="nav-dark">
 					<h1 class="logo"></h1>
 					<ul class="navigationLinksList">
@@ -43,8 +43,9 @@
 						</li>
 					</ul>
 				</nav>
+				<!-- -->
 
-				<nav class="nav-light">
+				<nav class="nav-light" data-0="height:100%;" data-2000="height:0%;">
 					<h1 class="logo"></h1>
 					<ul class="navigationLinksList">
 						<li class="navigationLink">
@@ -70,7 +71,7 @@
 		</div>
         <!-- Add your site or application content here -->
         <article id="skrollr-body">
-			<section id="about" class="slider" data-0="top:0%;" data-2000="top:-200%;" style="z-index:9998;" data-menu="light">
+			<section id="about" class="slider" data-0="top:0%;" data-2000="top:-100%;" style="z-index:9998;" data-menu="light" >
         		<header>
         			<h2>
         				<span>Шезлонги, пальмы, бассейн, курортная атмосфера <br/>   
@@ -85,7 +86,7 @@
         		</div>
         	</section>
         	
-        	<section id="news" data-1600="top:0%;" data-4800="top:-200%;" style="z-index:9997;" data-menu="dark" >
+        	<section id="news" data-2000="top:0%;" data-4800="top:-200%;" style="z-index:9997;" data-menu="dark" >
         		<div class="container clearfix">
 	        		<h2><span>Новости&amp;События</span></h2>
 	        		<div class="events-list">
@@ -169,7 +170,8 @@
         		</div> <!-- /container -->
         	</section>
         	
-        	<section id="restaurant" class="slider" data-4600="top:0%;" data-6400="top:-200%;" style="z-index:9996;" data-menu="light">
+        	<section id="restaurant" class="slider" data-4600="top:0%;" data-6400="top:-200%;" style="z-index:9996;" data-menu="light"  data-offset="6648.78125">
+
         		<header>
         			<h2>
         				<span>Ресторан с аквариумом <br/>
@@ -184,7 +186,7 @@
         		</div>
         	</section>
         	
-        	<section id="restaurant-info" data-6200="top:0%;" data-8000="top:-250%;" style="z-index:9995;" data-menu="dark">
+        	<section id="restaurant-info" data-6200="top:0%;" data-8000="top:-250%;" style="z-index:9995;" data-menu="dark" data-offset="2803.78125">
         		<div class="container clearfix">
 	        		<h2><span>Ресторан</span></h2>
 	        		<ul class="rest-list">
@@ -266,7 +268,7 @@
         		</div> <!-- /container -->
         	</section>
         	
-        	<section id="pool" class="slider" data-7800="top:0%;" data-9600="top:-200%;" style="z-index:9994;" data-menu="light">
+        	<section id="pool" class="slider" data-7800="top:0%;" data-9600="top:-200%;" style="z-index:9994;" data-menu="light" data-offset="3867.5625">
         		<header>
         			<h2>
         				<span>Открытый бассейн в живописном уголке парка <br/> 
@@ -281,7 +283,7 @@
         		</div>
         	</section>
         	
-        	<section id="pool-info" data-9400="top:0%;" data-10800="top:-250%;" style="z-index:9993;" data-menu="dark">
+        	<section id="pool-info" data-9400="top:0%;" data-10800="top:-250%;" style="z-index:9993;" data-menu="dark" data-offset="4822.5625">
         		<div class="container clearfix">
 	        		<h2><span>Бассейн</span></h2>
 	        		<div class="rest-list">
@@ -350,7 +352,7 @@
         		</div> <!-- /container -->
         	</section>
         	
-        	<section id="contacts" data-9600="top:40%;" data-10800="top:0%;" style="z-index:9992;">
+        	<section id="contacts" data-9600="top:40%;" data-10800="top:-8em;" style="z-index:9992;">
         		<header>
         			<h2>
         				<span>пр. Стачки, 213 (парк им. г.Плевен) <br/> 
@@ -363,14 +365,22 @@
         		<div id="map-canvas"> </div>
         	</section>
         	
+        	<footer>
+        		<div class="container clearfix">
+        			<div class="copy">&copy; 2013 Ресторан Pool Cafe St.Tropez</div>
+        			<div class="dev">
+        				Создание сайта - <a href="http://grapheme.ru/" target="_blank">Рекламное агентство «Графема»</a>
+					</div>
+        		</div>
+        	</footer>
+        	
 		</article>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-        <script src="js/navscript.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
  		
         <script src="js/vendor/skrollr.min.js"></script>
-       
+        <!-- <script src="js/navscript.js"></script>  -->
     	<script src="js/vendor/fotorama.js"></script>
 		   
         <script src="js/plugins.js"></script>
@@ -415,7 +425,7 @@
 		  })();
 		</script>
 
-        <!-- Yandex.Metrika counter -->
+        <!-- Yandex.Metrika counter 
 		<script type="text/javascript">
 		(function (d, w, c) {
 		    (w[c] = w[c] || []).push(function() {
@@ -442,6 +452,6 @@
 		})(document, window, "yandex_metrika_callbacks");
 		</script>
 		<noscript><div><img src="//mc.yandex.ru/watch/21535516" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-		<!-- /Yandex.Metrika counter -->
+		 /Yandex.Metrika counter -->
     </body>
 </html>

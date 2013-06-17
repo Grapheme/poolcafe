@@ -54,25 +54,31 @@ jQuery("document").ready(function($) {
 	 * Footer
 	 * =============*/	 	
 	function clipping(event) {
+		//window.console.clear();
+		
 		var elt = event.data.value;
+		//console.info('elt', elt);
+		
 		var navdark = event.data.nav;
+		//console.info('navdark', navdark);
+		
 		var nsOffsetBot = navdark.offset().top + navdark.outerHeight(true) - 20;
+		//window.console.info('nsOffsetBot', nsOffsetBot);
+		
 		var mainoffset = $(elt).offset().top;
+		//window.console.info('mainoffset', mainoffset);
+		
 		var mainheight = $(elt).outerHeight(true);
-		if (nsOffsetBot >= $(elt).offset().top && !$(elt).attr('data-continue') && ($(elt).attr('data-menu') != 'footer')) {
+		//window.console.info('mainheight', mainheight);
+		
+		if (nsOffsetBot >= mainoffset && ($(elt).attr('data-menu') != 'footer')) {
+			window.console.info('******************** ПИЗДЕЦ **************************');
 			topClip = mainoffset - $(window).scrollTop() - (navdark.offset().top - $(window).scrollTop());
 			botClip = topClip + mainheight;
 			navdark.css('clip', 'rect(' + topClip + 'px,auto,' + botClip + 'px,0)');
 		}
-		if (nsOffsetBot >= $(elt).offset().top && $(elt).attr('data-continue') == 'continue' && ($(elt).attr('data-menu') != 'footer')) {
-			mainheight = $(elt).outerHeight(true) + $(elt).parents('section').next('[data-continue="next"]').outerHeight(true);
-			if ($(elt).parents('section').css('margin-bottom') > 0 || $(elt).parents('section').css('padding-bottom')) {
-				mainheight = mainheight + parseInt($(elt).parents('section').css('margin-bottom')) + parseInt($(elt).parents('section').css('padding-bottom'));
-			}
-			topClip = mainoffset - $(window).scrollTop() - (navdark.offset().top - $(window).scrollTop());
-			botClip = topClip + mainheight;
-			navdark.css('clip', 'rect(' + topClip + 'px,auto,' + botClip + 'px,0)');
-		}
+		
+		/*
 		if (nsOffsetBot >= $(elt).offset().top && ($(elt).attr('data-menu') == 'footer')) {
 			var deltaBottom = $(elt).offset().top - nsOffsetBot + 30;
 			navdark.css('top', deltaBottom);
@@ -83,6 +89,7 @@ jQuery("document").ready(function($) {
 		} else {
 			navdark.css('top', '60px');
 		}
+		*/
 	}
 
 });

@@ -5,8 +5,8 @@ $(function(){
 	$('section.slider').height(wh);
 	
 	$('#map-canvas').height(wh - 140);
-	initialize();
-	
+	//initialize();
+		
 	$('.__fotorama').fotorama({
 		nav: 'dots', 
 		transition: 'fade',
