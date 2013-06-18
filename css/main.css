@@ -97,8 +97,8 @@ textarea {
 .nav-containter { position: relative }
 .navigationLinksList { margin: 2em 0 0 0; padding: 0; }
 .navigationLinksList .navigationLink { text-align: left; padding-left: 3em; }
-.nav-light .navigationLink a { display: block; width: 130px; margin: 0; padding: 0 0 0.55em 0; color: #FFF; font-size: 1.15em; font-weight: 500; text-decoration: none; }
-.nav-dark .navigationLink a { display: block; width: 130px; margin: 0; padding: 0 0 0.55em 0;  color: #535353; font-size: 1.15em; font-weight: 500; text-decoration: none; }
+.nav-light .navigationLink a { display: block; width: 130px; margin: 0; padding: 0 0 0.55em 0; color: #FFF; font-size: 1.15em; font-weight: 500; text-decoration: none; outline: none;}
+.nav-dark .navigationLink a { display: block; width: 130px; margin: 0; padding: 0 0 0.55em 0;  color: #535353; font-size: 1.15em; font-weight: 500; text-decoration: none; outline: none;}
 .nav-light .logo { width: 130px; height: 162px; text-indent: -9999px; background: url('../img/white_logo.png') 0 60px no-repeat; }
 .nav-dark .logo { width: 130px; height: 162px; text-indent: -9999px; background: url('../img/color_logo.png') 0 60px no-repeat; }
 .selected { border: 1px solid black; background: url('../img/anchor.png'); }

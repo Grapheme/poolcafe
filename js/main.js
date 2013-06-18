@@ -10,17 +10,50 @@ st.init = function() {
 	
 	st.news_wh = $('#news').height();
 	st.rest_wh = $('#restaurant-info').height();
-	st.pool_wh = $('#pool-info').height();	
+	st.pool_wh = $('#pool-info').height();		
 	
-	$('#news').attr('data-2000', 'top: 0px;');
-	$('#news').attr('data-4800', 'top: -' + st.news_wh + 'px;');
+	$('#news').attr({
+		'data-2000' : 'top: 0px;',
+		'data-5200' : 'top: -' + st.news_wh + 'px;'
+	});
 	
-	$('#restaurant-info').attr('data-6400', 'top: 0px;');
-	$('#restaurant-info').attr('data-8000', 'top: -' + st.rest_wh + 'px;');
+	$('#restaurant-info').attr({
+		'data-6400' : 'top: 0px;',
+		'data-9600' : 'top: -' + st.rest_wh + 'px;'
+	});
 	
-	$('#pool-info').attr('data-9600', 'top: 0px;');
-	$('#pool-info').attr('data-10800', 'top: -' + st.pool_wh + 'px;');
+	$('#pool-info').attr({
+		'data-11000' : 'top: 0px;',
+		'data-13000' : 'top: -' + st.pool_wh + 'px;'
+	});
+				
+	$('nav.nav-dark').attr({
+		'data-13000' : 'top:-100%;',
+		'data-11000' : 'z-index:10002; top:0%;',
+		'data-9610' : 'height: 100%; z-index:10001;',
+		'data-9600' : 'height: 0%;',
+		'data-6400' : 'z-index:10002;',
+		'data-5210' : 'height:' + st.rest_wh + 'px; z-index:10001;',
+		'data-5200' : 'height:0%;',
+		'data-2000' : 'height:' + st.news_wh + 'px; z-index:10002;',
+		'data-0' : 'height:0%; z-index:10001;'
+	});
+	
+	$('nav.nav-light').attr({
+		'data-13000' : 'top:-100%;',
+		'data-11010' : 'height:100%; top:0%;',
+		'data-11000' : 'height:0%; z-index:10001;',
+		'data-9600' : 'z-index:10002;',
+		'data-6410' : 'height:100%;',
+		'data-6400' : 'height:0%; z-index:10001;',
+		'data-5200' : 'z-index:10002;',
+		'data-2010' : 'height:100%;',
+		'data-2000' : 'height:0%; z-index:10001;',
+		'data-0' : 'height:100%; z-index:10002;'
+	});
+
 };
+
 
 $(function(){
 
