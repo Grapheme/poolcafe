@@ -5,6 +5,7 @@ st.init = function() {
 	st.wh = $(window).height();
 	
 	$('section.slider').height(st.wh);
+	$('#map-canvas').height(st.wh - 140);
 	
 	st.news_wh = $('#news').height();
 	st.rest_wh = $('#restaurant-info').height();
@@ -28,40 +29,32 @@ st.init = function() {
 	$('nav.nav-dark').attr({
 		'data-13000' : 'top:-100%;',
 		'data-11000' : 'z-index:10002; top:0%;',
-		'data-9610' : 'height: 100%; z-index:10001;',
-		'data-9600' : 'height: 0%;',
-		'data-6400' : 'z-index:10002;',
-		'data-5210' : 'height:' + st.rest_wh + 'px; z-index:10001;',
-		'data-5200' : 'height:0%;',
-		'data-2000' : 'height:' + st.news_wh + 'px; z-index:10002;',
-		'data-0' : 'height:0%; z-index:10001;'
+		 'data-9610' : 'height: 100%; z-index:10001;',
+		 'data-9600' : 'height: 0%;',
+		 'data-6400' : 'z-index:10002;',
+		 'data-5210' : 'height:' + st.rest_wh + 'px; z-index:10001;',
+		 'data-5200' : 'height:0%;',
+		 'data-2000' : 'height:' + st.news_wh + 'px; z-index:10002;',
+		    'data-0' : 'height:0%; z-index:10001;'
 	});
 	
 	$('nav.nav-light').attr({
 		'data-13000' : 'top:-100%;',
 		'data-11010' : 'height:100%; top:0%;',
 		'data-11000' : 'height:0%; z-index:10001;',
-		'data-9600' : 'z-index:10002;',
-		'data-6410' : 'height:100%;',
-		'data-6400' : 'height:0%; z-index:10001;',
-		'data-5200' : 'z-index:10002;',
-		'data-2010' : 'height:100%;',
-		'data-2000' : 'height:0%; z-index:10001;',
-		'data-0' : 'height:100%; z-index:10002;'
+		 'data-9600' : 'z-index:10002;',
+		 'data-6410' : 'height:100%;',
+		 'data-6400' : 'height:0%; z-index:10001;',
+		 'data-5200' : 'z-index:10002;',
+		 'data-2010' : 'height:100%;',
+		 'data-2000' : 'height:0%; z-index:10001;',
+		    'data-0' : 'height:100%; z-index:10002;'
 	});
 
 };
 
 
 $(function(){
-
-
-	st.init();
-
-	var wh = $(window).height();	
-	
-	$('#map-canvas').height(wh - 140);
-	initialize();
 		
 	$('.__fotorama').fotorama({
 		nav: 'dots', 
@@ -77,7 +70,6 @@ $(function(){
 		arrowPrev: '<div class="arrows left_arrow"></div>'
 	});
 
-
 	$('ul.navigationLinksList li a').click(function(e){
 		e.preventDefault();
 		
@@ -88,18 +80,15 @@ $(function(){
 		$(this).addClass('current-section');
 	});
 	
-	var s = skrollr.init({ });
-});
-
-$(window).resize( function() {	
 	st.init();
-	var s = skrollr.init({ });
-	$(function() {
-		
-    $('.__fotorama').fotorama({height: st.wh});
-    });
+	st.skroll = skrollr.init({ });
+	initialize(); // google maps initialization
 	
-	var s = skrollr.init({ });
+	$(window).resize( function() {	
+		st.init();
+		st.skroll = skrollr.init({ });
+		initialize(); // google maps initialization
+	});
+	
 });
-
 
