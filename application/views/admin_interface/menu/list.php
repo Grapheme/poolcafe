@@ -24,42 +24,42 @@
 				<div class="clear"></div>
 				<div class="result-request"></div>
 				<?php $this->load->view('html/select-properties-menu');?>
+			<?php if($this->input->get('category') !== FALSE):?>
 				<a href="<?=site_url(ADMIN_START_PAGE.'/menu/add'.getUrlLink())?>" class="btn">Добавить продукт</a>
+			<?php endif;?>
 			<?php if(!empty($menu)):?>
 				<h2>Меню</h2>
-				<table>
+				<table class="table table-bordered" data-action="<?=site_url(ADMIN_START_PAGE.'/menu/remove'.getUrlLink());?>">
 					<thead>
 						<tr>
 							<th>Изображение</th>
 							<th>Название блюда</th>
-							<th>Вес,объем,размер</th>
+							<th>Вес, объем, размер</th>
 							<th>Цена</th>
+							<th>Описание</th>
 							<th></th>
 						</tr>
 					</thead>
 					<tbody>
-					<?php for($i=0;$i<count($categories);$i++):?>
+					<?php for($i=0;$i<count($menu);$i++):?>
 						<tr>
-							<td><img width="50" src="D:/IMG_18062013_122113.png" alt="" /></td>
+							<td>
+							<?php if($menu[$i]['photo_exist'] == 1):?>
+								<img width="50" class="img-polaroid" src="<?=site_url('loadimage/menu/'.$menu[$i]['id']);?>" alt="" />
+							<?php endif;?>
+							</td>
 							<td><?=$menu[$i]['title'];?></td>
 							<td><?=$menu[$i]['property'];?></td>
 							<td><?=$menu[$i]['price'];?></td>
-							<td data-item>
-								<button class="btn btn-link edit-product-menu" ><i class="icon-edit"></i></button>
-								<button class="btn btn-link remove-product-menu"><i class="icon-remove"></i></button>
+							<td><?=$menu[$i]['description'];?></td>
+							<td>
+								<a href="<?=site_url(ADMIN_START_PAGE.'/menu/edit'.getUrlLink().'&product='.$menu[$i]['id'])?>" class="btn btn-link" ><i class="icon-edit"></i></a>
+								<button data-item="<?=$menu[$i]['id'];?>" class="btn btn-link remove-product-menu"><i class="icon-remove"></i></button>
 							</td>
 						</tr>
 					<?php endfor;?>
 					</tbody>
 				</table>
-				<ul class="ul-parent" data-action="<?=site_url(ADMIN_START_PAGE.'/save-group')?>">
-				<?php for($i=0;$i<count($group);$i++):?>
-					<li data-item="<?=$group[$i]['id'];?>">
-						<span class="title"><?=$group[$i]['title'];?></span>
-						<button class="btn btn-link edit-group-menu"><i class="icon-edit"></i></button>
-					</li>
-				<?php endfor;?>
-				</ul>
 			<?php else:?>
 				<div class="msg-alert">Список меню пуст</div>
 			<?php endif;?>

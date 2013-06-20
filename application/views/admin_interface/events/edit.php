@@ -7,6 +7,7 @@
 <?php $this->load->view("admin_interface/includes/head");?>
 
 <link rel="stylesheet" href="<?=site_url('css/datapicker/jquery-ui-datapicker.css');?>" />
+<link rel="stylesheet" href="<?=site_url('css/redactor.css');?>" />
 </head>
 <body>
 <!--[if lt IE 7]>
@@ -35,9 +36,7 @@
 	<?php $this->load->view("admin_interface/includes/scripts");?>
 
 <script type="text/javascript" src="<?=site_url('js/libs/bootstrap.js');?>"></script>
-<script type="text/javascript" src="<?=site_url('ckeditor/ckeditor.js');?>"></script>
-<script type="text/javascript" src="<?=site_url('ckeditor/adapters/jquery.js');?>" ></script>
-<script type="text/javascript" src="<?=site_url('ckfinder/ckfinder.js');?>"></script>
+<script type="text/javascript" src="<?=site_url('js/vendor/redactor.min.js');?>"></script>
 <script type="text/javascript" src="<?=site_url('js/cabinet/redactor-config.js');?>"></script>
 <script type="text/javascript" src="<?=site_url('js/datepicker/jquery.ui.datepicker.js');?>"></script>
 <script type="text/javascript" src="<?=site_url('js/datepicker/jquery.ui.datepicker-ru.js');?>"></script>

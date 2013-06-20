@@ -192,6 +192,27 @@ class MY_Model extends CI_Model{
 		$this->db->delete($this->table);
 		return $this->db->affected_rows();
 	}
+	
+	function deleteWhereIN(){
+		
+		$arguments = &func_get_args();
+		$primary_key = (isset($arguments[0]['primary_key']))?$arguments[0]['primary_key']:NULL;
+		$field = (isset($arguments[0]['field']))?$arguments[0]['field']:$this->primary_key;
+		$whereIN = (isset($arguments[0]['where_in']))?$arguments[0]['where_in']:NULL;
+		$where = (isset($arguments[0]['where']))?$arguments[0]['where']:NULL;
+		
+		if(!is_null($primary_key)):
+			$this->db->where($this->primary_key,$primary_key);
+		endif;
+		if(!is_null($whereIN) && is_array($whereIN) && !is_null($field)):
+			$this->db->where_in($field,$whereIN);
+		endif;
+		if(!is_null($where) && is_array($where)):
+			$this->db->where($where);
+		endif;
+		$this->db->delete($this->table);
+		return $this->db->affected_rows();
+	}
 
 	function countAllResults($where = NULL){
 		

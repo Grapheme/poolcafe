@@ -4,11 +4,13 @@
 var uploadImage = uploadImage || {};
 uploadImage.singlePhotoOption = {
 	target: null, type: 'post', dataType:'json',
-	beforeSubmit: function(responseText,statusText,xhr,jqForm){
-		if(mt.ajaxBeforeSubmit(responseText,statusText,xhr,jqForm)){
-			var percentVal = '0%';
-			$("div.bar").width(percentVal).html(percentVal);
-			$("#div-upload-photo").removeClass('hidden');
+	beforeSubmit: function(formData,jqForm,options){
+		if(mt.ajaxBeforeSubmit(formData,jqForm,options)){
+			if($(jqForm).find('input[type="file"]').emptyValue() == false){
+				var percentVal = '0%';
+				$("div.bar").width(percentVal).html(percentVal);
+				$("#div-upload-photo").removeClass('hidden');
+			}
 		}else{return false;}
 	},
 	uploadProgress: function(event,position,total,percentComplete){

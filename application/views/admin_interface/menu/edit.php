@@ -5,9 +5,6 @@
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
 <?php $this->load->view("admin_interface/includes/head");?>
-
-<link rel="stylesheet" href="<?=site_url('css/datapicker/jquery-ui-datapicker.css');?>" />
-<link rel="stylesheet" href="<?=site_url('css/redactor.css');?>" />
 </head>
 <body>
 <!--[if lt IE 7]>
@@ -22,25 +19,21 @@
 			<div class="span9">
 				<ul class="breadcrumb">
 					<li><a href="<?=site_url(ADMIN_START_PAGE);?>">Панель управления</a> <span class="divider">/</span></li>
-					<li><a href="<?=site_url(ADMIN_START_PAGE.'/news');?>">Новости</a> <span class="divider">/</span></li>
-					<li class="active">Редактирование новости</li>
+					<li><a href="<?=site_url(ADMIN_START_PAGE,'/menu'.getUrlLink());?>">Меню</a> <span class="divider">/</span></li>
+					<li class="active">Редактирование продукта</li>
 				</ul>
 				<div class="clear"></div>
-				<?=$this->load->view('admin_interface/forms/edit-news')?>
+				<div class="result-request"></div>
+				<?php $this->load->view('html/select-properties-menu');?>
+				<?php $this->load->view('admin_interface/forms/edit-product-menu');?>
 				<div class="clear"></div>
 			</div>
 		</div>
 	</div>
-	
 	<?php $this->load->view("admin_interface/includes/footer");?>
 	<?php $this->load->view("admin_interface/includes/scripts");?>
 
 <script type="text/javascript" src="<?=site_url('js/libs/bootstrap.js');?>"></script>
-<script type="text/javascript" src="<?=site_url('js/vendor/redactor.min.js');?>"></script>
-<script type="text/javascript" src="<?=site_url('js/cabinet/redactor-config.js');?>"></script>
-<script type="text/javascript" src="<?=site_url('js/datepicker/jquery.ui.datepicker.js');?>"></script>
-<script type="text/javascript" src="<?=site_url('js/datepicker/jquery.ui.datepicker-ru.js');?>"></script>
-<script type="text/javascript" src="<?=site_url('js/cabinet/datepicker.js');?>"></script>
 <script type="text/javascript" src="<?=site_url('js/cabinet/upload.js');?>"></script>
 <script type="text/javascript" src="<?=site_url('js/cabinet/admin.js');?>"></script>
 </body>

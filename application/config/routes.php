@@ -7,6 +7,7 @@ $route['404_override'] = '';
 /******************guest interface ********************/
 $route['login-in'] = "ajax_interface/loginIn";
 $route['valid/exist-email'] = "ajax_interface/existEmail";
+$route['redactor/upload'] = "ajax_interface/redactorUploadImage";
 /**************** remove items ********************/
 $route['remove/project'] = "ajax_interface/removeItems";
 /******************load view ********************/
@@ -20,6 +21,9 @@ $route[ADMIN_START_PAGE.'/events/update/:num'] = "ajax_interface/updateEvent";
 /*********** menu ***************/
 $route[ADMIN_START_PAGE.'/save-group'] = "ajax_interface/saveGroup";
 $route[ADMIN_START_PAGE.'/manage-category'] = "ajax_interface/manageCategory";
+$route[ADMIN_START_PAGE.'/menu/insert'] = "ajax_interface/manageMenu";
+$route[ADMIN_START_PAGE.'/menu/update'] = "ajax_interface/manageMenu";
+$route[ADMIN_START_PAGE.'/menu/remove'] = "ajax_interface/manageMenu";
 /*************************************************** GUEST INTRERFACE ***********************************************/
 $route['clear-session'] = "guests_interface/clearSession";
 $route['admin'] = "guests_interface/signIN";
@@ -41,3 +45,4 @@ $route[ADMIN_START_PAGE.'/events(\/:any)*?'] = "admin_interface/events";
 $route[ADMIN_START_PAGE.'/categories'] = "admin_interface/categories";
 $route[ADMIN_START_PAGE.'/menu'] = "admin_interface/menu";
 $route[ADMIN_START_PAGE.'/menu/add'] = "admin_interface/addProductMenu";
+$route[ADMIN_START_PAGE.'/menu/edit'] = "admin_interface/editProductMenu";

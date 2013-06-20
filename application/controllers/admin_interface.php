@@ -188,6 +188,26 @@ class Admin_interface extends MY_Controller{
 		$this->load->view("admin_interface/menu/add",$pagevar);
 	}
 	
+	public function editProductMenu(){
+		
+		if($this->input->get('product') === FALSE || !is_numeric($this->input->get('product'))):
+			redirect(ADMIN_START_PAGE.'/menu'.getUrlLink());
+		endif;
+		$this->load->model(array('group','menu'));
+		$this->load->helper('form');
+		$pagevar = array(
+			'group' => $this->group->getAll(),
+			'categories' => array(),
+			'menu' => $this->menu->getWhere($this->input->get('product'))
+		);
+		if($parentsCategories = $this->getParentsCategoriesMenu()):
+			if($categoriesHierarchy = $this->getHierarchyCategoriesMenu($parentsCategories)):
+				$pagevar['categories'] = $categoriesHierarchy;
+			endif;
+		endif;
+		$this->load->view("admin_interface/menu/edit",$pagevar);
+	}
+	
 	private function getProductsMenu(){
 		
 		$menu = array();

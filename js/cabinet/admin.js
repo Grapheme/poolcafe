@@ -25,16 +25,16 @@
 	$("form.form-manage-news .btn-submit").click(function(){
 		var _form = $("form.form-manage-news");
 		$(this).addClass('loading');
-		var ckdata = CKEDITOR.instances.content.getData();
-		$(_form).find("textarea.redactor").html(ckdata);
+		var redactorData = $("textarea.redactor").redactor('get');
+		$(_form).find("textarea.redactor").html(redactorData);
 		setTimeout(function(){$(_form).ajaxSubmit(uploadImage.singlePhotoOption);},500);
 		return false;
 	});
 	$("form.form-manage-events .btn-submit").click(function(){
 		var _form = $("form.form-manage-events");
 		$(this).addClass('loading');
-		var ckdata = CKEDITOR.instances.content.getData();
-		$(_form).find("textarea.redactor").html(ckdata);
+		var redactorData = $("textarea.redactor").redactor('get');
+		$(_form).find("textarea.redactor").html(redactorData);
 		setTimeout(function(){$(_form).ajaxSubmit(uploadImage.singlePhotoOption);},500);
 		return false;
 	});
@@ -70,6 +70,31 @@
 			url = url+'&subcategory='+$(this).val();
 		}
 		mt.redirect(url);
+	});
+	$("form.form-manage-menu .btn-submit").click(function(){
+		var _form = $("form.form-manage-menu");
+		$(this).addClass('loading');
+		setTimeout(function(){$(_form).ajaxSubmit(uploadImage.singlePhotoOption);},500);
+		return false;
+	});
+	$("button.remove-product-menu").click(function(){
+		var _this = this;
+		var itemID = $(this).attr('data-item');
+		var action = $(this).parents('table').attr('data-action');
+		$.ajax({
+			url: action,type: 'POST',dataType: 'json',data:{'id':itemID},
+			beforeSend: function(){
+				$("div.result-request").html('');
+			},
+			success: function(response,textStatus,xhr){
+				if(response.status){
+					$(_this).parents('tr').remove();
+				}else{
+					$("div.result-request").html(response.responseText);
+				}
+			},
+			error: function(xhr,textStatus,errorThrown){}
+		});
 	});
 	function showSubCategory(element){
 		$(element).siblings('ul.ul-children').toggleClass('hidden');

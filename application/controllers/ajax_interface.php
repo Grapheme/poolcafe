@@ -38,6 +38,15 @@ class Ajax_interface extends MY_Controller{
 		endif;
 	}
 	
+	public function redactorUploadImage(){
+		
+		$uploadPath = getcwd().'/download/';
+		$fileName = $this->uploadSingleImage($uploadPath);
+		$file = array(
+			'filelink'=>base_url('download/'.$fileName)
+		);
+		echo stripslashes(json_encode($file));
+	}
 	/******************************************** guests interface *******************************************************/
 	
 	public function loginIn(){
@@ -290,10 +299,8 @@ class Ajax_interface extends MY_Controller{
 			$this->load->model('categories');
 			if($category = $this->categories->getWhere($this->input->post('id'))):
 				if($category['parent'] == 0):
-					if($childCategories = $this->categories->getWhere(NULL,array('parent'=>$category['id']),TRUE)):
-						$this->deleteProductsMenu(NULL,$this->getValuesInArray($childCategories));
-						$this->categories->delete(NULL,array('parent'=>$category['id']));
-					endif;
+					$this->deleteProductsMenu(NULL,$category['id']);
+					$this->categories->delete(NULL,array('parent'=>$category['id']));
 				endif;
 				$this->categories->delete($this->input->post('id'));
 				$json_request['status'] = TRUE;
@@ -303,9 +310,66 @@ class Ajax_interface extends MY_Controller{
 		echo json_encode($json_request);
 	}
 	
-	private function deleteProductsMenu($id = NULL,$categories = NULL){
+	public function manageMenu(){
 		
-		return TRUE;
+		if(!$this->input->is_ajax_request()):
+			show_error('В доступе отказано');
+		endif;
+		$json_request = array('status'=>FALSE,'responseText'=>'','responsePhotoSrc'=>'','redirect'=>site_url(ADMIN_START_PAGE));
+		if($this->uri->segment(3) == 'insert'):
+			if($this->postDataValidation('insert_product_menu') === FALSE):
+				$json_request['responseText'] = $this->load->view('html/validation-errors',array('alert_header'=>'Неверно заполнены обязательные поля'),TRUE);
+				echo json_encode($json_request);
+				return FALSE;
+			endif;
+			if($productID = $this->ExecuteCreatingProductMenu($_POST)):
+				$json_request['responsePhotoSrc'] = $this->uploadProductMenuPhoto($productID);
+				$json_request['status'] = TRUE;
+				$json_request['responseText'] = 'Сохранено';
+				$json_request['redirect'] = site_url(ADMIN_START_PAGE.'/menu'.getUrlLink());
+			endif;
+		elseif($this->uri->segment(3) == 'update'):
+			if($this->postDataValidation('update_product_menu') === FALSE):
+				$json_request['responseText'] = $this->load->view('html/validation-errors',array('alert_header'=>'Неверно заполнены обязательные поля'),TRUE);
+				echo json_encode($json_request);
+				return FALSE;
+			endif;
+			if($this->ExecuteUpdatingProductMenu($_POST) !== FALSE):
+				$json_request['responsePhotoSrc'] = $this->uploadProductMenuPhoto($this->input->get('product'));
+				$json_request['status'] = TRUE;
+				$json_request['responseText'] = 'Сохранено';
+				$json_request['redirect'] = site_url(ADMIN_START_PAGE.'/menu'.getUrlLink());
+			endif;
+		elseif($this->uri->segment(3) == 'remove'):
+			if($this->postDataValidation('remove_product_menu') === FALSE):
+				$json_request['responseText'] = $this->load->view('html/validation-errors',array('alert_header'=>'Неверно заполнены обязательные поля'),TRUE);
+				echo json_encode($json_request);
+				return FALSE;
+			endif;
+			if($this->deleteProductsMenu($this->input->post('id')) !== FALSE):
+				$json_request['status'] = TRUE;
+				$json_request['responseText'] = 'Удалено';
+			endif;
+		endif;
+		echo json_encode($json_request);
+	}
+	
+	private function deleteProductsMenu($id = NULL,$category = NULL){
+		
+		$this->load->model('menu');
+		if(!is_null($id)):
+			$this->menu->delete($id);
+			return TRUE;
+		endif;
+		if(!is_null($category)):
+			if($childCategories = $this->categories->getWhere(NULL,array('parent'=>$category),TRUE)):
+				$categoryIDs = $this->getValuesInArray($childCategories);
+				$this->menu->deleteWhereIN(array('field'=>'category','where_in'=>$categoryIDs));
+			endif;
+			$this->menu->delete(NULL,array('category'=>$category));
+			return TRUE;
+		endif;
+		return FALSE;
 	}
 	
 	private function ExecuteUpdatingGroupMenu($id,$title){
@@ -332,6 +396,58 @@ class Ajax_interface extends MY_Controller{
 		$category = array("title"=>$title,'parent'=>$parent);
 		/**************************************************************************************************************/
 		return $this->insertItem(array('insert'=>$category,'model'=>'categories'));
+	}
+	
+	private function ExecuteCreatingProductMenu($post){
+		
+		/**************************************************************************************************************/
+		$product = array("group"=>$this->input->get('group'),'category'=>0,'property'=>$post['property'],'photo_exist'=>0,'price'=>$post['price'],'title'=>$post['title'],'description'=>$post['description']);
+		/**************************************************************************************************************/
+		if($this->input->get('category') !== FALSE):
+			$product['category'] = $this->input->get('category');
+			if($this->input->get('subcategory') !== FALSE):
+				$product['category'] = $this->input->get('subcategory');
+			endif;
+			if($productID = $this->insertItem(array('insert'=>$product,'model'=>'menu'))):
+				return $productID;
+			endif;
+		endif;
+		return FALSE;
+	}
+	
+	private function uploadProductMenuPhoto($productID){
+		
+		if(isset($_FILES['photo'])):
+			if($_FILES['photo']['error'] != 4):
+				if($photo = file_get_contents($_FILES['photo']['tmp_name'])):
+					$this->load->model('menu');
+					$this->menu->updateField($productID,'photo',$photo);
+					$this->menu->updateField($productID,'photo_exist',1);
+					$this->load->helper('string');
+					return site_url('loadimage/menu/'.$productID.'?'.random_string('alpha',5));
+				endif;
+			endif;
+		endif;
+		return FALSE;
+	}
+	
+	private function ExecuteUpdatingProductMenu($post){
+		
+		/**************************************************************************************************************/
+		$product = array("id"=>$this->input->get('product'),"group"=>0,'category'=>0,'property'=>$post['property'],'title'=>$post['title'],'price'=>$post['price'],'description'=>$post['description']);
+		/**************************************************************************************************************/
+		if($this->input->get('product') !== FALSE && $this->input->get('group') !== FALSE):
+			$product['group'] = $this->input->get('group');
+			if($this->input->get('category') !== FALSE):
+				$product['category'] = $this->input->get('category');
+				if($this->input->get('subcategory') !== FALSE):
+					$product['category'] = $this->input->get('subcategory');
+				endif;
+				$this->updateItem(array('update'=>$product,'model'=>'menu'));
+				return TRUE;
+			endif;
+		endif;
+		return FALSE;
 	}
 	
 	/* -------------------------------------------------------------- */

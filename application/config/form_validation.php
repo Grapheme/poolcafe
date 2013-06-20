@@ -31,7 +31,22 @@
 			array('field'=>'title','label'=>'Название','rules'=>'required|trim')
 		),
 		'remove_menu_title' =>array(
-			array('field'=>'id','label'=>'ID','rules'=>'required|integer|trim'),
+			array('field'=>'id','label'=>'ID','rules'=>'required|integer|trim')
+		),
+		'insert_product_menu' =>array(
+			array('field'=>'title','label'=>'Название','rules'=>'required|trim'),
+			array('field'=>'property','label'=>'Вес, объем, размер','rules'=>'required|trim'),
+			array('field'=>'price','label'=>'Цена','rules'=>'required|trim'),
+			array('field'=>'description','label'=>'Описание','rules'=>'trim'),
+		),
+		'update_product_menu' =>array(
+			array('field'=>'title','label'=>'Название','rules'=>'required|trim'),
+			array('field'=>'property','label'=>'Вес, объем, размер','rules'=>'required|trim'),
+			array('field'=>'price','label'=>'Цена','rules'=>'required|trim'),
+			array('field'=>'description','label'=>'Описание','rules'=>'trim'),
+		),
+		'remove_product_menu' =>array(
+			array('field'=>'id','label'=>'ID','rules'=>'required|integer|trim')
 		)
 	);
 ?>

@@ -19,7 +19,8 @@
 			<div class="span9">
 				<ul class="breadcrumb">
 					<li><a href="<?=site_url(ADMIN_START_PAGE);?>">Панель управления</a> <span class="divider">/</span></li>
-					<li class="active">Меню</li>
+					<li><a href="<?=site_url(ADMIN_START_PAGE,'/menu'.getUrlLink());?>">Меню</a> <span class="divider">/</span></li>
+					<li class="active">Добавление продукта</li>
 				</ul>
 				<div class="clear"></div>
 				<div class="result-request"></div>
@@ -29,15 +30,11 @@
 			</div>
 		</div>
 	</div>
-	
 	<?php $this->load->view("admin_interface/includes/footer");?>
 	<?php $this->load->view("admin_interface/includes/scripts");?>
 
 <script type="text/javascript" src="<?=site_url('js/libs/bootstrap.js');?>"></script>
-<script type="text/javascript" src="<?=site_url('ckeditor/ckeditor.js');?>"></script>
-<script type="text/javascript" src="<?=site_url('ckeditor/adapters/jquery.js');?>" ></script>
-<script type="text/javascript" src="<?=site_url('ckfinder/ckfinder.js');?>"></script>
-<script type="text/javascript" src="<?=site_url('js/cabinet/redactor-config.js');?>"></script>
+<script type="text/javascript" src="<?=site_url('js/cabinet/upload.js');?>"></script>
 <script type="text/javascript" src="<?=site_url('js/cabinet/admin.js');?>"></script>
 </body>
 </html>

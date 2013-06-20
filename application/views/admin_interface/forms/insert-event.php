@@ -34,8 +34,8 @@
 	<div class="control-group">
 		<textarea rows="3" class="span9 valid-required" placeholder="Анонс собыьтия" name="anonce"></textarea>
 	</div>
-	<div class="control-group">
-		<textarea rows="10" class="span9 valid-required redactor" placeholder="Текс события" name="content"></textarea>
+	<div class="control-group clearfix">
+		<textarea rows="10" class="valid-required redactor" placeholder="Текс события" name="content"></textarea>
 	</div>
 	<div class="div-form-operation">
 		<button type="submit" value="" name="submit" class="btn btn-submit no-clickable btn-loading">Создать событие</button>

@@ -132,6 +132,7 @@ class MY_Controller extends CI_Controller{
 		switch($this->uri->segment(2)):
 			case 'news': $this->load->model('news'); $image = $this->news->getImage($this->uri->segment(3),'photo'); break;
 			case 'events': $this->load->model('events'); $image = $this->events->getImage($this->uri->segment(3),'photo'); break;
+			case 'menu': $this->load->model('menu'); $image = $this->menu->getImage($this->uri->segment(3),'photo'); break;
 		endswitch;
 		if(is_null($image) || empty($image)):
 			$image = file_get_contents(NO_IMAGE);
@@ -294,7 +295,6 @@ class MY_Controller extends CI_Controller{
 	
 	public function uploadSingleImage($uploadPath = NULL){
 		
-		$uploadStatus = array('status'=>FALSE,'message'=>'','uploadData'=>array());
 		if(is_null($uploadPath) || ($this->createDir($uploadPath) == FALSE)):
 			$uploadPath = NULL;
 		endif;
@@ -310,15 +310,10 @@ class MY_Controller extends CI_Controller{
 				$config['max_size'] = 5120;
 				$config['file_name'] = preg_replace('/.+(.)(\.)+/',random_string('nozero',12)."\$2",$_FILES['file']['name']);
 				$this->upload->initialize($config);
-				if(!$this->upload->do_upload('file')):
-					$uploadStatus['message'] = $this->load->view('html/print-error',array('alert_header'=>'Файл: '.$_FILES['file']['name'],'message'=>$this->upload->display_errors()),TRUE);
-				else:
-					$uploadStatus['uploadData'] = $this->upload->data();
-					$uploadStatus['status'] = TRUE;
-				endif;
+				$this->upload->do_upload('file');
 			endif;
 		endif;
-		return $uploadStatus;
+		return $config['file_name'];
 	}
 	
 	public function dropUploadFile(){
