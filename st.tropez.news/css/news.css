@@ -1,0 +1,125 @@
+/*
+ * HTML5 Boilerplate
+ *
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html,
+button,
+input,
+select,
+textarea {
+    color: #222;
+}
+
+body {
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+/*
+ * Remove the gap between images and the bottom of their containers: h5bp.com/i/440
+ */
+
+img {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+
+/* ==========================================================================
+   Main site styles
+   ========================================================================== */
+
+body {
+	background: #535353;
+	/*height: 100%;*/
+	background: url(../img/news-bg.jpg) 100% 100% no-repeat; /* Добавляем фон */
+    background-size: cover;
+}
+html, body { width: 100%; font: 12px "ff-meta-web-pro", "futura-pt", sans-serif; padding: 0; margin: 0; color: #636363; }
+body { overflow: auto; }
+body ul { list-style-type: none; }
+article.wrapper {height: 100%; padding: 0 0 5em 0; }
+section.news {
+	width: 52.5em;
+	margin: 0 auto;
+	padding: 0.375em 2.625em;
+	background: #FFF;		
+	line-height: 1.375em;
+}
+
+.news-header { padding: 3em 0 3em 0; }
+.news-header > h2 { text-align: center; font-size: 2.6em; text-transform: uppercase; padding: 0; margin: 0;}
+.news-header > h2 > span { font-weight: normal; color: #FFF; display: inline-block; border: 3px solid #FFF; padding: 0 0.25em; width: 9.5em; }
+
+.news-list-item { width: 100%; margin: 0 0 4.125em 0; }
+.news-item-body { width: 100%; }
+	.news-item-leftside { float: left; width: 12em; margin: 0 2.25em 0 0; }
+		.news-item-pict { width: 12em; text-align: center;}
+			.news-item-pict img { max-width: 100%; border-radius: 15em; }
+		.news-item-date { text-align: center; padding: 1.875em 0; font-size: .875em; }
+			.month-name { text-transform: uppercase; }
+	.news-item-rightside { float: left; width: 32.625em }
+		.news-item-header { padding: .925em 0; font-size: 1.5em; color: #191919; }
+		.news-item-content { padding: .785em .375em; font-size: .75em; }
+
+
+
+footer { background: #333; height: 6em; position: fixed; bottom: 0; color: #fff; line-height: 6em; font-size: 1.1em; width: 100%; }
+footer .copy { float: left; width: 50%; }
+footer .dev { float: right; width: 50%; text-align: center; }
+footer a { color: #bcdfef; }
+
+.clear { clear: both; }
