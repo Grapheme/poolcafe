@@ -1,6 +1,9 @@
 $(document).ready(function(){
-	var wh = $(window).height();
-	var dh = $(document).height();
-	
-	$('body').height(wh);
+	$('item1 a')
+	.mouseenter(function({
+		$('item1 div').css( "position", "absolute" );
+	}))
+	.mouseleave(function(){
+		
+	});
 });
