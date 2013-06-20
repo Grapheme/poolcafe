@@ -85,8 +85,9 @@ textarea {
 body {
 	background: #535353;
 	/*height: 100%;*/
-	background: url(../img/news-bg.jpg) 100% 100% no-repeat; /* Добавляем фон */
+	background: url(../img/news-bg.jpg) 0% 80% no-repeat; /* Добавляем фон */
     background-size: cover;
+    background-attachment: fixed;
 }
 html, body { width: 100%; font: 12px "ff-meta-web-pro", "futura-pt", sans-serif; padding: 0; margin: 0; color: #636363; }
 body { overflow: auto; }
@@ -113,7 +114,7 @@ section.news {
 			.month-name { text-transform: uppercase; }
 	.news-item-rightside { float: left; width: 32.625em }
 		.news-item-header { padding: .925em 0; font-size: 1.5em; color: #191919; }
-		.news-item-content { padding: .785em .375em; font-size: .75em; }
+		.news-item-content { padding: .785em .375em; font-size: .85em; }
 
 
 

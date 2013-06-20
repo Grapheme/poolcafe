@@ -122,11 +122,24 @@
 		<script src="js/main.js"></script>
 
 		<!-- Typekit fonts -->
-		<script type="text/javascript" src="//use.typekit.net/tnx6yum.js"></script>
 		<script type="text/javascript">
-			try {
-				Typekit.load();
-			} catch(e) {
+		
+			function initialize() {
+				var mapOptions = {
+					zoom : 15,
+					scrollwheel: false,
+					center : new google.maps.LatLng(47.210951, 39.632921),
+					mapTypeId : google.maps.MapTypeId.ROADMAP
+				}
+				var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
+				var image = 'img/marker.png';
+				var myLatLng = new google.maps.LatLng(47.210951, 39.632921);
+				var beachMarker = new google.maps.Marker({
+					position : myLatLng,
+					map : map,
+					icon : image
+				});
 			}
 		</script>
 
