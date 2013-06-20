@@ -21,6 +21,17 @@
 			array('field'=>'time','label'=>'Время проведения','rules'=>'trim'),
 			array('field'=>'price','label'=>'Цена','rules'=>'trim'),
 			array('field'=>'date','label'=>'Дата','rules'=>'required|trim')
+		),
+		'update_menu_title' =>array(
+			array('field'=>'id','label'=>'ID','rules'=>'required|integer|trim'),
+			array('field'=>'title','label'=>'Название','rules'=>'required|trim')
+		),
+		'insert_menu_title' =>array(
+			array('field'=>'parent','label'=>'Категория','rules'=>'required|integer|trim'),
+			array('field'=>'title','label'=>'Название','rules'=>'required|trim')
+		),
+		'remove_menu_title' =>array(
+			array('field'=>'id','label'=>'ID','rules'=>'required|integer|trim'),
 		)
 	);
 ?>

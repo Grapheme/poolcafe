@@ -130,9 +130,8 @@ class MY_Controller extends CI_Controller{
 		
 		$image = NULL;
 		switch($this->uri->segment(2)):
-			case 'photo':$image = $this->accounts->getImage($this->uri->segment(3),'photo'); break;
-			case 'thumbnail':$image = $this->accounts->getImage($this->uri->segment(3),'thumbnail'); break;
-			case 'course':$this->load->model('courses'); $image = $this->courses->getImage($this->uri->segment(3),'image'); break;
+			case 'news': $this->load->model('news'); $image = $this->news->getImage($this->uri->segment(3),'photo'); break;
+			case 'events': $this->load->model('events'); $image = $this->events->getImage($this->uri->segment(3),'photo'); break;
 		endswitch;
 		if(is_null($image) || empty($image)):
 			$image = file_get_contents(NO_IMAGE);
@@ -549,13 +548,47 @@ class MY_Controller extends CI_Controller{
 		endif;
 	}
 
-	public function getValuesInArray($array,$value){
+	public function getValuesInArray($array,$value = 'id'){
 		
 		$ids = array();
 		for($i=0;$i<count($array);$i++):
 			$ids[] = $array[$i][$value];
 		endfor;
 		return $ids;
+	}
+	
+	/* -------------------------------------------------------------------------------------------- */
+	public function getParentsCategoriesMenu(){
+		
+		$this->load->model('categories');
+		if($categories = $this->categories->getAll()):
+			$parents = array();
+			for($i=0;$i<count($categories);$i++):
+				if($categories[$i]['parent'] == 0):
+					$parents[] = $categories[$i];
+				endif;
+			endfor;
+			return $parents;
+		endif;
+		return FALSE;
+	}
+	
+	public function getHierarchyCategoriesMenu($parents){
+		
+		$this->load->model('categories');
+		if($categories = $this->categories->getAll()):
+			$hierarchy = array();
+			for($i=0;$i<count($parents);$i++):
+				$hierarchy[$i] = $parents[$i];
+				for($j=0;$j<count($categories);$j++):
+					if($parents[$i]['id'] == $categories[$j]['parent']):
+						$hierarchy[$i]['children'][] = $categories[$j];
+					endif;
+				endfor;
+			endfor;
+			return $hierarchy;
+		endif;
+		return FALSE;
 	}
 	
 }

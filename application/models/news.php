@@ -5,6 +5,7 @@ class News extends MY_Model{
 	protected $table = "news";
 	protected $primary_key = "id";
 	protected $fields = array("id","title","translit","anonce","content","date_publish");
+	protected $order_by = 'date_publish DESC';
 
 	function __construct(){
 		parent::__construct();

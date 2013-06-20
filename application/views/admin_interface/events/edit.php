@@ -42,6 +42,7 @@
 <script type="text/javascript" src="<?=site_url('js/datepicker/jquery.ui.datepicker.js');?>"></script>
 <script type="text/javascript" src="<?=site_url('js/datepicker/jquery.ui.datepicker-ru.js');?>"></script>
 <script type="text/javascript" src="<?=site_url('js/cabinet/datepicker.js');?>"></script>
+<script type="text/javascript" src="<?=site_url('js/cabinet/upload.js');?>"></script>
 <script type="text/javascript" src="<?=site_url('js/cabinet/admin.js');?>"></script>
 </body>
 </html>

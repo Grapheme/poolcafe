@@ -13,4 +13,20 @@
 		$parse = parse_url($url,PHP_URL_HOST);
 		return preg_replace('/(www\.)/','',$parse);
 	}
+	
+	function getUrlLink(){
+		
+		$CI = & get_instance();
+		$get = $CI->input->get();
+		$getLink = '';
+		if($get !== FALSE):
+			$temp = array();
+			foreach($get as $key => $value):
+				$temp[] = $key.'='.$value;
+			endforeach;
+			$getLink = '?'.implode('&',$temp);
+		endif;
+		return $getLink;
+	}
+	
 ?>

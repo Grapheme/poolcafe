@@ -134,5 +134,79 @@ class Admin_interface extends MY_Controller{
 		);
 		$this->load->view("admin_interface/cabinet/profile",$pagevar);
 	}
+	/********************************************* menu ********************************************************/
+	public function categories(){
+		
+		$this->load->model('group');
+		$pagevar = array(
+			'group' => $this->group->getAll(),
+			'categories' => array()
+		);
+		if($parentsCategories = $this->getParentsCategoriesMenu()):
+			if($categoriesHierarchy = $this->getHierarchyCategoriesMenu($parentsCategories)):
+				$pagevar['categories'] = $categoriesHierarchy;
+			endif;
+		endif;
+		$this->session->set_userdata('backpath',site_url(uri_string()));
+		$this->load->view("admin_interface/menu/categories",$pagevar);
+	}
 	
+	public function menu(){
+		
+		if($this->input->get('group') === FALSE || !is_numeric($this->input->get('group')) || $this->input->get('group') > 4):
+			redirect(ADMIN_START_PAGE.'/menu?group=1');
+		endif;
+		$this->load->model('group');
+		$pagevar = array(
+			'group' => $this->group->getAll(),
+			'categories' => array(),
+			'menu' => array()
+		);
+		if($parentsCategories = $this->getParentsCategoriesMenu()):
+			if($categoriesHierarchy = $this->getHierarchyCategoriesMenu($parentsCategories)):
+				$pagevar['categories'] = $categoriesHierarchy;
+			endif;
+		endif;
+		$pagevar['menu'] = $this->getProductsMenu();
+		$this->session->set_userdata('backpath',site_url(uri_string()));
+		$this->load->view("admin_interface/menu/list",$pagevar);
+	}
+	
+	public function addProductMenu(){
+		
+		$this->load->model('group');
+		$this->load->helper('form');
+		$pagevar = array(
+			'group' => $this->group->getAll(),
+			'categories' => array(),
+		);
+		if($parentsCategories = $this->getParentsCategoriesMenu()):
+			if($categoriesHierarchy = $this->getHierarchyCategoriesMenu($parentsCategories)):
+				$pagevar['categories'] = $categoriesHierarchy;
+			endif;
+		endif;
+		$this->load->view("admin_interface/menu/add",$pagevar);
+	}
+	
+	private function getProductsMenu(){
+		
+		$menu = array();
+		if($this->input->get('group') !== FALSE):
+			$this->load->model('menu');
+			if($groupMenu = $this->menu->getWhere(NULL,array('group'=>$this->input->get('group')),TRUE)):
+				$category = $this->input->get('category');
+				if($this->input->get('subcategory') !== FALSE):
+					$category = $this->input->get('subcategory');
+				endif;
+				for($i=0;$i<count($groupMenu);$i++):
+					if($groupMenu[$i]['category'] == $category):
+						$menu[] = $groupMenu[$i];
+					endif;
+				endfor;
+			endif;
+		endif;
+		return $menu;
+	}
+	
+	/***********************************************************************************************************/
 }

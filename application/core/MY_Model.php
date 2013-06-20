@@ -102,7 +102,7 @@ class MY_Model extends CI_Model{
 		$this->db->select($this->_fields())->order_by($orderby);
 		$query = $this->db->get($this->table);
 		$data = $query->result_array();
-		if($data):
+		if(!empty($data)):
 			return $data;
 		endif;
 		return NULL;

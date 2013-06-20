@@ -15,6 +15,15 @@
 			<input type="text" class="span3" name="time" placeholder="Введите время начала" value="">
 		</div>
 	</div>
+	<div class="controls">
+		<input type="file" class="valid-required" autocomplete="off" name="photo" size="52">
+		<p class="help-block">Поддерживаются форматы: JPG,PNG,GIF</p>
+		<div id="div-upload-photo" class="bar-file-upload hidden">
+			<div class="progress progress-info progress-striped active">
+				<div class="bar" style="width: 0%"></div>
+			</div>
+		</div>
+	</div>
 	<div class="control-group">
 		<input type="text" name="tags" class="span7" value="" placeholder="Теги" />
 	</div>

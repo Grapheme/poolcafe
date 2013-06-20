@@ -12,7 +12,17 @@ class Guests_interface extends MY_Controller{
 	
 	public function index(){
 		
-		$this->load->view("guests_interface/index");
+		$this->load->helper('date');
+		$this->load->model(array('news','events'));
+		$pagevar = array(
+			'news' => $this->news->limit(2,0),
+			'events' => $this->events->limit(2,0)
+		);
+		$category = array('Концерт','Выставка','Другое');
+		for($i=0;$i<count($pagevar['events']);$i++):
+			$pagevar['events'][$i]['category_title'] = $category[$pagevar['events'][$i]['category']];
+		endfor;
+		$this->load->view("guests_interface/index",$pagevar);
 	}
 	
 	/******************************************* Авторизация и регистрация ***********************************************/

@@ -17,6 +17,9 @@ $route[ADMIN_START_PAGE.'/news/update/:num'] = "ajax_interface/updateNews";
 
 $route[ADMIN_START_PAGE.'/events/insert'] = "ajax_interface/insertEvent";
 $route[ADMIN_START_PAGE.'/events/update/:num'] = "ajax_interface/updateEvent";
+/*********** menu ***************/
+$route[ADMIN_START_PAGE.'/save-group'] = "ajax_interface/saveGroup";
+$route[ADMIN_START_PAGE.'/manage-category'] = "ajax_interface/manageCategory";
 /*************************************************** GUEST INTRERFACE ***********************************************/
 $route['clear-session'] = "guests_interface/clearSession";
 $route['admin'] = "guests_interface/signIN";
@@ -35,4 +38,6 @@ $route[ADMIN_START_PAGE.'/events/add'] = "admin_interface/addEvent";
 $route[ADMIN_START_PAGE.'/events/delete/:num'] = "admin_interface/deleteEvent";
 $route[ADMIN_START_PAGE.'/events(\/:any)*?'] = "admin_interface/events";
 
-$route[ADMIN_START_PAGE.'/profile'] = "admin_interface/profile";
+$route[ADMIN_START_PAGE.'/categories'] = "admin_interface/categories";
+$route[ADMIN_START_PAGE.'/menu'] = "admin_interface/menu";
+$route[ADMIN_START_PAGE.'/menu/add'] = "admin_interface/addProductMenu";
