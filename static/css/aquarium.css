@@ -1,0 +1,18 @@
+html.aquarium-html, body.aquarium-body {	
+	/*height: 100%;*/
+	background: url(../img/aquarium_bg.jpg) 0% 80% no-repeat; /* Добавляем фон */
+    background-size: cover;
+    background-attachment: fixed;
+}
+section.aquarium { /*position: relative;*/ z-index: 1001; width: 33.125em; margin: 0 auto; padding: 5.25em 3.125em; /*background-color: rgba(255, 255, 255, 0.4); */}
+
+/*.aquarium-body { position: relative; }*/
+.aquarium_bg { /*position: absolute;*/ z-index: 1000; margin: 6,25em 0; background: rgba(255, 255, 255, 0.5); width: 100%; }
+	.octopus-1{ position: absolute; bottom: 0; left: -20em; width: 20em; }
+	.octopus-2{ position: absolute; top: 0; right: -15em; width: 15em; }
+		.octopus-1 img,
+		.octopus-2 img { width: 100%; }
+.aquarium { position: relative; }
+	.menu-nav { position: absolute; top: -1em; left: -18em;}
+.aquarium-content-header { font-size: 2.443125em; color: #000; font-weight: 400; line-height: 1em; }
+	.bold { font-weight: 700; }

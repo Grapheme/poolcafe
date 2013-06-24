@@ -28,6 +28,8 @@ $route[ADMIN_START_PAGE.'/menu/remove'] = "ajax_interface/manageMenu";
 $route['clear-session'] = "guests_interface/clearSession";
 $route['admin'] = "guests_interface/signIN";
 $route['log-off'] = "guests_interface/logoff";
+/***************** pages ******************/
+$route['news(\/:any)*?'] = "guests_interface/news";
 /********** loading resources *************/
 $route['loadimage/:any/:num'] = "guests_interface/loadimage";
 /*************************************************** ADMIN INTRERFACE ***********************************************/

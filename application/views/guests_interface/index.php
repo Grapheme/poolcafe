@@ -5,6 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
 <?php $this->load->view("guests_interface/includes/head");?>
+
+<link rel="stylesheet" href="<?=base_url('css/fotorama.css');?>" />
 </head>
 <body>
  <!--[if lt IE 7]>

@@ -12,40 +12,48 @@ st.init = function() {
 	st.pool_wh = $('#pool-info').height();		
 	
 	$('#news').attr({
-		'data-2000' : 'top: 0px;',
-		'data-5200' : 'top: -' + st.news_wh + 'px;'
+		'data-2600' : 'top: 0px;',
+		'data-5800' : 'top: -' + (+st.news_wh + +10) + 'px;'
 	});
 	
 	$('#restaurant-info').attr({
-		'data-6400' : 'top: 0px;',
-		'data-9600' : 'top: -' + st.rest_wh + 'px;'
+		'data-8200' : 'top: 0px;',
+		'data-11400' : 'top: -' + (+st.rest_wh + +10) + 'px;'
 	});
 	
 	$('#pool-info').attr({
-		'data-11000' : 'top: 0px;',
-		'data-13000' : 'top: -' + st.pool_wh + 'px;'
+		'data-14000' : 'top: 0px;',
+		'data-16200' : 'top: -' + (+st.pool_wh + +10) + 'px;'
 	});
 				
 	$('nav.nav-dark').attr({
-		'data-13000' : 'top:-100%;',
-		'data-11000' : 'z-index:10002; top:0%;',
-		 'data-9610' : 'height: 100%; z-index:10001;',
-		 'data-9600' : 'height: 0%;',
-		 'data-6400' : 'z-index:10002;',
-		 'data-5210' : 'height:' + st.rest_wh + 'px; z-index:10001;',
-		 'data-5200' : 'height:0%;',
+		'data-16600' : 'top:-100%;',
+		'data-14500' : 'z-index:10002; top:0%;',
+		
+		 'data-11410' : 'height: 100%; z-index:10001;',
+		 'data-11400' : 'height: 0%;',
+		 
+		 'data-8200' : 'z-index:10002;',
+		 
+		 'data-5810' : 'height:' + st.rest_wh + 'px; z-index:10001;',
+		 'data-5802' : 'height:0%;',
+		 
+		 'data-2600' : 'height:' + st.news_wh + 'px; z-index:10002;',
+		 
 		 'data-2000' : 'height:' + st.news_wh + 'px; z-index:10002;',
 		    'data-0' : 'height:0%; z-index:10001;'
 	});
 	
 	$('nav.nav-light').attr({
-		'data-13000' : 'top:-100%;',
-		'data-11010' : 'height:100%; top:0%;',
-		'data-11000' : 'height:0%; z-index:10001;',
-		 'data-9600' : 'z-index:10002;',
-		 'data-6410' : 'height:100%;',
-		 'data-6400' : 'height:0%; z-index:10001;',
-		 'data-5200' : 'z-index:10002;',
+		
+		 'data-13400' : 'height:0%; z-index:10001;', 
+		 'data-12000' : 'z-index: 10002',
+		 
+		 'data-8200' : 'z-index: 10000',
+		 'data-7610' : 'height:100%;',
+		 'data-7600' : 'height:0%; z-index:10001;',
+		 'data-6400' : 'z-index:10001;', 		 
+		 		 
 		 'data-2010' : 'height:100%;',
 		 'data-2000' : 'height:0%; z-index:10001;',
 		    'data-0' : 'height:100%; z-index:10002;'

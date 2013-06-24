@@ -2,7 +2,7 @@
 
 class Guests_interface extends MY_Controller{
 	
-	var $limit = PER_PAGE_DEFAULT;
+	var $per_page = PER_PAGE_DEFAULT;
 	var $offset = 0;
 	
 	function __construct(){
@@ -23,6 +23,18 @@ class Guests_interface extends MY_Controller{
 			$pagevar['events'][$i]['category_title'] = $category[$pagevar['events'][$i]['category']];
 		endfor;
 		$this->load->view("guests_interface/index",$pagevar);
+	}
+	
+	public function news(){
+		
+		$this->offset = intval($this->uri->segment(4));
+		$this->load->helper('date');
+		$this->load->model('news');
+		$pagevar = array(
+			'news' => $this->news->limit($this->per_page,$this->offset),
+			'pagination' => $this->pagination('news',3,$this->news->countAllResults(),$this->per_page),
+		);
+		$this->load->view("guests_interface/news",$pagevar);
 	}
 	
 	/******************************************* Авторизация и регистрация ***********************************************/
