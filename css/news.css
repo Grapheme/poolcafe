@@ -51,9 +51,10 @@ section.news {
 	text-align: center;
 }
 .sep_new-header h1 {
-	margin: 2.8125em auto;
+	margin: 0 auto;
 	padding: 0;
 	text-align: center;
+	text-transform: uppercase;
 }
 .sep_new-pict {
 	margin: 2.8125em auto;
