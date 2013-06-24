@@ -1,4 +1,4 @@
-<section id="news" data-2000="top:0%;" data-4800="top:-100%;" style="z-index:9997;" data-menu="dark" >
+<section id="news" style="z-index:9997;" data-menu="dark" >
 	<div class="container clearfix">
 		<h2><span>Новости&amp;События</span></h2>
 		<div class="events-list">

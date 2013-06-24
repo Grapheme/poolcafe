@@ -1,4 +1,4 @@
-<section id="restaurant" class="slider" data-4800="top:0%;" data-6400="top:-100%;" style="z-index:9996;" data-menu="light"  data-offset="6648.78125">
+<section id="restaurant" class="slider" data-6400="top:0%;" data-7600="top:-100%;" style="z-index:9996;" data-menu="light"  data-offset="6648.78125">
 	<header>
 		<h2>
 			<span>Ресторан с аквариумом <br/>

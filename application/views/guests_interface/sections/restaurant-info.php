@@ -1,4 +1,4 @@
-<section id="restaurant-info" data-6400="top:0%;" data-8000="top:-100%;" style="z-index:9995;" data-menu="dark" data-offset="2803.78125">
+<section id="restaurant-info" style="z-index:9995;" data-menu="dark" data-offset="2803.78125">
 	<div class="container clearfix">
 		<h2><span>Ресторан</span></h2>
 		<ul class="rest-list">

@@ -1,4 +1,4 @@
-<section id="pool-info" data-9600="top:0%;" data-10800="top:-100%;" style="z-index:9993;" data-menu="dark" data-offset="4822.5625">
+<section id="pool-info" style="z-index:9993;" data-menu="dark" data-offset="4822.5625">
 	<div class="container clearfix">
 		<h2><span>Бассейн</span></h2>
 		<div class="rest-list">

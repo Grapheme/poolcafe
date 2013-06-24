@@ -1,4 +1,4 @@
-<section id="pool" class="slider" data-8000="top:0%;" data-9600="top:-100%;" style="z-index:9994;" data-menu="light" data-offset="3867.5625">
+<section id="restaurant-info" style="z-index:9995;" data-menu="dark" data-offset="2803.78125">
 	<header>
 		<h2>
 			<span>Открытый бассейн в живописном уголке парка <br/> 

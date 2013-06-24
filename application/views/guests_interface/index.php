@@ -29,10 +29,10 @@
 		<?php $this->load->view("guests_interface/includes/footer");?>
 	</article>
 	<?php $this->load->view("guests_interface/includes/scripts");?>
+	
+<script type="text/javascript" src="<?=site_url('js/vendor/skrollr.min.js');?>"></script>
+<script type="text/javascript" src="<?=site_url('js/vendor/fotorama.js');?>"></script>
 	<?php $this->load->view("guests_interface/includes/google-maps");?>
-	<script type="text/javascript">
-		var s = skrollr.init({ });
-	</script>
 	<?php $this->load->view("guests_interface/includes/typekit-fonts");?>
 	<?php $this->load->view("guests_interface/includes/yandex-metrika");?>
 	
