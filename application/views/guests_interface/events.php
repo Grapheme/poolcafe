@@ -34,8 +34,12 @@
 								<div class="news-item-header">
 									<a class="news-item-header-link" href="<?=site_url('#');?>"><?=$events[$i]['title'];?></a>
 								</div>
+								<?=$events[$i]['category_title'];?>
 								<div class="news-item-content">
 									<?=$events[$i]['anonce'];?>
+								</div>
+								<div class="tags">
+									<?=$events[$i]['tags'];?>
 								</div>
 							</div>
 							<div class="clear"></div>

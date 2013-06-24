@@ -46,6 +46,10 @@ class Guests_interface extends MY_Controller{
 			'events' => $this->events->limit($this->per_page,$this->offset),
 			'pagination' => $this->pagination('events',3,$this->events->countAllResults(),$this->per_page),
 		);
+		$category = array('Концерт','Выставка','Другое');
+		for($i=0;$i<count($pagevar['events']);$i++):
+			$pagevar['events'][$i]['category_title'] = $category[$pagevar['events'][$i]['category']];
+		endfor;
 		$this->load->view("guests_interface/events",$pagevar);
 	}
 	
