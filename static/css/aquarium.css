@@ -26,3 +26,25 @@ section.aquarium { position: relative; z-index: 1001; width: 33.125em; margin: 0
     position: absolute;
 }
  
+/*
+ *  kids css
+ * 
+ */
+
+html.kids-html, body.kids-body {	
+	/*height: 100%;*/
+	background: url(../img/kids.jpg) 0% 80% no-repeat; /* Добавляем фон */
+    background-size: cover;
+    background-attachment: fixed;
+    font: 16px "ff-meta-web-pro", "futura-pt", sans-serif; padding: 0; margin: 0; color: #252525;
+}
+
+.kids-content-header { margin: 0 0 .4em 0; padding: 0 0 0.5em 0; font-size: 2.143125em; color: #000; font-weight: 400; line-height: 1em; border-bottom: 9px solid #ffc83d; }
+.menu-header > h2 > span { border: 3px solid #000; color: #000; }
+.aquarium-content p { margin: 0; }
+.parents-information-list { padding: 0 0 0 .5em; }
+.parents-information-list > li { margin: 0 0 1em 0; }
+.parents-information-list > li:before{
+	    content: "\2013";
+	}
+.parents-information { font-weight: 400; }
