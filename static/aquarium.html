@@ -25,6 +25,30 @@
 		<!--[if lt IE 7]>
 		<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
 		<![endif]-->
+		<style>
+ .parallax-viewport {
+      width: 100%;
+      height: 20em;
+      background-image: url("images/1.jpg");
+}
+.parallax-viewport {
+    position: relative;  
+    overflow: hidden;
+}
+.parallax-layer {
+    position: absolute;
+}
+ 
+ </style>
+ <div class="parallax-viewport" id="parallax">
+        
+
+    <div class="parallax-layer" style="width:500px; height:280px;">
+      <img src="img/octopus2.png" alt=""  />
+    </div>
+
+
+</div>
 		<article class="wrapper">
 
 			<div class="menu-header">
@@ -144,18 +168,15 @@
 		</script>
 
 		<script src="js/plugins.js"></script>
-		<script src="js/main.js"></script>
+		<!--<script src="js/main.js"></script>
 		<!--<script src="js/jquery.event.frame.js"></script> -->
 		<script src="js/jquery.parallax.js"></script>
-		<script type="text/javascript">
-			jQuery(document).ready(function() {
-				// Declare parallax on layers
-				jQuery('.parallax-layer').parallax({
-					mouseport : jQuery("article.wrapper")
-					//xparallax : false
-				});
-			});
-		</script>
+		<script>
+  $(document).ready(function(){
+   $('.parallax-layer')
+    .parallax({   });
+  });
+  </script>
 
 		<!-- Typekit fonts -->
 		<script type="text/javascript" src="//use.typekit.net/tnx6yum.js"></script>

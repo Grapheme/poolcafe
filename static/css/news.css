@@ -41,3 +41,30 @@ section.news {
 
 
 .clear { clear: both; }
+
+/* ============================================================================================
+   Separate New styles
+   ============================================================================================ */
+  
+.sep_new-date {
+	margin: 2.8125em;
+	text-align: center;
+}
+.sep_new-header h1 {
+	margin: 2.8125em auto;
+	padding: 0;
+	text-align: center;
+}
+.sep_new-pict {
+	margin: 2.8125em auto;
+	text-align: center;
+}
+.sep_new-pict img {
+	display: block;
+	margin: 0 auto;
+	border-radius: 15em;
+}
+.sep_new-content {
+	width: 40em;
+	margin: 2.8125em auto;
+}
