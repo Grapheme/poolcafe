@@ -1,4 +1,4 @@
-html, body {
+html.news-html, body.news-body {
 	margin: 0;
 	padding: 0;
 	width: 100%;
@@ -6,12 +6,13 @@ html, body {
 	height: 100%;
 	background: #535353;
 	/*height: 100%;*/
+	font: 16px "ff-meta-web-pro", "futura-pt", sans-serif; padding: 0; margin: 0; color: #252525;
 	background: url(../img/news-bg.jpg) 0% 80% no-repeat; /* Добавляем фон */
     background-size: cover;
     background-attachment: fixed;
 }
 body.news-body ul { list-style-type: none; }
-article.news-wrapper {height: 100%; padding: 0 0 5em 0; }
+article.news-wrapper { padding: 0 0 5em 0; }
 .news-bg { /*position: absolute;*/ z-index: 1000; margin: 6,25em 0; background: rgba(255, 255, 255, 0.6); width: 100%; }
 section.news {
 	width: 52.5em;
@@ -28,7 +29,7 @@ section.news {
 .news-list-item { width: 100%; margin: 0 0 4.125em 0; }
 .news-item-body { width: 100%; }
 	.news-item-leftside { float: left; width: 10em; margin: 0 2.25em 0 0; }
-		.news-item-pict { width: 7em; margin: 0 auto; text-align: center;}
+		.news-item-pict { width: 11.25em; margin: 0 auto; text-align: center;}
 			.news-item-pict img { max-width: 100%; border-radius: 15em; }
 		.news-item-date { text-align: center; padding: 1.875em 0; font-size: .775em; }
 			.month-name { text-transform: uppercase; font-weight: 700; font-size: 1.1em; }
