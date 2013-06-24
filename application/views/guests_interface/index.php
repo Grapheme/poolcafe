@@ -31,7 +31,10 @@
 	<?php $this->load->view("guests_interface/includes/scripts");?>
 	
 <script type="text/javascript" src="<?=site_url('js/vendor/skrollr.min.js');?>"></script>
+<script type="text/javascript" src="<?=site_url('js/cabinet/skrollr-config.js');?>"></script>
 <script type="text/javascript" src="<?=site_url('js/vendor/fotorama.js');?>"></script>
+<script type="text/javascript" src="<?=site_url('js/cabinet/fotorama-config.js');?>"></script>
+
 	<?php $this->load->view("guests_interface/includes/google-maps");?>
 	<?php $this->load->view("guests_interface/includes/typekit-fonts");?>
 	<?php $this->load->view("guests_interface/includes/yandex-metrika");?>

@@ -37,6 +37,26 @@ class Guests_interface extends MY_Controller{
 		$this->load->view("guests_interface/news",$pagevar);
 	}
 	
+	public function aquarium(){
+		
+		$this->load->model('menu');
+		$this->load->helper('text');
+		$pagevar = array(
+			'menu' => $this->menu->getWhere(NULL,array('group'=>4),TRUE),
+		);
+		$this->load->view("guests_interface/aquarium",$pagevar);
+	}
+	
+	public function menu(){
+		
+		$this->load->model('menu');
+		$this->load->helper('text');
+		$pagevar = array(
+			'menu' => $this->menu->getWhere(NULL,array('group'=>1),TRUE),
+		);
+		$this->load->view("guests_interface/menu",$pagevar);
+	}
+	
 	/******************************************* Авторизация и регистрация ***********************************************/
 	
 	public function signIN(){
