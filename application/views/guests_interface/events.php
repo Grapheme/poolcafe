@@ -14,28 +14,28 @@
 	<![endif]-->
 	<article class="news-wrapper">
 		<div class="news-header">
-			<h2><span>Новости</span></h2>
+			<h2><span>События</span></h2>
 		</div>
 		<div class="news-bg">
 			<section class="news">
 				<ul class="newspage-list">
-				<?php for($i=0;$i<count($news);$i++):?>
+				<?php for($i=0;$i<count($events);$i++):?>
 					<li class="news-list-item">
 						<div  class="news-item-body">
 							<div class="news-item-leftside">
 								<div class="news-item-date">
-									<?=monthDateSpan($news[$i]['date_publish'],'month-name');?>
+									<?=monthDateSpan($events[$i]['date_publish'],'month-name');?>
 								</div>
 								<div class="news-item-pict">
-									<img src="<?=site_url('loadimage/news/'.$news[$i]['id']);?>" />
+									<img src="<?=site_url('loadimage/events/'.$events[$i]['id']);?>" />
 								</div>
 							</div>
 							<div class="news-item-rightside">
 								<div class="news-item-header">
-									<a class="news-item-header-link" href="<?=site_url('#');?>"><?=$news[$i]['title'];?></a>
+									<a class="news-item-header-link" href="<?=site_url('#');?>"><?=$events[$i]['title'];?></a>
 								</div>
 								<div class="news-item-content">
-									<?=$news[$i]['anonce'];?>
+									<?=$events[$i]['anonce'];?>
 								</div>
 							</div>
 							<div class="clear"></div>

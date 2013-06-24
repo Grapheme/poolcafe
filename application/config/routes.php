@@ -30,6 +30,7 @@ $route['admin'] = "guests_interface/signIN";
 $route['log-off'] = "guests_interface/logoff";
 /***************** pages ******************/
 $route['news(\/:any)*?'] = "guests_interface/news";
+$route['events(\/:any)*?'] = "guests_interface/events";
 $route['aquarium'] = "guests_interface/aquarium";
 $route['menu'] = "guests_interface/menu";
 /********** loading resources *************/

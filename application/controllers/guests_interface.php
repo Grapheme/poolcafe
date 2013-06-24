@@ -27,7 +27,7 @@ class Guests_interface extends MY_Controller{
 	
 	public function news(){
 		
-		$this->offset = intval($this->uri->segment(4));
+		$this->offset = intval($this->uri->segment(3));
 		$this->load->helper('date');
 		$this->load->model('news');
 		$pagevar = array(
@@ -35,6 +35,18 @@ class Guests_interface extends MY_Controller{
 			'pagination' => $this->pagination('news',3,$this->news->countAllResults(),$this->per_page),
 		);
 		$this->load->view("guests_interface/news",$pagevar);
+	}
+	
+	public function events(){
+		
+		$this->offset = intval($this->uri->segment(3));
+		$this->load->helper('date');
+		$this->load->model('events');
+		$pagevar = array(
+			'events' => $this->events->limit($this->per_page,$this->offset),
+			'pagination' => $this->pagination('events',3,$this->events->countAllResults(),$this->per_page),
+		);
+		$this->load->view("guests_interface/events",$pagevar);
 	}
 	
 	public function aquarium(){

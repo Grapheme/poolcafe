@@ -54,7 +54,6 @@ $(function(){
 	st.init();
 	st.skroll = skrollr.init({ });
 	initialize();
-	
 	$(window).resize( function() {
 		st.init();
 		st.skroll = skrollr.init({ });

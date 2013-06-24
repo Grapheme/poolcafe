@@ -207,4 +207,16 @@
 		return $timeSting;
 	}
 	
+	function monthDateSpan($field,$class = ''){
+		
+		$months = array("01"=>"января","02"=>"февраля","03"=>"марта","04"=>"апреля","05"=>"мая","06"=>"июня","07"=>"июля","08"=>"августа","09"=>"сентября","10"=>"октября","11"=>"ноября","12"=>"декабря");
+		$list = explode("-",$field);
+		$list[2] = (int)$list[2];
+		$field = implode("-",$list);
+		$nmonth = $months[$list[1]];
+		$pattern = "/(\d+)(-)(\w+)(-)(\d+)/i";
+		$replacement = "\$5".' <span class="'.$class.'">'.$nmonth.'</span> '."\$1";
+		return preg_replace($pattern, $replacement,$field);
+	}
+	
 ?>

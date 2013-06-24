@@ -38,6 +38,5 @@
 	<?php $this->load->view("guests_interface/includes/google-maps");?>
 	<?php $this->load->view("guests_interface/includes/typekit-fonts");?>
 	<?php $this->load->view("guests_interface/includes/yandex-metrika");?>
-	
 </body>
 </html>
