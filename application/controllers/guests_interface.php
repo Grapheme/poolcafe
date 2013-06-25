@@ -84,8 +84,18 @@ class Guests_interface extends MY_Controller{
 		$this->load->model('menu');
 		$this->load->helper('text');
 		$pagevar = array(
-			'menu' => $this->menu->getWhere(NULL,array('group'=>1),TRUE),
+			'menu' => array(),
+			'categories' => array(),
 		);
+		if($menu = $this->menu->getWhere(NULL,array('group'=>1),TRUE)):
+			$pagevar['categories'] = $this->getCategoriesInfo($menu);
+			
+			/*$courses = $this->getFavoritesCourses($courses);
+			$courses = $this->getAutorsInCourses($courses);
+			$courses = $this->getCourseCategory($courses);
+			$courses = $this->getCountSubscribesInCourses($courses);
+			$pagevar['courses'] = $this->getCoursesByCategories($courses);*/
+		endif;
 		$this->load->view("guests_interface/menu",$pagevar);
 	}
 	
@@ -114,6 +124,11 @@ class Guests_interface extends MY_Controller{
 		$pagevar = array(
 		);
 		$this->load->view("guests_interface/kids",$pagevar);
+	}
+	
+	private function getCategoriesInfo($menu){
+		
+		return TRUE;
 	}
 	
 	/******************************************* Авторизация и регистрация ***********************************************/
