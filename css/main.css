@@ -231,7 +231,8 @@ width: 100%;
 .card__back .back__circle .back__time { font-size: 1.3em; text-transform: uppercase; line-height: 1.1em; padding: 0.1em 0; }
 .card__back .back__circle .back__price { font-size: 1.3em; font-weight: bold; }
 
-
+.rest-item .rest-content .back__age { font-size: 1.5em; padding: 1.55em 0 0; }
+.rest-item .rest-content .card__back .back__circle { margin: -6.2em 0 0 -6em; }
 /* ==========================================================================
    Media for html
    ========================================================================== */
