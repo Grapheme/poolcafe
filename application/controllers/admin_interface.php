@@ -214,15 +214,19 @@ class Admin_interface extends MY_Controller{
 		if($this->input->get('group') !== FALSE):
 			$this->load->model('menu');
 			if($groupMenu = $this->menu->getWhere(NULL,array('group'=>$this->input->get('group')),TRUE)):
-				$category = $this->input->get('category');
-				if($this->input->get('subcategory') !== FALSE):
-					$category = $this->input->get('subcategory');
-				endif;
-				for($i=0;$i<count($groupMenu);$i++):
-					if($groupMenu[$i]['category'] == $category):
-						$menu[] = $groupMenu[$i];
+				if($this->input->get('category') !== FALSE && is_numeric($this->input->get('category'))):
+					$category = $this->input->get('category');
+					if($this->input->get('subcategory') !== FALSE):
+						$category = $this->input->get('subcategory');
 					endif;
-				endfor;
+					for($i=0;$i<count($groupMenu);$i++):
+						if($groupMenu[$i]['category'] == $category):
+							$menu[] = $groupMenu[$i];
+						endif;
+					endfor;
+				else:
+					$menu = $groupMenu;
+				endif;
 			endif;
 		endif;
 		return $menu;

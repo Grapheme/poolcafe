@@ -5,16 +5,16 @@
 			<div class="rest-item">
 				<div class="rest-content clearfix">
 					<figure class="card">
-							<div class="card__front">
-								<img class="avatar" src="<?=base_url('img/pool/category-1.jpg');?>" alt="Открытый основной бассейн" />
+						<div class="card__front">
+							<img class="avatar" src="<?=base_url('img/pool/category-1.jpg');?>" alt="Открытый основной бассейн" />
+						</div>
+						<div class="card__back">
+							<div class="back__circle">
+								<div class="back__age">От 1500 руб</div>
+								<div class="back__time"><strong>500 руб. депозит</strong></div>
+								<div class="back__price">на кухню и бар.</div>
 							</div>
-							<div class="card__back">
-								<div class="back__circle">
-									<div class="back__age">От 1500 руб</div>
-									<div class="back__time"><strong>500 руб. депозит</strong></div>
-									<div class="back__price">на кухню и бар.</div>
-								</div>
-							</div>
+						</div>
 					</figure>
 					<div class="rest-text">
 						<h3>Открытый <strong>основной</strong> бассейн</h3>
