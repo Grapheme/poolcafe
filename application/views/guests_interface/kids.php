@@ -12,7 +12,7 @@
 <![endif]-->
 	<article class="wrapper">
 		<div class="menu-header">
-			<h2><span>Детям</span></h2>
+			<h2><span class="kids-header-span">Детям</span></h2>
 		</div>
 		<div class="aquarium_bg">
 			<section class="aquarium">
