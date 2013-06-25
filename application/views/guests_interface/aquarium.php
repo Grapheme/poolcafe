@@ -27,27 +27,7 @@
 					<div class="aquarium-content">
 						<div class="aquarium-content">
 							<h3 class="aquarium-content-header"> В <span class="bold">аквариуме</span> с морской водой всегда <span class="bold">свежие морепродукты</span></h3>
-							<div class="snacks">
-								<h3 class="category-header">Аквариум</h3>
-								<div class="category-elem">
-									<ul class="category-elem-body">
-									<?php for($i=0;$i<count($menu);$i++):?>
-										<li class="category-elem-item">
-											<div class="category-elem-name">
-												<?=$menu[$i]['title'];?>
-											</div>
-											<div class="category-elem-weight">
-												<?=getMenuProperty($menu[$i]['property']);?>
-											</div>
-											<div class="category-elem-price">
-												<?=$menu[$i]['price'];?> р
-											</div>
-											<div class="clear"></div>
-										</li>
-									<?php endfor;?>
-									</ul>
-								</div>
-							</div>
+							<?php $this->load->view("html/writeMenuColumn",array('start'=>0,'stop'=>count($menu)));?>
 						</div>
 					</div>
 				</div>

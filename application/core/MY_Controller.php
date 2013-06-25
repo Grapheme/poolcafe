@@ -552,6 +552,20 @@ class MY_Controller extends CI_Controller{
 		return $ids;
 	}
 	
+	public function TranspondIDtoIndex($array,$field = 'id'){
+		
+		$TmpIDs = array();
+		for($i=0;$i<count($array);$i++):
+			$TmpIDs[$array[$i][$field]] = $array[$i];
+		endfor;
+		$ids = array();
+		foreach($TmpIDs as $key => $values):
+			unset($values[$field]);
+			$ids[$key] = $values;
+		endforeach;
+		return $ids;
+	}
+	
 	/* -------------------------------------------------------------------------------------------- */
 	public function getParentsCategoriesMenu(){
 		

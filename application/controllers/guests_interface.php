@@ -71,50 +71,36 @@ class Guests_interface extends MY_Controller{
 	
 	public function aquarium(){
 		
-		$this->load->model('menu');
 		$this->load->helper('text');
 		$pagevar = array(
-			'menu' => $this->menu->getWhere(NULL,array('group'=>4),TRUE),
+			'menu' => $this->getMenuByCategories(4),
 		);
 		$this->load->view("guests_interface/aquarium",$pagevar);
 	}
 	
 	public function menu(){
 		
-		$this->load->model('menu');
 		$this->load->helper('text');
 		$pagevar = array(
-			'menu' => array(),
-			'categories' => array(),
+			'menu' => $this->getMenuByCategories(1),
 		);
-		if($menu = $this->menu->getWhere(NULL,array('group'=>1),TRUE)):
-			$pagevar['categories'] = $this->getCategoriesInfo($menu);
-			
-			/*$courses = $this->getFavoritesCourses($courses);
-			$courses = $this->getAutorsInCourses($courses);
-			$courses = $this->getCourseCategory($courses);
-			$courses = $this->getCountSubscribesInCourses($courses);
-			$pagevar['courses'] = $this->getCoursesByCategories($courses);*/
-		endif;
 		$this->load->view("guests_interface/menu",$pagevar);
 	}
 	
 	public function wineCard(){
 		
-		$this->load->model('menu');
 		$this->load->helper('text');
 		$pagevar = array(
-			'menu' => $this->menu->getWhere(NULL,array('group'=>2),TRUE),
+			'menu' => $this->getMenuByCategories(2),
 		);
 		$this->load->view("guests_interface/wine-card",$pagevar);
 	}
 	
 	public function bar(){
 		
-		$this->load->model('menu');
 		$this->load->helper('text');
 		$pagevar = array(
-			'menu' => $this->menu->getWhere(NULL,array('group'=>3),TRUE),
+			'menu' => $this->getMenuByCategories(3),
 		);
 		$this->load->view("guests_interface/bar",$pagevar);
 	}
@@ -126,9 +112,37 @@ class Guests_interface extends MY_Controller{
 		$this->load->view("guests_interface/kids",$pagevar);
 	}
 	
-	private function getCategoriesInfo($menu){
+	private function getMenuByCategories($group){
 		
-		return TRUE;
+		$this->load->model('menu');
+		$menu = array(); $categories = array();
+		if($AllMenu = $this->menu->getWhere(NULL,array('group'=>$group),TRUE)):
+			if($parentsCategories = $this->getParentsCategoriesMenu()):
+				if($categoriesHierarchy = $this->getHierarchyCategoriesMenu($parentsCategories)):
+					$categories = $categoriesHierarchy;
+				endif;
+			endif;
+			if(!empty($categories)):
+				$menu = $categories;
+				for($parents=0;$parents<count($categories);$parents++):
+					for($m=0;$m<count($AllMenu);$m++):
+						if($AllMenu[$m]['category'] == $categories[$parents]['id']):
+							$menu[$parents]['products'][] = $AllMenu[$m];
+						endif;
+					endfor;
+					if(isset($categories[$parents]['children'])):
+						for($children=0;$children<count($categories[$parents]['children']);$children++):
+							for($m=0;$m<count($AllMenu);$m++):
+								if($AllMenu[$m]['category'] == $categories[$parents]['children'][$children]['id']):
+									$menu[$parents]['children'][$children]['products'][] = $AllMenu[$m];
+								endif;
+							endfor;
+						endfor;
+					endif;
+				endfor;
+			endif;
+		endif;
+		return $menu;
 	}
 	
 	/******************************************* Авторизация и регистрация ***********************************************/
