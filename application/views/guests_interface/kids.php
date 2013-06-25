@@ -7,9 +7,12 @@
 <?php $this->load->view("guests_interface/includes/head");?>
 </head>
 <body class="kids-body">
- <!--[if lt IE 7]>
+<!--[if lt IE 7]>
 	<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
 <![endif]-->
+	<div class="logo-back-to-main">
+		<a href="<?=site_url('')?>"><img src="<?=base_url('img/color_logo.png');?>"></a>
+	</div>
 	<article class="wrapper">
 		<div class="menu-header">
 			<h2><span>Детям</span></h2>
@@ -20,7 +23,6 @@
 					<img class="parallax-layer" src="<?=base_url('img/ball.png');?>">
 				</div>
 				<div class="aquarium-body">
-					<?php $this->load->view("guests_interface/includes/nav-menu");?>
 					<div class="aquarium-content">
 						<h3 class="kids-content-header"> В St.Tropez созданы все условия <span class="bold">для отдыха с маленькими детьми</span></h3>
 						<p>

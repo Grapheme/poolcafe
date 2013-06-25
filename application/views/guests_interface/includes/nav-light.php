@@ -9,13 +9,13 @@
 			<a class="navLink-2" href="#" data-scroll="2000">НОВОСТИ</a>
 		</li>
 		<li class="navigationLink">
-			<a class="navLink-3" href="#" data-scroll="4800">РЕСТОРАН</a>
+			<a class="navLink-3" href="#" data-scroll="6400">РЕСТОРАН</a>
 		</li>
 		<li class="navigationLink">
-			<a class="navLink-4" href="#" data-scroll="8000">БАССЕЙН</a>
+			<a class="navLink-4" href="#" data-scroll="11400">БАССЕЙН</a>
 		</li>
 		<li class="navigationLink">
-			<a class="navLink-5" href="#" data-scroll="10800">КОНТАКТЫ</a>
+			<a class="navLink-5" href="#" data-scroll="16200">КОНТАКТЫ</a>
 		</li>
 	</ul>
 </nav>

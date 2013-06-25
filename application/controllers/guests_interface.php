@@ -89,6 +89,26 @@ class Guests_interface extends MY_Controller{
 		$this->load->view("guests_interface/menu",$pagevar);
 	}
 	
+	public function wineCard(){
+		
+		$this->load->model('menu');
+		$this->load->helper('text');
+		$pagevar = array(
+			'menu' => $this->menu->getWhere(NULL,array('group'=>2),TRUE),
+		);
+		$this->load->view("guests_interface/wine-card",$pagevar);
+	}
+	
+	public function bar(){
+		
+		$this->load->model('menu');
+		$this->load->helper('text');
+		$pagevar = array(
+			'menu' => $this->menu->getWhere(NULL,array('group'=>3),TRUE),
+		);
+		$this->load->view("guests_interface/bar",$pagevar);
+	}
+	
 	public function kids(){
 		
 		$pagevar = array(

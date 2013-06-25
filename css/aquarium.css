@@ -48,3 +48,5 @@ html.kids-html, body.kids-body {
 	    content: "\2013";
 	}
 .parents-information { font-weight: 400; }
+
+.logo-back-to-main{ position: absolute; top: 20px; left: 20px; width: 130px; height: 162px; }

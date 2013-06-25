@@ -58,20 +58,20 @@
 		</ul> <!-- /rest-list -->
 		<div class="menu-list">
 			<div class="menu-item">
-				<a href="#">
+				<a href="<?=site_url('menu');?>">
 					<img src="<?=base_url('img/menu/category-1.png');?>" alt="Меню" />
 					<span>Меню</span>
 				</a>
 			</div>
 			<div class="menu-item">
-				<a href="#">
-					<img src="<?=base_url('img/menu/category-2.png');?>" alt="Меню" />
+				<a href="<?=site_url('bar');?>">
+					<img src="<?=base_url('img/menu/category-2.png');?>" alt="Бар" />
 					<span>Ресторан&amp;Бар</span>
 				</a>
 			</div>
 			<div class="menu-item">
-				<a href="#">
-					<img src="<?=base_url('img/menu/category-3.png');?>" alt="Меню" />
+				<a href="<?=site_url('aquarium');?>">
+					<img src="<?=base_url('img/menu/category-3.png');?>" alt="Аквариум" />
 					<span>Аквариум</span>
 				</a>
 			</div>
