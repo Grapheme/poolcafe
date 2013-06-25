@@ -131,7 +131,7 @@ section header h2 span { background: #000; padding: 0 0.25em; color: #fff; text-
 /*#news, #restaurant-info { padding: 1em 0 4em; }*/
 
 .list-title { font-size: 1.4em; font-weight: bold; line-height: 1em; }
-	.list-title a { font-size: 0.7em; text-transform: uppercase; text-decoration: none; color: #353535; font-weight: normal; float: right; display: none; }
+	.list-title a { font-size: 0.7em; text-transform: uppercase; text-decoration: none; color: #353535; font-weight: normal; float: right; display: block; }
 
 .events-list { width: 50em; float: left; margin-right: 2em;/* margin-left: 0em; */}
 	.events-list .event-title { text-transform: uppercase; font-size: 1.6em; padding-left: 0.5em; margin: 0 0 1.75em; }
@@ -165,6 +165,7 @@ section header h2 span { background: #000; padding: 0 0.25em; color: #fff; text-
 	.rest-text h3 { font-weight: normal; text-transform: uppercase; font-size: 2.7em; letter-spacing: -1px; line-height: 1.15em; margin: 0 0 0.75em; }
 	.rest-text .tags { background: #e18c44; display: inline-block; color: #fff; font-size: 1.1em; padding: 0.1em 0.75em 0.25em; }
 	.rest-text p { font-size: 1.1em; margin-bottom: 1.5em; }
+	
 
 .menu-list { width: 22em; float: left; }
 .menu-item { margin: 0; padding: 0.5em 0; height: 22em; overflow: hidden; text-align: center; }
@@ -229,7 +230,8 @@ width: 100%;
 .card__back .back__circle .back__time { font-size: 1.3em; text-transform: uppercase; line-height: 1.1em; padding: 0.1em 0; }
 .card__back .back__circle .back__price { font-size: 1.3em; font-weight: bold; }
 
-
+.rest-item .rest-content .back__age { font-size: 1.5em; padding: 1.55em 0 0; }
+.rest-item .rest-content .card__back .back__circle { margin: -6.2em 0 0 -6em; }
 /* ==========================================================================
    Media for html
    ========================================================================== */
