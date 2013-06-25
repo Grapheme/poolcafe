@@ -64,8 +64,8 @@
 				</a>
 			</div>
 			<div class="menu-item">
-				<a href="<?=site_url('bar');?>">
-					<img src="<?=base_url('img/menu/category-2.png');?>" alt="Бар" />
+				<a href="<?=site_url('wine-card');?>">
+					<img src="<?=base_url('img/menu/category-2.png');?>" alt="Винная карта" />
 					<span>Ресторан&amp;Бар</span>
 				</a>
 			</div>
