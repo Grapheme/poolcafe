@@ -131,7 +131,7 @@ section header h2 span { background: #000; padding: 0 0.25em; color: #fff; text-
 /*#news, #restaurant-info { padding: 1em 0 4em; }*/
 
 .list-title { font-size: 1.4em; font-weight: bold; line-height: 1em; }
-	.list-title a { font-size: 0.7em; text-transform: uppercase; text-decoration: none; color: #353535; font-weight: normal; float: right;}
+	.list-title a { font-size: 0.7em; text-transform: uppercase; text-decoration: none; color: #353535; font-weight: normal; float: right; }
 
 .events-list { width: 50em; float: left; margin-right: 2em;/* margin-left: 0em; */}
 	.events-list .event-title { text-transform: uppercase; font-size: 1.6em; padding-left: 0.5em; margin: 0 0 1.75em; }
