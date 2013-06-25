@@ -33,6 +33,7 @@ $route['news(\/:any)*?'] = "guests_interface/news";
 $route['events(\/:any)*?'] = "guests_interface/events";
 $route['aquarium'] = "guests_interface/aquarium";
 $route['menu'] = "guests_interface/menu";
+$route['kids'] = "guests_interface/kids";
 /********** loading resources *************/
 $route['loadimage/:any/:num'] = "guests_interface/loadimage";
 /*************************************************** ADMIN INTRERFACE ***********************************************/

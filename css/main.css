@@ -131,7 +131,7 @@ section header h2 span { background: #000; padding: 0 0.25em; color: #fff; text-
 /*#news, #restaurant-info { padding: 1em 0 4em; }*/
 
 .list-title { font-size: 1.4em; font-weight: bold; line-height: 1em; }
-	.list-title a { font-size: 0.7em; text-transform: uppercase; text-decoration: none; color: #353535; font-weight: normal; float: right; display: none; }
+	.list-title a { font-size: 0.7em; text-transform: uppercase; text-decoration: none; color: #353535; font-weight: normal; float: right;}
 
 .events-list { width: 50em; float: left; margin-right: 2em;/* margin-left: 0em; */}
 	.events-list .event-title { text-transform: uppercase; font-size: 1.6em; padding-left: 0.5em; margin: 0 0 1.75em; }
@@ -171,6 +171,8 @@ section header h2 span { background: #000; padding: 0 0.25em; color: #fff; text-
 .menu-item a { display: inline-block; text-decoration: none; color: #1b1b1b; text-transform: uppercase; }
 .menu-item a img { display: block; max-width: 11.33333333em;}
 .menu-item a span { display: block; font-size: 1.3em; margin: 1em 0 0; }
+
+.tags { background: #e18c44; display: inline-block; color: #fff; font-size: 1.1em; padding: 0.1em 0.75em 0.25em; }
 
 #restaurant-info .menu-item:first-child a span { display: block; font-size: 1.3em; margin: -1em 0 0; }
 
@@ -234,8 +236,69 @@ width: 100%;
    Media for html
    ========================================================================== */
 
-@media screen and (min-width:480px) and (max-width:900px) {
-  /* Target landscape smartphones, portrait tablets, narrow desktops*/
+@media (max-width: 960px) {
+	
+}
+@media (max-width: 800px) {
+	
+}
+@media (max-width: 640px) {
+	
+}
+@media (max-width: 540px) {
+	
+}
+@media (max-width: 480px) {
+	html { font-size: .5625em; }
+	#about { height: 100%; }
+	#skrollr-body > section header { width: 100%; }
+	.nav-containter { visibility: hidden; display: none; }	
+	#skrollr-body > section {position: relative; }
+	.container { width: 36em; margin: 0 auto; }
+	.events-list { width: 36em; float: none; margin: 0 auto; }
+	.events-item { height: 100%; }
+	.events-item .event-text { float: none; width: 100%; }
+	.event-text h3 { text-align: center; }
+	
+	.events-item figure { float: none; width: 36em; }
+	figure.card { width: 14em; margin: 0 auto; }
+	
+	
+	.rest-item { height: 100%; margin: 1em 0 2em; border-top: 3px solid #bcdfef; padding: 2em 0; }
+	
+	.rest-item figure { float: none; width: 36em;}
+	.rest-item .rest-text { float: none; width: 36em; }
+	.rest-text h3 {text-align: center; }
+	
+	
+	.rest-content figure img { display: block; margin: 0 auto; max-width: 100%; }
+	
+	
+	.news-list { width: 36em; float: none; margin: 0 auto; }
+	.news-item { height: 100%; }
+	.news-item h3 { text-align: center; }
+	section header h2 { font-size: 1.5em; line-height: 1.57em; font-weight: normal; }
+	section.slider { height: auto !important; } 
+	
+	.menu-list { width: 36em; }
+	.menu-item { float: left; }
+	
+	.pool-temperature { float: none; width: 36em; margin: 0 2em; }
+}
+
+@media (max-width: 320px) {
+	html { font-size: 9px; }
+	.nav-containter { visibility: hidden; display:none; }	
+	section { position: relative; }
+	.container { width: 24em; margin: 0 auto; }
+	.events-list { width: 100%; float: none; margin: 0 auto; }
+	.news-list { width: 18em; float: none; margin: 0 auto; }
+	.news-item { height: 100%; }
+	section header h2 { font-size: 1.5em; line-height: 1.57em; font-weight: normal; }
+}
+
+/*@media screen and (min-width:480px) and (max-width:900px) {
+  /* Target landscape smartphones, portrait tablets, narrow desktops*//*
 	html { font-size: .7em; }	
 	section { position: relative; }
 	section header h2 { font-size: 2.2em; }
@@ -246,10 +309,10 @@ width: 100%;
 	section header { width: 24em; }
 	.menu-list { float: none; width: 44em; margin: 0 auto; }
 	.menu-item { float: left; width: 14em; }
-}
+}*/
 
-@media screen and (min-width:480px) and (max-width:900px) and(orientation: portrait) {
-  /* Target landscape smartphones, portrait tablets, narrow desktops*/
+/*@media screen and (min-width:480px) and (max-width:900px) and(orientation: portrait) {
+  /* Target landscape smartphones, portrait tablets, narrow desktops*//*
 	html { font-size: .7em; }	
 	section header h2 { font-size: 2.2em; }
 	.nav-containter { visibility: hidden; }	
@@ -258,13 +321,17 @@ width: 100%;
 	.news-list { float: none; width: 34em; margin: 0 auto; }
 	section header { width: 14em; }
 	.menu-list { float: none; width: 34em; margin: 0 auto; }
-	.menu-item { float: left; width: 11em; }
+	.menu-item { float: left; width: 11em; }*/
 }
 
 @media (max-width: 260px) {
-	html { font-size: .7em; }	
-	.nav-containter { visibility: hidden; }
-	section header h2 { font-size: .75em; }
+	html { font-size: 9px; }
+	.nav-containter { visibility: hidden; }	
+	section { position: relative; }
+	.container { width: 24em; margin: 0 auto; }
+	.events-list { width: 18em; float: none; margin: 0 auto; }
+	.news-list { width: 18em; float: none; margin: 0 auto; }
+	section header h2 { font-size: 1.5em; line-height: 1.57em; font-weight: normal; }
 }
 /*@media (max-width: 320px) {
 	html { font-size: .7em; }

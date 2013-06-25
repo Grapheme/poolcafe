@@ -14,40 +14,22 @@
 	<![endif]-->
 	<article class="news-wrapper">
 		<div class="news-header">
-			<h2><span>События</span></h2>
+			<h2><span>Новости</span></h2>
 		</div>
 		<div class="news-bg">
 			<section class="news">
-				<ul class="newspage-list">
-				<?php for($i=0;$i<count($events);$i++):?>
-					<li class="news-list-item">
-						<div  class="news-item-body">
-							<div class="news-item-leftside">
-								<div class="news-item-date">
-									<?=monthDateSpan($events[$i]['date_publish'],'month-name');?>
-								</div>
-								<div class="news-item-pict">
-									<img src="<?=site_url('loadimage/events/'.$events[$i]['id']);?>" />
-								</div>
-							</div>
-							<div class="news-item-rightside">
-								<div class="news-item-header">
-									<a class="news-item-header-link" href="<?=site_url('events/'.$events[$i]['translit'].'?event='.$events[$i]['id']);?>"><?=$events[$i]['title'];?></a>
-								</div>
-								<?=$events[$i]['category_title'];?>
-								<div class="news-item-content">
-									<?=$events[$i]['anonce'];?>
-								</div>
-								<div class="tags">
-									<?=$events[$i]['tags'];?>
-								</div>
-							</div>
-							<div class="clear"></div>
-						</div>
-					</li>
-				<?php endfor;?>
-				</ul>
-				<?=$pagination;?>
+				<div class="sep_new-date">
+					<?=monthDateSpan($news['date_publish'],'month-name');?>
+				</div>
+				<div class="sep_new-header">
+					<h1 class="news-item-header"><?=$news['title'];?></h1>
+				</div>
+				<div class="sep_new-pict">
+					<img src="<?=site_url('loadimage/news/'.$news['id']);?>" />
+				</div>
+				<div class="sep_new-content">
+					<?=$news['content'];?>
+				</div>
 			</section>
 			<div class="clear"></div>
 		</div>

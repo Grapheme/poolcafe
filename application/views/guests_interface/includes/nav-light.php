@@ -1,6 +1,6 @@
 <nav class="nav-light" >
 	<h1 class="logo"> </h1>
-	<div class="anchor" data-0="top:201px;" data-2600="top:234px;" data-6400="top:257px;" data-10600="top:283px;" data-13000="top:296px;" data-14500="top:307px;" data-16000="top:-128px;" > </div>
+	<div class="anchor" data-0="top:201px;" data-2600="top:234px;" data-6400="top:257px;" data-10600="top:283px;" data-13000="top:296px;" data-14500="top:307px;" data-15265="top:-128px;" > </div>
 	<ul class="navigationLinksList">
 		<li class="navigationLink">
 			<a class="navLink-1" href="#top" data-scroll="0">ГЛАВНАЯ</a>

@@ -16,7 +16,7 @@ define('FOPEN_READ_WRITE_CREATE_STRICT',		'x+b');
 
 define('PATH_SMILEYS',							getcwd().'/img/smileys');
 define('NO_IMAGE',								getcwd().'/img/icons/no-photo.png');
-define('PER_PAGE_DEFAULT',						1);
+define('PER_PAGE_DEFAULT',						10);
 define('ADMIN_START_PAGE',						'administrator');
 define('ALLOWED_TYPES_DOCUMENTS',				'doc|docx|xls|xlsx|txt|pdf|ppt|pptx');
 define('ALLOWED_TYPES_IMAGES',					'jpg|gif|jpeg|png');

@@ -5,7 +5,7 @@
 			<div class="rest-item">
 				<div class="rest-content clearfix">
 					<figure>
-						<img class="avatar" src="<?=base_url('img/pool/category-1.jpg');?>" alt="Свежие морепродукты" />
+						<img class="avatar" src="<?=base_url('img/pool/category-1.jpg');?>" alt="Открытый основной бассейн" />
 					</figure>
 					<div class="rest-text">
 						<h3>Открытый <strong>основной</strong> бассейн</h3>
@@ -22,7 +22,7 @@
 			<div class="rest-item">
 				<div class="rest-content clearfix">
 					<figure>
-						<img class="avatar" src="<?=base_url('img/pool/category-2.jpg');?>" alt="Францзуское вино" />
+						<img class="avatar" src="<?=base_url('img/pool/category-2.jpg');?>" alt="Детский бассейн" />
 					</figure>
 					<div class="rest-text">
 						<h3><strong>Детский</strong> бассейн</h3>
@@ -45,7 +45,7 @@
 				</a>
 			</div>
 			<div class="menu-item">
-				<a href="#">
+				<a href="<?=site_url('kids');?>">
 					<img src="<?=base_url('img/pool/category-3.png');?>" alt="Меню" />
 					<span>Детям</span>
 				</a>

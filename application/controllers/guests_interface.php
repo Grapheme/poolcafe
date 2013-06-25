@@ -31,10 +31,17 @@ class Guests_interface extends MY_Controller{
 		$this->load->helper('date');
 		$this->load->model('news');
 		$pagevar = array(
-			'news' => $this->news->limit($this->per_page,$this->offset),
-			'pagination' => $this->pagination('news',3,$this->news->countAllResults(),$this->per_page),
+			'news' => array(),
+			'pagination' => array()
 		);
-		$this->load->view("guests_interface/news",$pagevar);
+		if($this->input->get('news') === FALSE):
+			$pagevar['news'] = $this->news->limit($this->per_page,$this->offset);
+			$pagevar['pagination'] = $this->pagination('news',3,$this->news->countAllResults(),$this->per_page);
+			$this->load->view("guests_interface/news",$pagevar);
+		elseif(is_numeric($this->input->get('news'))):
+			$pagevar['news'] = $this->news->getWhere($this->input->get('news'));
+			$this->load->view("guests_interface/single-news",$pagevar);
+		endif;
 	}
 	
 	public function events(){
@@ -43,14 +50,23 @@ class Guests_interface extends MY_Controller{
 		$this->load->helper('date');
 		$this->load->model('events');
 		$pagevar = array(
-			'events' => $this->events->limit($this->per_page,$this->offset),
-			'pagination' => $this->pagination('events',3,$this->events->countAllResults(),$this->per_page),
+			'events' => array(),
+			'pagination' => array(),
 		);
 		$category = array('Концерт','Выставка','Другое');
-		for($i=0;$i<count($pagevar['events']);$i++):
-			$pagevar['events'][$i]['category_title'] = $category[$pagevar['events'][$i]['category']];
-		endfor;
-		$this->load->view("guests_interface/events",$pagevar);
+		if($this->input->get('event') === FALSE):
+			$pagevar['events'] = $this->events->limit($this->per_page,$this->offset);
+			$pagevar['pagination'] = $this->pagination('events',3,$this->events->countAllResults(),$this->per_page);
+			for($i=0;$i<count($pagevar['events']);$i++):
+				$pagevar['events'][$i]['category_title'] = $category[$pagevar['events'][$i]['category']];
+			endfor;
+			$this->load->view("guests_interface/events",$pagevar);
+		elseif(is_numeric($this->input->get('event'))):
+			$pagevar['events'] = $this->events->getWhere($this->input->get('event'));
+			$pagevar['events']['category_title'] = $category[$pagevar['events']['category']];
+			$this->load->view("guests_interface/single-event",$pagevar);
+		endif;
+		
 	}
 	
 	public function aquarium(){
@@ -71,6 +87,13 @@ class Guests_interface extends MY_Controller{
 			'menu' => $this->menu->getWhere(NULL,array('group'=>1),TRUE),
 		);
 		$this->load->view("guests_interface/menu",$pagevar);
+	}
+	
+	public function kids(){
+		
+		$pagevar = array(
+		);
+		$this->load->view("guests_interface/kids",$pagevar);
 	}
 	
 	/******************************************* Авторизация и регистрация ***********************************************/

@@ -32,7 +32,7 @@
 							</div>
 							<div class="news-item-rightside">
 								<div class="news-item-header">
-									<a class="news-item-header-link" href="<?=site_url('#');?>"><?=$news[$i]['title'];?></a>
+									<a class="news-item-header-link" href="<?=site_url('news/'.$news[$i]['translit'].'?news='.$news[$i]['id']);?>"><?=$news[$i]['title'];?></a>
 								</div>
 								<div class="news-item-content">
 									<?=$news[$i]['anonce'];?>

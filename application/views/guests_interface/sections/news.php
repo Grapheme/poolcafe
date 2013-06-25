@@ -4,7 +4,7 @@
 		<div class="events-list">
 			<div class="list-title clearfix">
 				Ближайшие события
-				<a href="#">Показать все</a>
+				<a href="<?=site_url('events');?>">Показать все</a>
 			</div>
 		<?php for($i=0;$i<count($events);$i++):?>
 			<div class="events-item">
@@ -26,7 +26,7 @@
 						</div>
 					</figure>
 					<div class="event-text">
-						<h3><?=$events[$i]['title'];?></h3>
+						<h3><a href="<?=site_url('events/'.$events[$i]['translit'].'?event='.$events[$i]['id']);?>"><?=$events[$i]['title'];?></a></h3>
 						<p><?=$events[$i]['anonce'];?></p>
 						<div class="tags">
 							<?=$events[$i]['tags'];?>
@@ -39,12 +39,12 @@
 		<div class="news-list">
 			<div class="list-title clearfix">
 				Последние новости
-				<a href="#">Показать все</a>
+				<a href="<?=site_url('news');?>">Показать все</a>
 			</div>
 		<?php for($i=0;$i<count($news);$i++):?>
 			<div class="news-item">
 				<div class="news-date"><?=month_date($news[$i]['date_publish'])?></div>
-				<h3><a href="#" class=""><?=$news[$i]['title'];?></a></h3>
+				<h3><a href="<?=site_url('news/'.$news[$i]['translit'].'?news='.$news[$i]['id']);?>" class=""><?=$news[$i]['title'];?></a></h3>
 				<p><?=$news[$i]['anonce']?></p>
 				<a class="read-more" href="#">Подробный фотоотчет</a>
 			</div>

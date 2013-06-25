@@ -18,36 +18,22 @@
 		</div>
 		<div class="news-bg">
 			<section class="news">
-				<ul class="newspage-list">
-				<?php for($i=0;$i<count($events);$i++):?>
-					<li class="news-list-item">
-						<div  class="news-item-body">
-							<div class="news-item-leftside">
-								<div class="news-item-date">
-									<?=monthDateSpan($events[$i]['date_publish'],'month-name');?>
-								</div>
-								<div class="news-item-pict">
-									<img src="<?=site_url('loadimage/events/'.$events[$i]['id']);?>" />
-								</div>
-							</div>
-							<div class="news-item-rightside">
-								<div class="news-item-header">
-									<a class="news-item-header-link" href="<?=site_url('events/'.$events[$i]['translit'].'?event='.$events[$i]['id']);?>"><?=$events[$i]['title'];?></a>
-								</div>
-								<?=$events[$i]['category_title'];?>
-								<div class="news-item-content">
-									<?=$events[$i]['anonce'];?>
-								</div>
-								<div class="tags">
-									<?=$events[$i]['tags'];?>
-								</div>
-							</div>
-							<div class="clear"></div>
-						</div>
-					</li>
-				<?php endfor;?>
-				</ul>
-				<?=$pagination;?>
+				<div class="sep_new-date">
+					<?=monthDateSpan($events['date_publish'],'month-name');?>
+					<br/><?=$events['category_title'];?>
+				</div>
+				<div class="sep_new-header">
+					<h1 class="news-item-header"><?=$events['title'];?></h1>
+				</div>
+				<div class="sep_new-pict">
+					<img src="<?=site_url('loadimage/events/'.$events['id']);?>" />
+				</div>
+				<div class="tags">
+					<?=$events['tags'];?>
+				</div>
+				<div class="sep_new-content">
+					<?=$events['content'];?>
+				</div>
 			</section>
 			<div class="clear"></div>
 		</div>
