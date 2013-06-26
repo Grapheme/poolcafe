@@ -131,7 +131,7 @@ section header h2 span { background: #000; padding: 0 0.25em; color: #fff; text-
 /*#news, #restaurant-info { padding: 1em 0 4em; }*/
 
 .list-title { font-size: 1.4em; font-weight: bold; line-height: 1em; }
-	.list-title a { font-size: 0.7em; text-transform: uppercase; text-decoration: none; color: #353535; font-weight: normal; float: right; }
+	.list-title a { font-size: 0.7em; text-transform: uppercase; text-decoration: none; color: #353535; font-weight: normal; float: right; display: block; }
 
 .events-list { width: 50em; float: left; margin-right: 2em;/* margin-left: 0em; */}
 	.events-list .event-title { text-transform: uppercase; font-size: 1.6em; padding-left: 0.5em; margin: 0 0 1.75em; }
@@ -165,14 +165,13 @@ section header h2 span { background: #000; padding: 0 0.25em; color: #fff; text-
 	.rest-text h3 { font-weight: normal; text-transform: uppercase; font-size: 2.7em; letter-spacing: -1px; line-height: 1.15em; margin: 0 0 0.75em; }
 	.rest-text .tags { background: #e18c44; display: inline-block; color: #fff; font-size: 1.1em; padding: 0.1em 0.75em 0.25em; }
 	.rest-text p { font-size: 1.1em; margin-bottom: 1.5em; }
+	
 
 .menu-list { width: 22em; float: left; }
 .menu-item { margin: 0; padding: 0.5em 0; height: 22em; overflow: hidden; text-align: center; }
 .menu-item a { display: inline-block; text-decoration: none; color: #1b1b1b; text-transform: uppercase; }
 .menu-item a img { display: block; max-width: 11.33333333em;}
 .menu-item a span { display: block; font-size: 1.3em; margin: 1em 0 0; }
-
-.tags { background: #e18c44; display: inline-block; color: #fff; font-size: 1.1em; padding: 0.1em 0.75em 0.25em; }
 
 #restaurant-info .menu-item:first-child a span { display: block; font-size: 1.3em; margin: -1em 0 0; }
 
@@ -251,9 +250,12 @@ width: 100%;
 }
 @media (max-width: 480px) {
 	html { font-size: .5625em; }
+	body { height: auto !important; }
 	#about { height: 100%; }
 	#skrollr-body > section header { width: 100%; }
 	.nav-containter { visibility: hidden; display: none; }	
+	#restaurant-info .menu-item:first-child a span { display: block; font-size: 1.3em; margin: 1em 0 0; }
+	.menu-item a img { height: 11em; }
 	#skrollr-body > section {position: relative; }
 	.container { width: 36em; margin: 0 auto; }
 	.events-list { width: 36em; float: none; margin: 0 auto; }
@@ -263,11 +265,11 @@ width: 100%;
 	
 	.events-item figure { float: none; width: 36em; }
 	figure.card { width: 14em; margin: 0 auto; }
+	.card__back .back__circle { margin: -6.5em 0 0 -6em; }
 	
+	.rest-item { height: 100%; margin: 1em 0 2em; border-bottom: 3px solid #bcdfef; padding: 2em 0; }
 	
-	.rest-item { height: 100%; margin: 1em 0 2em; border-top: 3px solid #bcdfef; padding: 2em 0; }
-	
-	.rest-item figure { float: none; width: 36em;}
+	.rest-item figure { width: 36em;}
 	.rest-item .rest-text { float: none; width: 36em; }
 	.rest-text h3 {text-align: center; }
 	
@@ -282,47 +284,77 @@ width: 100%;
 	section.slider { height: auto !important; } 
 	
 	.menu-list { width: 36em; }
-	.menu-item { float: left; }
+	.menu-item { float: left; margin: 0 1em;}
 	
 	.pool-temperature { float: none; width: 36em; margin: 0 2em; }
+	
+	/*
+	 * 
+	 *  AQUARIUM
+	 * 
+	 */
+	
+	section.aquarium { padding-left:0 ; padding-right: 0;  width: 26em;}
+	.octopus-1,
+	.octopus-2 { display: none; }
+	.category-elem-name { width: 12em; }
+	.aquarium-body .menu-nav { left: -1em; }
+	
 }
 
 @media (max-width: 320px) {
-	html { font-size: 9px; }
-	.nav-containter { visibility: hidden; display:none; }	
-	section { position: relative; }
+	html { font-size: .5625em; }
+	body { height: auto !important; }
+	#about { height: 100%; }
+	#skrollr-body > section header { width: 100%; }
+	.nav-containter { visibility: hidden; display: none; }	
+	#restaurant-info .menu-item:first-child a span { display: block; font-size: 1.3em; margin: 1em 0 0; }
+	.menu-item a img { height: 11em; }
+	#skrollr-body > section {position: relative; }
+	
 	.container { width: 24em; margin: 0 auto; }
-	.events-list { width: 100%; float: none; margin: 0 auto; }
-	.news-list { width: 18em; float: none; margin: 0 auto; }
+	.container > h2 > span { font-size: 0.7em; }
+	.event-text .tags { font-size: 1.05em; }
+	.events-list { width: 24em; float: none; margin: 0 auto; }
+	.events-item { height: 100%; }
+	.events-item .event-text { float: none; width: 100%; }
+	.event-text h3 { text-align: center; }
+	
+	.events-item figure { float: none; width: 24em; }
+	figure.card { width: 14em; margin: 0 auto; }
+	.rest-item .rest-content .card__back .back__circle { margin: -6.5em 0 0 -6em; }
+	
+	.rest-item { height: 100%; margin: 1em 0 2em; padding: 2em 0; }
+	
+	.rest-item figure { width: 24em;}
+	.rest-item .rest-text { float: none; width: 24em; }
+	.rest-text h3 {text-align: center; }
+	
+	
+	.rest-content figure img { display: block; margin: 0 auto; max-width: 100%; }
+	
+	
+	.news-list { width: 24em; float: none; margin: 0 auto; }
 	.news-item { height: 100%; }
-	section header h2 { font-size: 1.5em; line-height: 1.57em; font-weight: normal; }
-}
-
-/*@media screen and (min-width:480px) and (max-width:900px) {
-  /* Target landscape smartphones, portrait tablets, narrow desktops*//*
-	html { font-size: .7em; }	
-	section { position: relative; }
-	section header h2 { font-size: 2.2em; }
-	.nav-containter { visibility: hidden; }	
-	.container { width: 54em; }
-	.events-list { width: 54em; }
-	.news-list { float: none; width: 44em; margin: 0 auto; }
-	section header { width: 24em; }
-	.menu-list { float: none; width: 44em; margin: 0 auto; }
-	.menu-item { float: left; width: 14em; }
-}*/
-
-/*@media screen and (min-width:480px) and (max-width:900px) and(orientation: portrait) {
-  /* Target landscape smartphones, portrait tablets, narrow desktops*//*
-	html { font-size: .7em; }	
-	section header h2 { font-size: 2.2em; }
-	.nav-containter { visibility: hidden; }	
-	.container { width: 44em; }
-	.events-list { width: 44em; }
-	.news-list { float: none; width: 34em; margin: 0 auto; }
-	section header { width: 14em; }
-	.menu-list { float: none; width: 34em; margin: 0 auto; }
-	.menu-item { float: left; width: 11em; }*/
+	.news-item h3 { text-align: center; }
+	section header h2 { font-size: 1em; line-height: 1.57em; font-weight: normal; }
+	section.slider { height: auto !important; } 
+	
+	.menu-list { width: 24em; }
+	.menu-item { float: left; margin: 0 1em;}
+	
+	.pool-temperature { float: none; width: 24em; margin: 0 2em; }
+	.pool-temperature .column { font-size: 4em; }
+	
+	/*
+	 * aquarium adaptation
+	 * 
+	 */
+	section.aquarium { padding-left:0 ; padding-right: 0;  width: 26em;}
+	.octopus-1,
+	.octopus-2 { display: none; }
+	.category-elem-name { width: 12em; }
+	.aquarium-body .menu-nav { left: -1em; }
 }
 
 @media (max-width: 260px) {
