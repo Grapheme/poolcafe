@@ -407,6 +407,7 @@ width: 100%;
 	 *  KIDS	 
 	   ============================================================ */
 	html.kids-html, body.kids-body { font-size: 11px; }	
+	html.pool-rules-html, body.pool-rules-body { font-size: 11px; }	
 }
 
 @media (max-width: 280px) {
@@ -450,6 +451,7 @@ width: 100%;
 	 *  KIDS	 
 	   ============================================================ */
 	html.kids-html, body.kids-body { font-size: 8px; }	
+	html.pool-rules-html, body.pool-rules-body { font-size: 8px; }	
 }
 @media only screen 
 and (min-width : 481px)
