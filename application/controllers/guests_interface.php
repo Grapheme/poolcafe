@@ -73,7 +73,7 @@ class Guests_interface extends MY_Controller{
 		
 		$this->load->helper('text');
 		$pagevar = array(
-			'menu' => $this->getMenuByCategories(4),
+			'menu' => $this->getMenuByCategories(3),
 		);
 		$this->load->view("guests_interface/aquarium",$pagevar);
 	}
@@ -96,20 +96,14 @@ class Guests_interface extends MY_Controller{
 		$this->load->view("guests_interface/wine-card",$pagevar);
 	}
 	
-	public function bar(){
-		
-		$this->load->helper('text');
-		$pagevar = array(
-			'menu' => $this->getMenuByCategories(3),
-		);
-		$this->load->view("guests_interface/bar",$pagevar);
-	}
-	
 	public function kids(){
 		
-		$pagevar = array(
-		);
-		$this->load->view("guests_interface/kids",$pagevar);
+		$this->load->view("guests_interface/kids");
+	}
+	
+	public function poolRules(){
+		
+		$this->load->view("guests_interface/pool-rules");
 	}
 	
 	private function getMenuByCategories($group){

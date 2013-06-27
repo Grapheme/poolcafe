@@ -35,7 +35,8 @@ $route['aquarium'] = "guests_interface/aquarium";
 $route['menu'] = "guests_interface/menu";
 $route['kids'] = "guests_interface/kids";
 $route['wine-card'] = "guests_interface/wineCard";
-$route['bar'] = "guests_interface/bar";
+$route['pool-rules'] = "guests_interface/poolRules";
+
 /********** loading resources *************/
 $route['loadimage/:any/:num'] = "guests_interface/loadimage";
 /*************************************************** ADMIN INTRERFACE ***********************************************/

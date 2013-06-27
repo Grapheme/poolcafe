@@ -57,9 +57,9 @@
 		</div>
 		<div class="menu-list">
 			<div class="menu-item">
-				<a href="<?=site_url('bar');?>">
-					<img src="<?=base_url('img/pool/category-4.png');?>" alt="Водный бар" />
-					<span>Водный бар</span>
+				<a href="<?=site_url('pool-rules');?>">
+					<img src="<?=base_url('img/pool/category-4.png');?>" alt="Условия посещения басейна" />
+					<span>Условия посещения<br/>басейна</span>
 				</a>
 			</div>
 			<div class="menu-item">

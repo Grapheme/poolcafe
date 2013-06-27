@@ -88,10 +88,12 @@ class Ajax_interface extends MY_Controller{
 			return FALSE;
 		endif;
 		if($newsID = $this->ExecuteCreatingNews($_POST)):
-			if($this->uploadNewsPhoto($newsID)):
-				$json_request['status'] = TRUE;
-				$json_request['responseText'] = 'Новость добавлена';
-				$json_request['redirect'] = site_url(ADMIN_START_PAGE.'/news');
+			if($this->CropToSquare(array('filepath'=>$_FILES['photo']['tmp_name'],'edgeSize'=>500))):
+				if($this->uploadNewsPhoto($newsID)):
+					$json_request['status'] = TRUE;
+					$json_request['responseText'] = 'Новость добавлена';
+					$json_request['redirect'] = site_url(ADMIN_START_PAGE.'/news');
+				endif;
 			endif;
 		endif;
 		echo json_encode($json_request);
@@ -109,8 +111,10 @@ class Ajax_interface extends MY_Controller{
 			return FALSE;
 		endif;
 		if($this->ExecuteUpdatingNews($this->uri->segment(4),$_POST)):
-			$json_request['responsePhotoSrc'] = $this->uploadNewsPhoto($this->uri->segment(4));
-			$json_request['status'] = TRUE;
+			if($this->CropToSquare(array('filepath'=>$_FILES['photo']['tmp_name'],'edgeSize'=>500))):
+				$json_request['responsePhotoSrc'] = $this->uploadNewsPhoto($this->uri->segment(4));
+				$json_request['status'] = TRUE;
+			endif;
 			$json_request['responseText'] = 'Новость cохранена';
 			$json_request['redirect'] = site_url(ADMIN_START_PAGE.'/news');
 		endif;
@@ -130,12 +134,11 @@ class Ajax_interface extends MY_Controller{
 		endif;
 		if($eventID = $this->ExecuteCreatingEvent($_POST)):
 			if($this->CropToSquare(array('filepath'=>$_FILES['photo']['tmp_name'],'edgeSize'=>500))):
-				
-			endif;
-			if($this->uploadEventPhoto($eventID)):
-				$json_request['status'] = TRUE;
-				$json_request['responseText'] = 'Cобытие добавлено';
-				$json_request['redirect'] = site_url(ADMIN_START_PAGE.'/events');
+				if($this->uploadEventPhoto($eventID)):
+					$json_request['status'] = TRUE;
+					$json_request['responseText'] = 'Cобытие добавлено';
+					$json_request['redirect'] = site_url(ADMIN_START_PAGE.'/events');
+				endif;
 			endif;
 		endif;
 		echo json_encode($json_request);
