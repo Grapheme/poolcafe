@@ -262,7 +262,7 @@ width: 100%;
 	figure.card { width: 14em; margin: 0 auto; }
 	.card__back .back__circle { margin: -6.5em 0 0 -6em; }
 	
-	.rest-item { height: 100%; margin: 1em 0 2em; border-bottom: 3px solid #bcdfef; padding: 2em 0; }
+	.rest-item {width: 37em; height: 100%; margin: 1em 0 2em; border-bottom: 3px solid #bcdfef; padding: 2em 0; }
 	
 	.rest-item figure { width: 36em;}
 	.rest-item .rest-text { float: none; width: 36em; }
