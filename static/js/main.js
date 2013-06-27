@@ -87,16 +87,23 @@ $(function(){
 		$('ul.navigationLinksList li a').removeClass('current-section');
 		$(this).addClass('current-section');
 	});
-	
-	st.init();
-	st.skroll = skrollr.init({ });
-	initialize(); // google maps initialization
+	if ( $(window).width() > 768) {
+		
+		st.init();
+		st.skroll = skrollr.init({ });
+		initialize(); // google maps initialization
+		
+	}
 	
 	$(window).resize( function() {	
 		st.init();
 		st.skroll = skrollr.init({ });
 		initialize(); // google maps initialization
 	});
+	
+	/*if ( $(window).width() < 768) {
+   		st.skroll = skrollr.init({forceHeight:FALSE,  });
+	}*/
 	
 });
 
