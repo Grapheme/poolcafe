@@ -29,9 +29,9 @@
 						<div class="menu-content-column1">
 							<?php $this->load->view("html/writeMenuColumn",array('start'=>0,'stop'=>$columnCount1));?>
 						</div>
-						<!--<div class="menu-content-column2">
+						<div class="menu-content-column2">
 							<?php $this->load->view("html/writeMenuColumn",array('start'=>$columnCount1,'stop'=>$columnCount2));?>
-						</div>-->
+						</div>
 						<div class="clear"></div>
 					</div>
 				</div>

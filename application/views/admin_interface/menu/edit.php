@@ -19,7 +19,7 @@
 			<div class="span9">
 				<ul class="breadcrumb">
 					<li><a href="<?=site_url(ADMIN_START_PAGE);?>">Панель управления</a> <span class="divider">/</span></li>
-					<li><a href="<?=site_url(ADMIN_START_PAGE,'/menu'.getUrlLink());?>">Меню</a> <span class="divider">/</span></li>
+					<li><a href="<?=site_url(ADMIN_START_PAGE.'/menu'.getUrlLink());?>">Меню</a> <span class="divider">/</span></li>
 					<li class="active">Редактирование продукта</li>
 				</ul>
 				<div class="clear"></div>

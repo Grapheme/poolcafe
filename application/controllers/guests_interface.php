@@ -73,8 +73,11 @@ class Guests_interface extends MY_Controller{
 		
 		$this->load->helper('text');
 		$pagevar = array(
-			'menu' => $this->getMenuByCategories(3),
+			'menu' => array()
 		);
+		if($manuAllCategories = $this->getMenuByCategories(3)):
+			$pagevar['menu'] = $this->clearingEmptyCategories($manuAllCategories);
+		endif;
 		$this->load->view("guests_interface/aquarium",$pagevar);
 	}
 	
@@ -82,11 +85,11 @@ class Guests_interface extends MY_Controller{
 		
 		$this->load->helper('text');
 		$pagevar = array(
-			'menu' => $this->getMenuByCategories(1),
+			'menu' => array()
 		);
-		
-//		print_r($pagevar['menu']);exit;
-		
+		if($manuAllCategories = $this->getMenuByCategories(1)):
+			$pagevar['menu'] = $this->clearingEmptyCategories($manuAllCategories);
+		endif;
 		$this->load->view("guests_interface/menu",$pagevar);
 	}
 	
@@ -94,8 +97,11 @@ class Guests_interface extends MY_Controller{
 		
 		$this->load->helper('text');
 		$pagevar = array(
-			'menu' => $this->getMenuByCategories(2),
+			'menu' => array()
 		);
+		if($manuAllCategories = $this->getMenuByCategories(2)):
+			$pagevar['menu'] = $this->clearingEmptyCategories($manuAllCategories);
+		endif;
 		$this->load->view("guests_interface/wine-card",$pagevar);
 	}
 	
@@ -103,7 +109,7 @@ class Guests_interface extends MY_Controller{
 		
 		$this->load->view("guests_interface/kids");
 	}
-	
+
 	public function poolRules(){
 		
 		$this->load->view("guests_interface/pool-rules");
@@ -141,6 +147,25 @@ class Guests_interface extends MY_Controller{
 		endif;
 		return $menu;
 	}
+	
+	private function clearingEmptyCategories($menu){
+		
+		$newMenu = array();
+		for($parents=0;$parents<count($menu);$parents++):
+			if(isset($menu[$parents]['products'])):
+				$newMenu[] = $menu[$parents];
+			elseif(isset($menu[$parents]['children'])):
+				for($children=0;$children<count($menu[$parents]['children']);$children++):
+					if(isset($menu[$parents]['children'][$children]['products'])):
+						$newMenu[] = $menu[$parents];
+					endif;
+				endfor;
+			endif;
+		endfor;
+		return $newMenu;
+	}
+	
+	
 	
 	/******************************************* Авторизация и регистрация ***********************************************/
 	

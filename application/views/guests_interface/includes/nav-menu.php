@@ -10,9 +10,6 @@
 		<li class="menu-nav-list-item item2">
 			<a href="<?=site_url('wine-card');?>"> <div></div> <span>Винная карта</span> </a>
 		</li>
-		<li class="menu-nav-list-item item3">
-			<a href="<?=site_url('bar');?>"> <div></div> <span>Бар</span> </a>
-		</li>
 		<li class="menu-nav-list-item item4">
 			<a href="<?=site_url('aquarium');?>"> <div></div> <span>Аквариум</span> </a>
 		</li>

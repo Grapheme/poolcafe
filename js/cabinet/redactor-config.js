@@ -8,6 +8,6 @@ $(function(){
 		buttons: buttons,
 		autoresize: false,
 		minHeight: true,
-		imageUpload: mt.baseURL+'/redactor/upload'
+		imageUpload: mt.baseURL+'redactor/upload'
 	});
 });

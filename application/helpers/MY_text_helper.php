@@ -14,9 +14,8 @@
 	function getMenuProperty($property){
 		
 		if(!empty($property)):
-			$pattern = "/(\d+)(.+)/i";
-			$replacement = '<span class="elem-weight-value">'."\$1".'</span>'."\$2";
-			return preg_replace($pattern, $replacement,$property);
+			list($size,$value) = explode(' ',$property);
+			return '<span class="elem-weight-value">'.$size.'</span> '.$value;
 		else:
 			return '';
 		endif;

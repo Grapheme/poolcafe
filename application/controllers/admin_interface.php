@@ -182,7 +182,7 @@ class Admin_interface extends MY_Controller{
 		);
 		if($parentsCategories = $this->getParentsCategoriesMenu()):
 			if($categoriesHierarchy = $this->getHierarchyCategoriesMenu($parentsCategories)):
-				$pagevar['categories'] = $categoriesHierarchy;
+				$pagevar['categories'] = $this->TranspondIDtoIndex($categoriesHierarchy);
 			endif;
 		endif;
 		$this->load->view("admin_interface/menu/add",$pagevar);
@@ -202,7 +202,7 @@ class Admin_interface extends MY_Controller{
 		);
 		if($parentsCategories = $this->getParentsCategoriesMenu()):
 			if($categoriesHierarchy = $this->getHierarchyCategoriesMenu($parentsCategories)):
-				$pagevar['categories'] = $categoriesHierarchy;
+				$pagevar['categories'] = $this->TranspondIDtoIndex($categoriesHierarchy);
 			endif;
 		endif;
 		$this->load->view("admin_interface/menu/edit",$pagevar);

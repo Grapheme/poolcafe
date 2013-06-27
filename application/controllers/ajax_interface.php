@@ -111,10 +111,12 @@ class Ajax_interface extends MY_Controller{
 			return FALSE;
 		endif;
 		if($this->ExecuteUpdatingNews($this->uri->segment(4),$_POST)):
-			if($this->CropToSquare(array('filepath'=>$_FILES['photo']['tmp_name'],'edgeSize'=>500))):
-				$json_request['responsePhotoSrc'] = $this->uploadNewsPhoto($this->uri->segment(4));
-				$json_request['status'] = TRUE;
+			if(isset($_FILES['photo']['tmp_name'])):
+				if($this->CropToSquare(array('filepath'=>$_FILES['photo']['tmp_name'],'edgeSize'=>500))):
+					$json_request['responsePhotoSrc'] = $this->uploadEventPhoto($this->uri->segment(4));
+				endif;
 			endif;
+			$json_request['status'] = TRUE;
 			$json_request['responseText'] = 'Новость cохранена';
 			$json_request['redirect'] = site_url(ADMIN_START_PAGE.'/news');
 		endif;
@@ -156,10 +158,12 @@ class Ajax_interface extends MY_Controller{
 			return FALSE;
 		endif;
 		if($this->ExecuteUpdatingEvent($this->uri->segment(4),$_POST)):
-			if($this->CropToSquare(array('filepath'=>$_FILES['photo']['tmp_name'],'edgeSize'=>500))):
-				$json_request['responsePhotoSrc'] = $this->uploadEventPhoto($this->uri->segment(4));
-				$json_request['status'] = TRUE;
+			if(isset($_FILES['photo']['tmp_name'])):
+				if($this->CropToSquare(array('filepath'=>$_FILES['photo']['tmp_name'],'edgeSize'=>500))):
+					$json_request['responsePhotoSrc'] = $this->uploadEventPhoto($this->uri->segment(4));
+				endif;
 			endif;
+			$json_request['status'] = TRUE;
 			$json_request['responseText'] = 'Событие cохранено';
 			$json_request['redirect'] = site_url(ADMIN_START_PAGE.'/events');
 		endif;

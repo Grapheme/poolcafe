@@ -1,16 +1,5 @@
 <?php for($parents=$start;$parents<$stop;$parents++):?>
 	<div class="category-table">
-	<?php $writeMenu = FALSE;?>
-	<?php if(isset($menu[$parents]['products'])):?>
-		<?php $writeMenu = TRUE;?>
-	<?php elseif(isset($menu[$parents]['children'])):?>
-		<?php for($children=0;$children<count($menu[$parents]['children']);$children++):?>
-			<?php if(isset($menu[$parents]['children'][$children]['products'])):?>
-				<?php $writeMenu = TRUE;?>
-			<?php endif;?>
-		<?php endfor;?>
-	<?php endif;?>
-	<?php if($writeMenu):?>
 		<h3 class="category-header"><?=$menu[$parents]['title'];?></h3>
 		<div class="category-elem">
 	<?php if(isset($menu[$parents]['products'])):?>
@@ -24,7 +13,7 @@
 						<?=getMenuProperty($menu[$parents]['products'][$m]['property']);?>
 					</div>
 					<div class="category-elem-price">
-						<?=$menu[$parents]['products'][$m]['price'];?>р
+						<?=$menu[$parents]['products'][$m]['price'];?> руб.
 					</div>
 					<div class="clear"></div>
 				</li>
@@ -47,7 +36,7 @@
 						<?=getMenuProperty($menu[$parents]['children'][$children]['products'][$m]['property']);?>
 					</div>
 					<div class="category-elem-price">
-						<?=$menu[$parents]['children'][$children]['products'][$m]['price'];?>р
+						<?=$menu[$parents]['children'][$children]['products'][$m]['price'];?> руб.
 					</div>
 					<div class="clear"></div>
 				</li>
@@ -57,6 +46,5 @@
 		<?php endfor;?>
 	<?php endif;?>
 		</div>
-	<?php endif;?>
 	</div>
 <?php endfor;?>
