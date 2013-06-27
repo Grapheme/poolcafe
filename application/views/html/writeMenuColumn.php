@@ -16,7 +16,7 @@
 						<?=getMenuProperty($menu[$parents]['products'][$m]['property']);?>
 					</div>
 					<div class="category-elem-price">
-						<?=$menu[$parents]['products'][$m]['property'];?>р
+						<?=$menu[$parents]['products'][$m]['price'];?>р
 					</div>
 					<div class="clear"></div>
 				</li>
@@ -41,7 +41,7 @@
 						<?=getMenuProperty($menu[$parents]['children'][$children]['products'][$m]['property']);?>
 					</div>
 					<div class="category-elem-price">
-						<?=$menu[$parents]['children'][$children]['products'][$m]['property'];?>р
+						<?=$menu[$parents]['children'][$children]['products'][$m]['price'];?>р
 					</div>
 					<div class="clear"></div>
 				</li>

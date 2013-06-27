@@ -14,7 +14,7 @@
 	</select>
 <?php if($this->input->get('category') !== FALSE && isset($categories[$this->input->get('category')]['children'])):?>
 	<select autocomplete="off" class="select-subcategories" name="parents">
-		<option value="">Выберите подкатегорию</option>
+		<option value="">Без подкатегории</option>
 	<?php for($i=0;$i<count($categories[$this->input->get('category')]['children']);$i++):?>
 		<?php if($categories[$this->input->get('category')]['children'][$i]['parent'] == $this->input->get('category')):?>
 		<option value="<?=$categories[$this->input->get('category')]['children'][$i]['id'];?>" <?=($this->input->get('subcategory') == $categories[$this->input->get('category')]['children'][$i]['id'])?'selected="selected"':'';?>><?=$categories[$this->input->get('category')]['children'][$i]['title'];?></option>
