@@ -96,7 +96,7 @@ textarea {
 /* ==========================================================================
    Navigation styles
    ========================================================================== */
-
+div.logo { margin: 1.3em 0; }
 .nav-light,
 .nav-dark { position: fixed; left: 60px; top: 0; z-index: 9999; height: 340px; overflow: hidden; }
 .nav-containter { position: relative; }
@@ -170,7 +170,7 @@ section header h2 span { background: #000; padding: 0 0.25em; color: #fff; text-
 .menu-list { width: 22em; float: left; }
 .menu-item { margin: 0; padding: 0.5em 0; height: 22em; overflow: hidden; text-align: center; }
 .menu-item a { display: inline-block; text-decoration: none; color: #1b1b1b; text-transform: uppercase; }
-.menu-item a img { display: block; max-width: 11.33333333em;}
+.menu-item a img { display: block; max-width: 11.33333333em; margin: 0 auto;}
 .menu-item a span { display: block; font-size: 1.3em; margin: 1em 0 0; }
 
 #restaurant-info .menu-item:first-child a span { display: block; font-size: 1.3em; margin: -1em 0 0; }
@@ -209,7 +209,7 @@ footer a { color: #bcdfef; }
 	position: absolute; top: 0; left: 0; 
 	-webkit-backface-visibility: hidden; -moz-backface-visibility: hidden; -ms-backface-visibility: hidden; -o-backface-visibility: hidden; backface-visibility: hidden; 
 	-webkit-transition: -webkit-transform 0.4s ease-out, opacity 0.3s ease-out; -moz-transition: -moz-transform 0.4s ease-out, opacity 0.3s ease-out; -o-transition: -o-transform 0.4s ease-out, opacity 0.3s ease-out; transition: transform 0.4s ease-out, opacity 0.3s ease-out;
-	-webkit-transform-style: preserve-3d; -moz-transform-style: preserve-3d; -ms-transform-style: preserve-3d; -o-transform-style: preserve-3d; transform-style: preserve-3d; 
+	/*-webkit-transform-style: preserve-3d; -moz-transform-style: preserve-3d; -ms-transform-style: preserve-3d; -o-transform-style: preserve-3d; transform-style: preserve-3d; */
 }
 .card__front {
 width: 100%;
@@ -236,21 +236,16 @@ width: 100%;
    Media for html
    ========================================================================== */
 
-@media (max-width: 960px) {
+
+
+@media (max-width : 767px) 
+
+	{
 	
-}
-@media (max-width: 800px) {
-	
-}
-@media (max-width: 640px) {
-	
-}
-@media (max-width: 540px) {
-	
-}
-@media (max-width: 480px) {
 	html { font-size: .5625em; }
 	body { height: auto !important; }
+	.aquarium-body .menu-nav { left: 0; }	
+	section { position: relative; }		
 	#about { height: 100%; }
 	#skrollr-body > section header { width: 100%; }
 	.nav-containter { visibility: hidden; display: none; }	
@@ -267,7 +262,7 @@ width: 100%;
 	figure.card { width: 14em; margin: 0 auto; }
 	.card__back .back__circle { margin: -6.5em 0 0 -6em; }
 	
-	.rest-item { height: 100%; margin: 1em 0 2em; border-bottom: 3px solid #bcdfef; padding: 2em 0; }
+	.rest-item {width: 37em; height: 100%; margin: 1em 0 2em; border-bottom: 3px solid #bcdfef; padding: 2em 0; }
 	
 	.rest-item figure { width: 36em;}
 	.rest-item .rest-text { float: none; width: 36em; }
@@ -288,6 +283,26 @@ width: 100%;
 	
 	.pool-temperature { float: none; width: 36em; margin: 0 2em; }
 	
+	/* ============================================================	
+	 *  NEWS	 
+	   ============================================================ */
+	html.news-html, body.news-body { font-size: 12px; }  
+	section.news { padding: 0.375em 0 0 .3em; width: 24em; }
+	.newspage-list { padding: 0; }
+	.news-item-rightside { width: 22em; }
+	.sep_new-content { width: 22em; }
+	
+	/* ============================================================	
+	 *  MENU	 
+	   ============================================================ */
+	  section.menu { padding-bottom: 3em; }
+	  .menu-content { width: 24em; }
+	  .menu-nav-list { padding: 0; }
+	  .menu-content-column1,
+	  .menu-content-column2 { width: 24em; float: none; padding: 0; font-size: 14px; }
+	  
+	  .category-elem-weight { margin-right: 4em; }
+	  
 	/*
 	 * 
 	 *  AQUARIUM
@@ -299,92 +314,185 @@ width: 100%;
 	.octopus-2 { display: none; }
 	.category-elem-name { width: 12em; }
 	.aquarium-body .menu-nav { left: -1em; }
+	.logo-back-to-main { visibility: hidden; display: none; }
 	
+	body.kids .logo-back-to-main { visibility: hidden: display: none; }
+	
+		
 }
 
-@media (max-width: 320px) {
-	html { font-size: .5625em; }
+@media (max-width: 361px) {
+	html { font-size: .3625em; }
 	body { height: auto !important; }
-	#about { height: 100%; }
-	#skrollr-body > section header { width: 100%; }
-	.nav-containter { visibility: hidden; display: none; }	
-	#restaurant-info .menu-item:first-child a span { display: block; font-size: 1.3em; margin: 1em 0 0; }
-	.menu-item a img { height: 11em; }
+		
+	section { position: relative; }	
 	#skrollr-body > section {position: relative; }
+	.nav-containter { visibility: hidden; display: none; }		
+	section .__fotorama img { position: absolute; top: 0px; } 
 	
-	.container { width: 24em; margin: 0 auto; }
+	
+	.container { width: 20em; }
 	.container > h2 > span { font-size: 0.7em; }
+	
 	.event-text .tags { font-size: 1.05em; }
-	.events-list { width: 24em; float: none; margin: 0 auto; }
+	
+	.events-list { width: 20em; float: none; margin: 0 auto; }
 	.events-item { height: 100%; }
 	.events-item .event-text { float: none; width: 100%; }
 	.event-text h3 { text-align: center; }
 	
-	.events-item figure { float: none; width: 24em; }
+	.events-item figure { float: none; width: 20em; }
 	figure.card { width: 14em; margin: 0 auto; }
 	.rest-item .rest-content .card__back .back__circle { margin: -6.5em 0 0 -6em; }
 	
 	.rest-item { height: 100%; margin: 1em 0 2em; padding: 2em 0; }
 	
-	.rest-item figure { width: 24em;}
-	.rest-item .rest-text { float: none; width: 24em; }
+	.rest-item figure { width: 20em;}
+	.rest-item .rest-text { float: none; width: 20em; }
 	.rest-text h3 {text-align: center; }
 	
 	
 	.rest-content figure img { display: block; margin: 0 auto; max-width: 100%; }
 	
 	
-	.news-list { width: 24em; float: none; margin: 0 auto; }
+	.news-list { width: 24em; float: none; }
 	.news-item { height: 100%; }
 	.news-item h3 { text-align: center; }
 	section header h2 { font-size: 1em; line-height: 1.57em; font-weight: normal; }
 	section.slider { height: auto !important; } 
 	
-	.menu-list { width: 24em; }
-	.menu-item { float: left; margin: 0 1em;}
+	.menu-list { width: 30em; margin: 0 0 0 -25px;}
+	.menu-item { float: left; width:6.5em;  margin: 0 .7em; height: 16em; }
+	.menu-item a img{ max-width: 6.333em; height: 6em; }
 	
 	.pool-temperature { float: none; width: 24em; margin: 0 2em; }
 	.pool-temperature .column { font-size: 4em; }
 	
-	/*
-	 * aquarium adaptation
-	 * 
-	 */
+	/* ============================================================	
+	 *  NEWS	 
+	   ============================================================ */
+	html.news-html, body.news-body { font-size: 12px; }  
+	section.news { padding: 0.375em 0 2em .3em; width: 24em; }
+	.newspage-list { padding: 0; }
+	.news-item-leftside { float: none; width: 24em; }
+	.news-item-rightside { float: none; width: 24em; }
+	.news-item-header { text-align: center; }
+	
+	/* ============================================================	
+	 *  MENU	 
+	   ============================================================ */
+	  html.menu-html, body.menu-body-back { font-size:11px; }
+	  .menu-body-back .menu-header>h2>span { border-color: #919191; color: #919191; }	
+	  ul.menu-nav-list { padding: 0; margin: 0; }
+	  .menu-content-column1,
+	  .menu-content-column2 { width: 20em; }
+	  .menu-content-column1 .category-elem-body,
+	  .menu-content-column2 .category-elem-body{ padding: 0; }/*	  
+	  
+	/* ============================================================	
+	 *  AQUARIUM	 
+	   ============================================================ */
+	  
+	html.aquarium-html, body.aquarium-body { font-size: 11px; }
+	.menu-nav-list { padding: 0; margin-left: 3em;}
+	.menu-header > h2 { font-size: 2.4em; }
 	section.aquarium { padding-left:0 ; padding-right: 0;  width: 26em;}
 	.octopus-1,
 	.octopus-2 { display: none; }
-	.category-elem-name { width: 12em; }
+	.category-elem-name { width: 8em; }
 	.aquarium-body .menu-nav { left: -1em; }
+	.logo-back-to-main { visibility: hidden; display: none;}
+	
+	/* ============================================================	
+	 *  KIDS	 
+	   ============================================================ */
+	html.kids-html, body.kids-body { font-size: 11px; }	
+	html.pool-rules-html, body.pool-rules-body { font-size: 11px; }	
 }
 
-@media (max-width: 260px) {
-	html { font-size: 9px; }
+@media (max-width: 280px) {
+	
+	html, body { font-size: 9px; }
 	.nav-containter { visibility: hidden; }	
 	section { position: relative; }
 	.container { width: 24em; margin: 0 auto; }
 	.events-list { width: 18em; float: none; margin: 0 auto; }
 	.news-list { width: 18em; float: none; margin: 0 auto; }
 	section header h2 { font-size: 1.5em; line-height: 1.57em; font-weight: normal; }
+	.rest-item figure { width: 18em; margin: 0 4em; max-width: 78%; height: 21em; }
+	
+	.menu-header > h2 { font-size: 2.2em; }
+	html.aquarium-html, body.aquarium-body { font-size: 8px; }
+	.menu-nav-list { padding: 0; margin-left: 1em;}
+	.aquarium-content-header { font-size: 3em; }
+	section.aquarium { padding-left:0 ; padding-right: 0;  width: 26em;}
+	.octopus-1,
+	.octopus-2 { display: none; }
+	.category-elem-name { width: 8em; }
+	.aquarium-body .menu-nav { left: -1em; }
+	.logo-back-to-main { visibility: hidden; display: none;}
+	
+	/* ============================================================	
+	 *  NEWS	 
+	   ============================================================ */
+	html.news-html, body.news-body { font-size: 9px; }  	
+	.news-item-leftside { float: none; width: 24em; }
+	.news-item-rightside { float: none; width: 24em; }
+	.news-header h2 { font-size: 2.4em; }
+	section.news { padding: 0.375em 0 2em .3em; width: 24em; }
+	/* ============================================================	
+	 *  MENU	 
+	   ============================================================ */
+	  html.menu-html, body.menu-body-back { font-size:8px; }
+	  .menu-body-back .menu-header>h2>span { border-color: #616161; color: #616161; }	  
+	  .menu-content-column1,
+	  .menu-content-column2 { width: 24em; float: none; padding: 0; font-size: 10px; }
+	/* ============================================================	
+	 *  KIDS	 
+	   ============================================================ */
+	html.kids-html, body.kids-body { font-size: 8px; }	
+	html.pool-rules-html, body.pool-rules-body { font-size: 8px; }	
 }
-/*@media (max-width: 320px) {
-	html { font-size: .7em; }
-	.container { width: 54em; margin: 0 auto; }
-	.news-list { width: 18em; margin: 0 auto; }
-	.events-list { width: 24em; font-size: 10px; }
-	.events-item { height: 46em; }
-	section{ position: relative; }
-	.menu-item { margin-left: 5em;  float: left; }
-	.news-item { height: 20em; }
-	#skrollr-body > section header { width: 54em; }
-	.menu-list { width: 54em; }
-	.nav-containter { visibility: hidden; }
-	section header h2 { font-size: .75em; }
-}*/
+@media only screen 
+and (min-width : 481px)
+and (max-width : 660px)
+  {
+  	body { height: auto !important; }
+		
+	section { position: relative; }	
+	#skrollr-body > section {position: relative; }
+  	#skrollr-body > section {position: relative; }
+  	.aquarium-body .menu-nav { left: 0; }
+		.logo-back-to-main { visibility: hidden; display: none;}
+  }
+@media only screen 
+and (min-width : 768px) 
+and (max-width : 1024px)
 
-
-
-
-
+  {
+  	body { height: auto !important; }
+		
+	section { position: relative; }	
+	#skrollr-body > section {position: relative; }
+	    .aquarium-body .menu-nav { left: 0; }
+		.logo-back-to-main { visibility: hidden; display: none;}
+		.nav-containter, .nav-dark { visibility: hidden; }	
+		.anchor { visibility: hidden; }
+}
+@media only screen 
+and (min-width : 768px) 
+and (max-width : 1044px)
+and (orientation : landscape)
+  {
+  	body { height: auto !important; }
+		
+	section { position: relative; }	
+	#skrollr-body > section {position: relative; }
+	    .aquarium-body .menu-nav { left: 0; }
+	    .nav-containter, .nav-dark { visibility: hidden; display: none; }	
+	    .anchor { visibility: hidden; }
+		.logo-back-to-main { visibility: hidden; display: none;}
+}
 
 /*
  * Image replacement

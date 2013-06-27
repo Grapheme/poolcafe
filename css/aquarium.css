@@ -42,7 +42,6 @@ html.kids-html, body.kids-body {
 .kids-content-header { margin: 0 0 .4em 0; padding: 0 0 0.5em 0; font-size: 2.143125em; color: #000; font-weight: 400; line-height: 1em; border-bottom: 9px solid #ffc83d; }
 .menu-header > h2 > span { border: 3px solid #FFF; color: #FFF; }
 .menu-header > h2 > .kids-header-span { border: 3px solid #000; color: #000; }
-
 .aquarium-content p { margin: 0; }
 .parents-information-list { padding: 0 0 0 .5em; }
 .parents-information-list > li { margin: 0 0 1em 0; }
@@ -52,3 +51,18 @@ html.kids-html, body.kids-body {
 .parents-information { font-weight: 400; }
 
 .logo-back-to-main{ position: absolute; top: 20px; left: 20px; width: 130px; height: 162px; }
+
+/*
+ * 
+ *  pool rules css
+ * 
+ * 
+ */
+
+html.pool-rules-html, body.pool-rules-body {	
+	/*height: 100%;*/
+	background: url(../img/poo.jpg) 0% 80% no-repeat; /* Добавляем фон */
+    background-size: cover;
+    background-attachment: fixed;
+    font: 16px "ff-meta-web-pro", "futura-pt", sans-serif; padding: 0; margin: 0; color: #252525;
+}
