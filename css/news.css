@@ -35,7 +35,7 @@ section.news {
 			.month-name { text-transform: uppercase; font-weight: 700; font-size: 1.1em; }
 	.news-item-rightside { float: left; width: 32.625em }
 		.news-item-header { padding: .925em 0; font-size: 1.5em; color: #191919; }
-			.news-item-header-link { color: #000; text-decoration: none; text-transform: uppercase; }
+			.news-item-header-link { color: #000; text-decoration: none; text-transform: uppercase; line-height: 1.4; }
 			.news-item-header-link:hover { border-bottom: 2px solid black; }
 		.news-item-content { padding: .785em .375em; font-size: .85em; }
 		
