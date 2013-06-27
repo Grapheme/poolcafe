@@ -84,6 +84,9 @@ class Guests_interface extends MY_Controller{
 		$pagevar = array(
 			'menu' => $this->getMenuByCategories(1),
 		);
+		
+//		print_r($pagevar['menu']);exit;
+		
 		$this->load->view("guests_interface/menu",$pagevar);
 	}
 	
