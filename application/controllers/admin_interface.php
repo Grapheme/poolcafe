@@ -153,7 +153,7 @@ class Admin_interface extends MY_Controller{
 	
 	public function menu(){
 		
-		if($this->input->get('group') === FALSE || !is_numeric($this->input->get('group')) || $this->input->get('group') > 4):
+		if($this->input->get('group') === FALSE || !is_numeric($this->input->get('group')) || $this->input->get('group') > 3):
 			redirect(ADMIN_START_PAGE.'/menu?group=1');
 		endif;
 		$this->load->model('group');
@@ -164,7 +164,7 @@ class Admin_interface extends MY_Controller{
 		);
 		if($parentsCategories = $this->getParentsCategoriesMenu()):
 			if($categoriesHierarchy = $this->getHierarchyCategoriesMenu($parentsCategories)):
-				$pagevar['categories'] = $categoriesHierarchy;
+				$pagevar['categories'] = $this->TranspondIDtoIndex($categoriesHierarchy);
 			endif;
 		endif;
 		$pagevar['menu'] = $this->getProductsMenu();

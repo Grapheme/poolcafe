@@ -6,11 +6,11 @@
 	</select>
 	<select autocomplete="off" class="select-parents-categories" name="parents">
 		<option value="">Выберите категорию</option>
-	<?php for($i=0;$i<count($categories);$i++):?>
-		<?php if($categories[$i]['parent'] == 0):?>
-		<option value="<?=$categories[$i]['id'];?>" <?=($this->input->get('category') == $categories[$i]['id'])?'selected="selected"':'';?>><?=$categories[$i]['title'];?></option>
+	<?php foreach($categories as $key => $value):?>
+		<?php if($value['parent'] == 0):?>
+		<option value="<?=$key;?>" <?=($this->input->get('category') == $key)?'selected="selected"':'';?>><?=$value['title'];?></option>
 		<?php endif;?>
-	<?php endfor;?>
+	<?php endforeach;?>
 	</select>
 <?php if($this->input->get('category') !== FALSE && isset($categories[$this->input->get('category')]['children'])):?>
 	<select autocomplete="off" class="select-subcategories" name="parents">
