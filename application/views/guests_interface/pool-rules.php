@@ -2,11 +2,11 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js kids-html"> <!--<![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js pool-rules-html"> <!--<![endif]-->
 <head>
 <?php $this->load->view("guests_interface/includes/head");?>
 </head>
-<body class="kids-body">
+<body class="pool-rules-body">
 <!--[if lt IE 7]>
 	<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
 <![endif]-->
@@ -15,30 +15,30 @@
 	</div>
 	<article class="wrapper">
 		<div class="menu-header">
-			<h2><span class="kids-header-span">Детям</span></h2>
+			<h2><span class="kids-header-span">Бассейн</span></h2>
 		</div>
 		<div class="aquarium_bg">
 			<section class="aquarium">
 				<div class="octopus-1 div-octopus">
-					<img class="parallax-layer" src="<?=base_url('img/ball.png');?>">
+					<img class="parallax-layer" src="<?=base_url('img/tapok1.png');?>">
 				</div>
 				<div class="aquarium-body">
 					<div class="aquarium-content">
-						<h3 class="kids-content-header"> В St.Tropez созданы все условия <span class="bold">для отдыха с маленькими детьми</span></h3>
+						<h3 class="kids-content-header"> Правила посещения <span class="bold">бассейна</span> St.Tropez</span></h3>
 						<p>
-							Отдельный подогреваемый бассейн с горкой и большая детская площадка смогут надолго увлечь вашего ребенка.
-							в выходные дни у нас работают профессиональные аниматоры, которые в течение всего дня смогут позаботиться о ваших малышах.
+							Окруженный шезлонгами, пальмами и пляжными зонтиками — бассейн с нежной лазурной водой приковывает внимание всех посетителей. Вокруг бассейна на лежаках можно погреться на солнышке, а немного дальше, в тени, можно устроиться в беседке. Бассейн работает 7 дней в неделю.
 						</p>
-						<h4 class="parents-information">Информация для родителей</h4>
+						<h4 class="parents-information">Правила и стоимость посещения:</h4>
 						<ul class="parents-information-list">
-							<li>&nbsp;Дети младше 5 лет - вход бесплатный.</li>
-							<li>&nbsp;Детский бассейн обогревается, что позволяет постоянно поддерживать комфортную температуру в бассейне.</li>
-							<li>&nbsp;На детской площадке есть игровая зона, где малыши смогут покататься на качелях, попрыгать на батуте и проявить свои творческие способности.</li>
+							<li>&nbsp;Каждому посетителю бассейна предоставляется в пользование полотенце, комфортная раздевалка и лежак рядом с бассейном.</li>
+							<li>&nbsp;В будние дни с 05.00 до 12.00 стоимость посещения 500 рублей без депозита. С 12.00 и до закрытия — 1 000 рублей, 500 рублей — депозит в ресторане.</li>
+							<li>&nbsp;В выходные с 05.00 до 12.00 стоимость посещения 500 рублей и 500 депозит в ресторане. С 12.00 и до закрытия бассейна — 1 000 рублей, 1 000 рублей — депозит.</li>
+							<li>&nbsp;Дети до 5 лет — бесплатно.</li>
 						</ul>
 					</div>
 				</div>
 				<div class="octopus-2 div-octopus">
-					<img style="z-index: -100;" class="parallax-layer" src="<?=base_url('img/circle.png');?>">
+					<img style="z-index: -100;" class="parallax-layer" src="<?=base_url('img/tapok2.png');?>">
 				</div>
 			</section>
 		</div>

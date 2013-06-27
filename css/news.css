@@ -29,17 +29,17 @@ section.news {
 .news-list-item { width: 100%; margin: 0 0 4.125em 0; }
 .news-item-body { width: 100%; }
 	.news-item-leftside { float: left; width: 10em; margin: 0 2.25em 0 0; }
-		.news-item-pict { width: 11.25em; margin: 0 auto; text-align: center;}
-			.news-item-pict img { max-width: 100%; border-radius: 15em; }
+		.news-item-pict { width: 11.25em; margin: 0 auto; text-align: center; }
+			.news-item-pict img { max-width: 100%; border-radius: 15em; width: 9em; height: 9em; }
 		.news-item-date { text-align: center; padding: 1.875em 0; font-size: .775em; }
 			.month-name { text-transform: uppercase; font-weight: 700; font-size: 1.1em; }
 	.news-item-rightside { float: left; width: 32.625em }
 		.news-item-header { padding: .925em 0; font-size: 1.5em; color: #191919; }
-			.news-item-header-link { color: #000; text-decoration: none; }
+			.news-item-header-link { color: #000; text-decoration: none; text-transform: uppercase; }
 			.news-item-header-link:hover { border-bottom: 2px solid black; }
 		.news-item-content { padding: .785em .375em; font-size: .85em; }
-
-
+		
+.news-item  h3  a { text-decoration: none; color: #313131; }
 .clear { clear: both; }
 
 /* ============================================================================================
