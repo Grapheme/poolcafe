@@ -180,12 +180,12 @@ class MY_Controller extends CI_Controller{
 		echo $resource;
 	}
 	
-	public function imageManupulation($userfile,$dim = 'width',$ratio = TRUE,$width = 60,$height = 60){
+	public function imageManupulation($filePath,$dim = 'width',$ratio = TRUE,$width = 60,$height = 60){
 		
 		$this->load->library('image_lib');
 		$this->image_lib->clear();
 		$config['image_library'] = 'gd2';
-		$config['source_image'] = $userfile;
+		$config['source_image'] = $filePath;
 		$config['create_thumb'] = FALSE;
 		$config['maintain_ratio'] = $ratio;
 		$config['master_dim'] = $dim;
@@ -193,6 +193,32 @@ class MY_Controller extends CI_Controller{
 		$config['height'] = $height;
 		$this->image_lib->initialize($config);
 		$this->image_lib->resize();
+		return TRUE;
+	}
+	
+	public function CropToSquare(){
+		
+		$arguments = &func_get_args();
+		$fileName = (isset($arguments[0]['filepath']))?$arguments[0]['filepath']:NULL;
+		$edgeWidth = (isset($arguments[0]['edgeSize']))?$arguments[0]['edgeSize']:800;
+		$copy = (isset($arguments[0]['copy']))?TRUE:FALSE;
+		
+		if(!is_null($fileName) && is_file($fileName)):
+			$this->load->library('images');
+			$newFile = FALSE;
+			if($copy === TRUE):
+				$this->load->helper('string');
+				$newFile = getcwd().'/download/tmp/'.random_string('alnum',12).'.tmp';
+			endif;
+			if($this->images->cropToSquare($fileName,$edgeWidth,$edgeWidth,1,1,$newFile)):
+				if($copy === TRUE):
+					return $newFile;
+				else:
+					return TRUE;
+				endif;
+			endif;
+		endif;
+		return FALSE;
 	}
 	
 	public function getImageContent($content = NULL,$manupulation = NULL){

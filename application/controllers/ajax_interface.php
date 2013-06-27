@@ -129,6 +129,9 @@ class Ajax_interface extends MY_Controller{
 			return FALSE;
 		endif;
 		if($eventID = $this->ExecuteCreatingEvent($_POST)):
+			if($this->CropToSquare(array('filepath'=>$_FILES['photo']['tmp_name'],'edgeSize'=>500))):
+				
+			endif;
 			if($this->uploadEventPhoto($eventID)):
 				$json_request['status'] = TRUE;
 				$json_request['responseText'] = 'Cобытие добавлено';
@@ -150,8 +153,10 @@ class Ajax_interface extends MY_Controller{
 			return FALSE;
 		endif;
 		if($this->ExecuteUpdatingEvent($this->uri->segment(4),$_POST)):
-			$json_request['responsePhotoSrc'] = $this->uploadEventPhoto($this->uri->segment(4));
-			$json_request['status'] = TRUE;
+			if($this->CropToSquare(array('filepath'=>$_FILES['photo']['tmp_name'],'edgeSize'=>500))):
+				$json_request['responsePhotoSrc'] = $this->uploadEventPhoto($this->uri->segment(4));
+				$json_request['status'] = TRUE;
+			endif;
 			$json_request['responseText'] = 'Событие cохранено';
 			$json_request['redirect'] = site_url(ADMIN_START_PAGE.'/events');
 		endif;
