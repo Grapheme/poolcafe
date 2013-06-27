@@ -210,7 +210,7 @@ class MY_Controller extends CI_Controller{
 				$this->load->helper('string');
 				$newFile = getcwd().'/download/tmp/'.random_string('alnum',12).'.tmp';
 			endif;
-			if($this->images->cropToSquare($fileName,$edgeWidth,$edgeWidth,1,1,$newFile)):
+			if($this->images->cropToSquare($fileName,$edgeWidth,$edgeWidth,$newFile)):
 				if($copy === TRUE):
 					return $newFile;
 				else:

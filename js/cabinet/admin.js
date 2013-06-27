@@ -54,18 +54,18 @@
 		showSubCategory(this);
 	});
 	$("select.select-group").change(function(){
-		var url = mt.currentURL.replace(/group=(\d)/,'group='+$(this).val());
+		var url = mt.currentURL.replace(/group=(\d+)/,'group='+$(this).val());
 		mt.redirect(url);
 	});
 	$("select.select-parents-categories").change(function(){
-		var url = mt.currentURL.replace(/(&category=(\d)|&subcategory=(\d))/g,'');
+		var url = mt.currentURL.replace(/(&category=(\d+)|&subcategory=(\d+))/g,'');
 		if($(this).emptyValue() == false){
 			url = url+'&category='+$(this).val();
 		}
 		mt.redirect(url);
 	});
 	$("select.select-subcategories").change(function(){
-		var url = mt.currentURL.replace(/&subcategory=(\d)/,'');
+		var url = mt.currentURL.replace(/&subcategory=(\d+)/,'');
 		if($(this).emptyValue() == false){
 			url = url+'&subcategory='+$(this).val();
 		}

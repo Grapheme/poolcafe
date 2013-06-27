@@ -7,7 +7,7 @@ class Images{
 		$this->CI->load->library('image_lib');
 	}
 
-	public function cropToSquare($source,$base_width,$base_height,$x = 4,$y = 3,$dest = FALSE){
+	public function cropToSquare($source,$base_width,$base_height,$dest = FALSE){
 		// $config['image_library'] = 'gd2';
 		$config['source_image'] = $source;
 		$config['maintain_ratio'] = FALSE;
