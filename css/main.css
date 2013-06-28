@@ -177,8 +177,7 @@ section header h2 span { background: #000; padding: 0 0.25em; color: #fff; text-
 	height: 1.4em;
 }
 .current-link > div {
-	background: #67c1df;
-	top: -101%;
+	visibily: hidden;
 }
 
 .menu-list { width: 22em; float: left; }
@@ -196,7 +195,7 @@ section header h2 span { background: #000; padding: 0 0.25em; color: #fff; text-
 #map-canvas { width: 100%; height: 735px; }
 .back-forward-links { width: 95px; height: 18px; margin: 0 auto; }
 .back-forward-links-list { width: 120px; padding: 0; }
-.back-forward-links-list-item { margin: 0 5px; float: left;}
+.back-forward-links-list-item { margin: 0 5px; float: left; width: 22px; }
 .back-forward-links-list-item mainmenu{ width: 18px; height: 18px; }
 .back-forward-links-list-item back,
 .back-forward-links-list-item forward{ width: 22px; height: 18px; }
@@ -257,6 +256,11 @@ width: 100%;
    ========================================================================== */
 
 
+@media (max-width : 1148px) 
+	
+	{
+		.menu-content { width: 36em; }
+	}
 
 @media (max-width : 767px) 
 
@@ -314,7 +318,7 @@ width: 100%;
 	.news-item-header { text-align: center; }
 	.news-bg { padding-bottom: 2em; }
 	.sep_new-content { width: 24em; }
-	
+	.sep_new-pict img {width: 22em; }
 	/* ============================================================	
 	 *  MENU	 
 	   ============================================================ */
@@ -327,6 +331,7 @@ width: 100%;
 	  div.category-elem-name { width: 11em; }
 	  .category-elem-weight { margin-right: 1em; }
 	  .category-table {width: 26em; }
+	  .category-elem-price { font-size: .925em; }
 	  
 	/*
 	 * 
