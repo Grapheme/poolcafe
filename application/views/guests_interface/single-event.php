@@ -31,10 +31,11 @@
 				<div class="sep_new-pict">
 					<img src="<?=site_url('loadimage/events/'.$events['id']);?>" />
 				</div>
-				<div class="tags">
+				
+				<div class="sep_new-content">
+<div class="tags">
 					<?=$events['tags'];?>
 				</div>
-				<div class="sep_new-content">
 					<?=$events['content'];?>
 				</div>
 			</section>
