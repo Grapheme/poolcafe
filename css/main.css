@@ -255,14 +255,16 @@ width: 100%;
    Media for html
    ========================================================================== */
 
-
-@media (max-width : 1148px) 
-	
+@media (max-width: 1280px)
 	{
+		.nav-light, .nav-dark, .anchor { left: 0; }
+	}
+@media (max-width: 1199px) 	
+	{
+		.nav-containter,.nav-light, .nav-dark, .anchor { visibility: hidden; display: none; }
 		.menu-content { width: 36em; }
 	}
-
-@media (max-width : 767px) 
+@media (max-width: 767px) 
 
 	{
 	
@@ -338,8 +340,8 @@ width: 100%;
 	 *  AQUARIUM
 	 * 
 	 */
-	
-	section.aquarium { padding-left:0 ; padding-right: 0;  width: 26em;}
+	.aquarium-content .category-elem-name { width: 11em; }
+	section.aquarium { padding-left:0 ; padding-right: 0;  width: 24em;}
 	.octopus-1,
 	.octopus-2 { display: none; }
 	.category-elem-name { width: 12em; }
@@ -411,7 +413,7 @@ width: 100%;
 	/* ============================================================	
 	 *  MENU	 
 	   ============================================================ */
-	  html.menu-html, body.menu-body-back { font-size:8px; }
+	  html.menu-html, body.menu-body-back { font-size:8px; width: 46em; }
 body.menu-body-back article.wrapper { width: 100%; }
 	  .menu-body-back .menu-header>h2>span { border-color: #919191; color: #919191; }	
 	  ul.menu-nav-list { padding: 0; margin: 0; }
@@ -425,7 +427,7 @@ body.menu-body-back article.wrapper { width: 100%; }
 	 *  AQUARIUM	 
 	   ============================================================ */
 	  
-	html.aquarium-html, body.aquarium-body { font-size: 11px; }
+	html.aquarium-html, body.aquarium-body { font-size: 11px; width: 30em;}
 	.menu-nav-list { padding: 0; margin-left: 3em;}
 	.menu-header > h2 { font-size: 2.4em; }
 	section.aquarium { padding-left:0 ; padding-right: 0;  width: 26em;}
@@ -444,7 +446,7 @@ body.menu-body-back article.wrapper { width: 100%; }
 
 @media (max-width: 280px) {
 	
-	html, body { font-size: 9px; }
+	html, body { font-size: 7px; }
 	.nav-containter { visibility: hidden; }	
 	section { position: relative; }
 	.container { width: 24em; margin: 0 auto; }
