@@ -361,7 +361,7 @@ width: 100%;
 	#skrollr-body > section {position: relative; }
 	.nav-containter { visibility: hidden; display: none; }		
 	section .__fotorama img { position: absolute; top: 0px; } 
-	
+	#restaurant-info .menu-item:first-child a span, .menu-item a span { font-size: 8px; }
 	
 	.container { width: 20em; }
 	.container > h2 > span { font-size: 0.7em; }
