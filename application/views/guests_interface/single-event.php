@@ -24,6 +24,20 @@
 				<div class="sep_new-date">
 					<?=monthDateSpan($events['date_publish'],'month-name');?>
 					<br/><?=$events['category_title'];?>
+					<div class="back-forward-links">
+						<ul class="back-forward-links-list">
+							<li class="back-forward-links-list-item back">
+								<a href="#"><img src="<?=base_url('img/linkback.png');?>"></a>
+							</li>
+							<li class="back-forward-links-list-item mainmenu">
+								<a href="#"><img src="<?=base_url('img/mainmenu.png');?>"></a>
+							</li>
+							<li class="back-forward-links-list-item forward">
+								<a href="#"><img src="<?=base_url('img/linkforward.png');?>"></a>
+							</li>
+						</ul>	
+
+					</div><div class="clear"></div>
 				</div>
 				<div class="sep_new-header">
 					<h1 class="news-item-header"><?=$events['title'];?></h1>
