@@ -15,6 +15,12 @@
 		
 		if(!empty($property)):
 			list($size,$value) = explode(' ',$property);
+			if(!isset($size) || empty($size)):
+				$size = '';
+			endif;
+			if(!isset($value) || empty($value)):
+				$size = '';
+			endif;
 			return '<span class="elem-weight-value">'.$size.'</span> '.$value;
 		else:
 			return '';
