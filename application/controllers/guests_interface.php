@@ -52,6 +52,8 @@ class Guests_interface extends MY_Controller{
 		$pagevar = array(
 			'events' => array(),
 			'pagination' => array(),
+			'linkback' => array('exist'=>FALSE,'link'=>''),
+			'linkforward' => array('exist'=>FALSE,'link'=>'')
 		);
 		$category = array('Концерт','Выставка','Другое');
 		if($this->input->get('event') === FALSE):
@@ -63,6 +65,8 @@ class Guests_interface extends MY_Controller{
 			$this->load->view("guests_interface/events",$pagevar);
 		elseif(is_numeric($this->input->get('event'))):
 			$pagevar['events'] = $this->events->getWhere($this->input->get('event'));
+			$pagevar['linkback'] = $this->getBackEvents($this->input->get('event'));
+			$pagevar['linkforward'] = $this->getForwardEvents($this->input->get('event'));
 			$pagevar['events']['category_title'] = $category[$pagevar['events']['category']];
 			$this->load->view("guests_interface/single-event",$pagevar);
 		endif;
@@ -203,6 +207,37 @@ class Guests_interface extends MY_Controller{
 		return $newMenu;
 	}
 	
+	private function getBackEvents($eventID){
+		
+		$this->load->model('events');
+		$events = $this->events->getAll();
+		$eventsIDs = $this->getValuesInArray($events);
+		$backEvent = array('exist'=>FALSE,'link'=>'');
+		$positionID = array_search($eventID,$eventsIDs);
+		if($positionID !== FALSE):
+			if(isset($eventsIDs[$positionID-1])):
+				$backEvent['exist'] = TRUE;
+				$backEvent['link'] = site_url('events/'.$events[$positionID-1]['translit'].'?event='.$events[$positionID-1]['id']);
+			endif;
+		endif;
+		return $backEvent;
+	}
+	
+	private function getForwardEvents($eventID){
+		
+		$this->load->model('events');
+		$events = $this->events->getAll();
+		$eventsIDs = $this->getValuesInArray($events);
+		$backEvent = array('exist'=>FALSE,'link'=>'');
+		$positionID = array_search($eventID,$eventsIDs);
+		if($positionID !== FALSE):
+			if(isset($eventsIDs[$positionID+1])):
+				$backEvent['exist'] = TRUE;
+				$backEvent['link'] = site_url('events/'.$events[$positionID+1]['translit'].'?event='.$events[$positionID+1]['id']);
+			endif;
+		endif;
+		return $backEvent;
+	}
 	
 	/******************************************* Авторизация и регистрация ***********************************************/
 	

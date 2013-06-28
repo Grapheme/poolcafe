@@ -26,17 +26,20 @@
 					<br/><?=$events['category_title'];?>
 					<div class="back-forward-links">
 						<ul class="back-forward-links-list">
+						<?php if($linkback['exist'] === TRUE):?>
 							<li class="back-forward-links-list-item back">
-								<a href="#"><img src="<?=base_url('img/linkback.png');?>"></a>
+								<a href="<?=$linkback['link'];?>"><img src="<?=base_url('img/linkback.png');?>"></a>
 							</li>
+						<?php endif;?>
 							<li class="back-forward-links-list-item mainmenu">
-								<a href="#"><img src="<?=base_url('img/mainmenu.png');?>"></a>
+								<a href="<?=site_url('events')?>"><img src="<?=base_url('img/mainmenu.png');?>"></a>
 							</li>
+						<?php if($linkforward['exist'] === TRUE):?>
 							<li class="back-forward-links-list-item forward">
-								<a href="#"><img src="<?=base_url('img/linkforward.png');?>"></a>
+								<a href="<?=$linkforward['link'];?>"><img src="<?=base_url('img/linkforward.png');?>"></a>
 							</li>
-						</ul>	
-
+						<?php endif;?>
+						</ul>
 					</div><div class="clear"></div>
 				</div>
 				<div class="sep_new-header">
