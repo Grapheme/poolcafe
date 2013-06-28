@@ -1,8 +1,6 @@
 <?php if(!defined('BASEPATH')) exit('No direct script access allowed');
 
 $config['base_url'] 			= "http://poolcafe/";
-$config['ckfinder_base_url']	= 'http://poolcafe/download/';
-$config['ckfinder_base_dir']	= 's:/home/poolcafe/www/download/';
 $config['index_page'] 			= '';
 $config['uri_protocol']			= 'AUTO';
 $config['url_suffix'] 			= '';
