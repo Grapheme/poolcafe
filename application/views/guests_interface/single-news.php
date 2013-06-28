@@ -23,6 +23,23 @@
 			<section class="news">
 				<div class="sep_new-date">
 					<?=monthDateSpan($news['date_publish'],'month-name');?>
+					<div class="back-forward-links">
+						<ul class="back-forward-links-list">
+							<li class="back-forward-links-list-item back">
+							<?php if($linkback['exist'] === TRUE):?>
+								<a href="<?=$linkback['link'];?>"><img src="<?=base_url('img/linkback.png');?>"></a>
+							<?php endif;?>
+							</li>
+							<li class="back-forward-links-list-item mainmenu">
+								<a href="<?=site_url('events')?>"><img src="<?=base_url('img/mainmenu.png');?>"></a>
+							</li>
+							<li class="back-forward-links-list-item forward">
+							<?php if($linkforward['exist'] === TRUE):?>
+								<a href="<?=$linkforward['link'];?>"><img src="<?=base_url('img/linkforward.png');?>"></a>
+							<?php endif;?>
+							</li>
+						</ul>
+					</div>
 				</div>
 				<div class="sep_new-header">
 					<h1 class="news-item-header"><?=$news['title'];?></h1>

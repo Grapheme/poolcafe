@@ -32,7 +32,9 @@ class Guests_interface extends MY_Controller{
 		$this->load->model('news');
 		$pagevar = array(
 			'news' => array(),
-			'pagination' => array()
+			'pagination' => array(),
+			'linkback' => array('exist'=>FALSE,'link'=>''),
+			'linkforward' => array('exist'=>FALSE,'link'=>'')
 		);
 		if($this->input->get('news') === FALSE):
 			$pagevar['news'] = $this->news->limit($this->per_page,$this->offset);
@@ -40,6 +42,8 @@ class Guests_interface extends MY_Controller{
 			$this->load->view("guests_interface/news",$pagevar);
 		elseif(is_numeric($this->input->get('news'))):
 			$pagevar['news'] = $this->news->getWhere($this->input->get('news'));
+			$pagevar['linkback'] = $this->getBackLink($this->input->get('news'),'news','news');
+			$pagevar['linkforward'] = $this->getForwardLink($this->input->get('news'),'news','news');
 			$this->load->view("guests_interface/single-news",$pagevar);
 		endif;
 	}
@@ -65,8 +69,8 @@ class Guests_interface extends MY_Controller{
 			$this->load->view("guests_interface/events",$pagevar);
 		elseif(is_numeric($this->input->get('event'))):
 			$pagevar['events'] = $this->events->getWhere($this->input->get('event'));
-			$pagevar['linkback'] = $this->getBackEvents($this->input->get('event'));
-			$pagevar['linkforward'] = $this->getForwardEvents($this->input->get('event'));
+			$pagevar['linkback'] = $this->getBackLink($this->input->get('event'),'events','event');
+			$pagevar['linkforward'] = $this->getForwardLink($this->input->get('event'),'events','event');
 			$pagevar['events']['category_title'] = $category[$pagevar['events']['category']];
 			$this->load->view("guests_interface/single-event",$pagevar);
 		endif;
@@ -207,36 +211,36 @@ class Guests_interface extends MY_Controller{
 		return $newMenu;
 	}
 	
-	private function getBackEvents($eventID){
+	private function getBackLink($itemID,$table,$getParam){
 		
-		$this->load->model('events');
-		$events = $this->events->getAll();
-		$eventsIDs = $this->getValuesInArray($events);
-		$backEvent = array('exist'=>FALSE,'link'=>'');
-		$positionID = array_search($eventID,$eventsIDs);
+		$this->load->model($table);
+		$items = $this->$table->getAll();
+		$itemsIDs = $this->getValuesInArray($items);
+		$backLink = array('exist'=>FALSE,'link'=>'');
+		$positionID = array_search($itemID,$itemsIDs);
 		if($positionID !== FALSE):
-			if(isset($eventsIDs[$positionID-1])):
-				$backEvent['exist'] = TRUE;
-				$backEvent['link'] = site_url('events/'.$events[$positionID-1]['translit'].'?event='.$events[$positionID-1]['id']);
+			if(isset($itemsIDs[$positionID-1])):
+				$backLink['exist'] = TRUE;
+				$backLink['link'] = site_url($table.'/'.$items[$positionID-1]['translit'].'?'.$getParam.'='.$items[$positionID-1]['id']);
 			endif;
 		endif;
-		return $backEvent;
+		return $backLink;
 	}
 	
-	private function getForwardEvents($eventID){
+	private function getForwardLink($itemID,$table,$getParam){
 		
-		$this->load->model('events');
-		$events = $this->events->getAll();
-		$eventsIDs = $this->getValuesInArray($events);
-		$backEvent = array('exist'=>FALSE,'link'=>'');
-		$positionID = array_search($eventID,$eventsIDs);
+		$this->load->model($table);
+		$items = $this->$table->getAll();
+		$itemsIDs = $this->getValuesInArray($items);
+		$forwardLink = array('exist'=>FALSE,'link'=>'');
+		$positionID = array_search($itemID,$itemsIDs);
 		if($positionID !== FALSE):
-			if(isset($eventsIDs[$positionID+1])):
-				$backEvent['exist'] = TRUE;
-				$backEvent['link'] = site_url('events/'.$events[$positionID+1]['translit'].'?event='.$events[$positionID+1]['id']);
+			if(isset($itemsIDs[$positionID+1])):
+				$forwardLink['exist'] = TRUE;
+				$forwardLink['link'] = site_url($table.'/'.$items[$positionID+1]['translit'].'?'.$getParam.'='.$items[$positionID+1]['id']);
 			endif;
 		endif;
-		return $backEvent;
+		return $forwardLink;
 	}
 	
 	/******************************************* Авторизация и регистрация ***********************************************/
