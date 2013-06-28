@@ -177,8 +177,7 @@ section header h2 span { background: #000; padding: 0 0.25em; color: #fff; text-
 	height: 1.4em;
 }
 .current-link > div {
-	background: #67c1df;
-	top: -101%;
+	visibily: hidden;
 }
 
 .menu-list { width: 22em; float: left; }
@@ -314,7 +313,7 @@ width: 100%;
 	.news-item-header { text-align: center; }
 	.news-bg { padding-bottom: 2em; }
 	.sep_new-content { width: 24em; }
-	
+	.sep_new-pict img {width: 22em; }
 	/* ============================================================	
 	 *  MENU	 
 	   ============================================================ */
