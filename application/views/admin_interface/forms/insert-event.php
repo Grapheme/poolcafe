@@ -32,7 +32,7 @@
 		<input type="text" name="price" class="span2" value="" placeholder="Цена" />
 	</div>
 	<div class="control-group">
-		<textarea rows="3" class="span9 valid-required" placeholder="Анонс собыьтия" name="anonce"></textarea>
+		<textarea rows="3" class="span9 valid-required" placeholder="Анонс события" name="anonce"></textarea>
 	</div>
 	<div class="control-group clearfix">
 		<textarea rows="10" class="valid-required redactor" placeholder="Текс события" name="content"></textarea>
