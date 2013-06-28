@@ -14,14 +14,14 @@
 	function getMenuProperty($property){
 		
 		if(!empty($property)):
-			list($size,$value) = explode(' ',$property);
-			if(!isset($size) || empty($size)):
-				$size = '';
+			$propertyMenu = explode(' ',$property);
+			if(!isset($propertyMenu[0]) || empty($propertyMenu[0])):
+				$propertyMenu[0] = '';
 			endif;
-			if(!isset($value) || empty($value)):
-				$size = '';
+			if(!isset($propertyMenu[1]) || empty($propertyMenu[1])):
+				$propertyMenu[1] = '';
 			endif;
-			return '<span class="elem-weight-value">'.$size.'</span> '.$value;
+			return '<span class="elem-weight-value">'.$propertyMenu[0].'</span> '.$propertyMenu[1];
 		else:
 			return '';
 		endif;
