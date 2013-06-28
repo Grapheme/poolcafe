@@ -31,7 +31,7 @@
 							<?php endif;?>
 							</li>
 							<li class="back-forward-links-list-item mainmenu">
-								<a href="<?=site_url('events')?>"><img src="<?=base_url('img/mainmenu.png');?>"></a>
+								<a href="<?=site_url('news')?>"><img src="<?=base_url('img/mainmenu.png');?>"></a>
 							</li>
 							<li class="back-forward-links-list-item forward">
 							<?php if($linkforward['exist'] === TRUE):?>
