@@ -592,6 +592,15 @@ class MY_Controller extends CI_Controller{
 		return $ids;
 	}
 	
+	public function reIndexArray($array){
+		
+		$newArray = array();
+		foreach($array as $key => $value):
+			$newArray[] = $value;
+		endforeach;
+		return $newArray;
+	}
+	
 	/* -------------------------------------------------------------------------------------------- */
 	public function getParentsCategoriesMenu(){
 		

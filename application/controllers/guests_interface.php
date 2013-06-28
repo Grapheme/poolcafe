@@ -150,21 +150,58 @@ class Guests_interface extends MY_Controller{
 	
 	private function clearingEmptyCategories($menu){
 		
-		$newMenu = array();
+		$newMenu = $this->deleteEmptyParentsAndChildrens($menu);
+		return  $this->reIndexMenu($newMenu);
+	}
+	
+	private function deleteEmptyParentsAndChildrens($menu){
+		
+		$unsetParentMenu = $menu;
 		for($parents=0;$parents<count($menu);$parents++):
-			if(isset($menu[$parents]['products'])):
-				$newMenu[] = $menu[$parents];
-			elseif(isset($menu[$parents]['children'])):
+			if(!isset($menu[$parents]['products']) && !isset($menu[$parents]['children'])):
+				unset($unsetParentMenu[$parents]);
+			endif;
+		endfor;
+		$menu = $this->reIndexArray($unsetParentMenu);
+		unset($unsetParentMenu);
+		$unsetChildrenMenu = $menu;
+		for($parents=0;$parents<count($menu);$parents++):
+			if(isset($menu[$parents]['children'])):
 				for($children=0;$children<count($menu[$parents]['children']);$children++):
-					if(isset($menu[$parents]['children'][$children]['products'])):
-						$newMenu[] = $menu[$parents];
+					if(!isset($menu[$parents]['children'][$children]['products'])):
+						unset($unsetChildrenMenu[$parents]['children'][$children]);
+					endif;
+				endfor;
+			endif;
+			if(empty($unsetChildrenMenu[$parents]['children']) && empty($unsetChildrenMenu[$parents]['products'])):
+				unset($unsetChildrenMenu[$parents]);
+			endif;
+		endfor;
+		$menu = $unsetChildrenMenu;
+		unset($unsetChildrenMenu);
+		return $menu;
+	}
+	
+	private function reIndexMenu($menu){
+		
+		$newMenu = $this->reIndexArray($menu); //Реиндексация родительского массива
+		for($parents=0;$parents<count($newMenu);$parents++):
+			if(isset($newMenu[$parents]['children'])):
+				$newMenu[$parents]['children'] = $this->reIndexArray($newMenu[$parents]['children']);//Реиндексация потомкового массива
+			endif;
+		endfor;
+		for($parents=0;$parents<count($newMenu);$parents++):
+			if(isset($newMenu[$parents]['children'])):
+				for($children=0;$children<count($newMenu[$parents]['children']);$children++):
+					if(!isset($newMenu[$parents]['children'][$children]['products'])):
+						$newMenu[$parents]['children'][$children]['products'] = $this->reIndexArray($newMenu[$parents]['children'][$children]['products']);
+						//Реиндексация массива продуктов
 					endif;
 				endfor;
 			endif;
 		endfor;
 		return $newMenu;
 	}
-	
 	
 	
 	/******************************************* Авторизация и регистрация ***********************************************/
