@@ -358,14 +358,16 @@ width: 100%;
 	body { height: auto !important; }
 		
 	section { position: relative; }	
-	#skrollr-body > section {position: relative; }
+	#skrollr-body > section { position: relative; }
+	#skrollr-body > section header { width: 85%; }
 	.nav-containter { visibility: hidden; display: none; }		
 	section .__fotorama img { position: absolute; top: 0px; } 
 	#restaurant-info .menu-item:first-child a span, .menu-item a span { font-size: 8px; }
-	
+	.rest-item { width: 20em; }
 	.container { width: 20em; }
 	.container > h2 > span { font-size: 0.7em; }
-	
+	#pool-info .container > h2,
+	#restaurant-info .container > h2 { margin: 1em 0 0 0; }
 	.event-text .tags { font-size: 1.05em; }
 	
 	.events-list { width: 20em; float: none; margin: 0 auto; }
@@ -387,7 +389,7 @@ width: 100%;
 	.rest-content figure img { display: block; margin: 0 auto; max-width: 100%; }
 	
 	
-	.news-list { width: 24em; float: none; }
+	.news-list { width: 20em; float: none; }
 	.news-item { height: 100%; }
 	.news-item h3 { text-align: center; }
 	section header h2 { font-size: 1em; line-height: 1.57em; font-weight: normal; }
@@ -454,7 +456,8 @@ body.menu-body-back article.wrapper { width: 100%; }
 	.news-list { width: 18em; float: none; margin: 0 auto; }
 	section header h2 { font-size: 1.5em; line-height: 1.57em; font-weight: normal; }
 	.rest-item figure { width: 18em; margin: 0 4em; max-width: 78%; height: 21em; }
-	
+	.rest-item { width: 20em; }
+
 	.menu-header > h2 { font-size: 2.2em; }
 	html.aquarium-html, body.aquarium-body { font-size: 8px; }
 	.menu-nav-list { padding: 0; margin-left: 1em;}
