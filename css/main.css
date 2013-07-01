@@ -332,7 +332,7 @@ width: 100%;
 	  .menu-content-column1,
 	  .menu-content-column2 { width: 24em; float: none; padding: 0; font-size: 14px; }
 	  
-	  div.category-elem-name { width: 11em; }
+	  div.category-elem-name { width: 10em; }
 	  .category-elem-weight { margin-right: 1em; }
 	  .category-table {width: 26em; }
 	  .category-elem-price { font-size: .925em; }
@@ -387,7 +387,7 @@ width: 100%;
 	.rest-item figure { width: 20em;}
 	.rest-item .rest-text { float: none; width: 20em; }
 	.rest-text h3 {text-align: center; }
-	.list-title a {font-size: 0.5em; position: relative; left: .5em; line-height: 2.3em; }
+	.list-title a {font-size: 0.5em; position: relative; left: .5em; line-height: 2.6em; }
 	
 	.rest-content figure img { display: block; margin: 0 auto; max-width: 100%; }
 	
@@ -424,7 +424,7 @@ width: 100%;
 	  html.menu-html, body.menu-body-back { font-size:8px; width: 46em; }
 	body.menu-body-back article.wrapper { width: 100%; }
 	  .menu-body-back .menu-header>h2>span { border-color: #919191; color: #919191; }	
-	  ul.menu-nav-list { padding: 0; margin: 0; }
+	  ul.menu-nav-list { padding: 0; margin: 0; font-size: 1.2em; }
 	.menu-content { width: 36em; margin: 0 .5em; }
 	  .menu-content-column1,
 	  .menu-content-column2 { width: 24em; }
