@@ -6,6 +6,7 @@ st.init = function() {
 	st.news_wh = $('#news').height();
 	st.rest_wh = $('#restaurant-info').height();
 	st.pool_wh = $('#pool-info').height();
+if ( $(window).width() > 768) {
 	$('#news').attr({
 		'data-2600' : 'top: 0px;',
 		'data-5800' : 'top: -' + (+st.news_wh + +10) + 'px;'
@@ -42,6 +43,7 @@ st.init = function() {
 		'data-0' : 'height:100%; z-index:10002;'
 	});
 };
+};
 
 $(function(){
 	$('ul.navigationLinksList li a').click(function(e){
@@ -51,12 +53,17 @@ $(function(){
 		$('ul.navigationLinksList li a').removeClass('current-section');
 		$(this).addClass('current-section');
 	});
+
 	st.init();
+if ( $(window).width() > 768) {
 	st.skroll = skrollr.init({ });
+};
 	initialize();
 	$(window).resize( function() {
 		st.init();
-		st.skroll = skrollr.init({ });
+		if ( $(window).width() > 768) {
+			st.skroll = skrollr.init({ });
+		};
 		initialize();
 	});
 });
