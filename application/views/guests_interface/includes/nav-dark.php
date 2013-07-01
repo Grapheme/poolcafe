@@ -1,6 +1,6 @@
 <nav class="nav-dark" >
 					<h1 class="logo">St.Tropez</h1>
-					<div class="anchor" data-0="top:201px;" data-2600="top:234px;" data-6400="top:257px;" data-10600="top:283px;" data-13000="top:296px;" data-14500="top:315px;" data-15400="top:-113px;" > </div>
+					<div class="anchor" data-0="top:171px;" data-2600="top:204px;" data-6400="top:227px;" data-10600="top:253px;" data-13000="top:266px;" data-14500="top:285px;" data-15400="top:-113px;" > </div>
 					<ul class="navigationLinksList">
 						<li class="navigationLink">
 							<a class="navLink-1" href="#" data-scroll="0">ГЛАВНАЯ</a>

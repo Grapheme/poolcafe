@@ -98,16 +98,16 @@ textarea {
    ========================================================================== */
 div.logo { margin: 1.3em 0; }
 .nav-light,
-.nav-dark { position: fixed; left: 60px; top: 0; z-index: 9999; height: 340px; overflow: hidden; }
+.nav-dark { position: fixed; left: 40px; top: 0; z-index: 9999; height: 340px; overflow: hidden; }
 .nav-containter { position: relative; }
 .navigationLinksList { margin: 2em 0 0 0; padding: 0; }
 .navigationLinksList .navigationLink { text-align: left; padding-left: 3em; }
 .nav-light .navigationLink a { display: block; width: 130px; margin: 0; padding: 0 0 0.55em 0; color: #FFF; font-size: 1.15em; font-weight: 500; text-decoration: none; outline: none;}
 .nav-dark .navigationLink a { display: block; width: 130px; margin: 0; padding: 0 0 0.55em 0;  color: #535353; font-size: 1.15em; font-weight: 500; text-decoration: none; outline: none;}
-.nav-light .logo { width: 130px; height: 162px; text-indent: -9999px; background: url('../img/white_logo.png') 0 60px no-repeat; }
-.nav-dark .logo { width: 130px; height: 162px; text-indent: -9999px; background: url('../img/color_logo.png') 0 60px no-repeat; }
+.nav-light .logo { width: 130px; height: 132px; text-indent: -9999px; background: url('../img/white_logo.png') 0 20px no-repeat; }
+.nav-dark .logo { width: 130px; height: 132px; text-indent: -9999px; background: url('../img/color_logo.png') 0 20px no-repeat; }
 .selected { border: 1px solid black; background: url('../img/anchor.png'); }
-.nav-dark .anchor, .nav-light .anchor { width: 20px; height: 21px; background: url('../img/anchor.png') no-repeat; position: fixed; top: 201px; left: 60px; } 
+.nav-dark .anchor, .nav-light .anchor { width: 20px; height: 21px; background: url('../img/anchor.png') no-repeat; position: fixed; top: 201px; left: 40px; } 
 
 /* ==========================================================================
    Main site styles
