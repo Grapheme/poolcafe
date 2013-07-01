@@ -424,7 +424,7 @@ width: 100%;
 	  html.menu-html, body.menu-body-back { font-size:8px; width: 46em; }
 	body.menu-body-back article.wrapper { width: 100%; }
 	  .menu-body-back .menu-header>h2>span { border-color: #919191; color: #919191; }	
-	  ul.menu-nav-list { padding: 0; margin: 0; font-size: 1.2em; }
+	 html.menu-html ul.menu-nav-list { padding: 0; margin: 0; font-size: 1.5em; }
 	.menu-content { width: 36em; margin: 0 .5em; }
 	  .menu-content-column1,
 	  .menu-content-column2 { width: 24em; }
