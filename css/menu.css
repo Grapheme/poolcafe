@@ -110,12 +110,3 @@ section.menu-navigation {
 		.elem-weight-value { font-size: 0.83em; font-weight: 500; line-height: 1.95;}
 .category-elem-header { margin: 2.125em 0; font-weight: 300; font-family:Garamond, Georgia, serif; text-align: center; color: /*#6d6d6d*/#313131; }
 .category-elem-body { margin: 1em 0; padding: 0 .875em; }
-
-
-
-footer { background: #333; height: 6em; position: fixed; bottom: 0; color: #fff; line-height: 6em; font-size: 1.1em; width: 100%; }
-footer .copy { float: left; width: 50%; }
-footer .dev { float: right; width: 50%; text-align: center; }
-footer a { color: #bcdfef; }
-
-.clear { clear: both; }

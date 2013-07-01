@@ -134,8 +134,8 @@ section header h2 span { background: #000; padding: 0 0.25em; color: #fff; text-
 	.list-title a { font-size: 0.7em; text-transform: uppercase; text-decoration: none; color: #717171; font-weight: normal; float: right; display: block; }
 	.list-title a:hover { color: #212121; }
 .events-list { width: 50em; float: left; margin-right: 2em;/* margin-left: 0em; */}
-	.events-list .event-title { text-transform: uppercase; font-size: 1.6em; padding-left: 0.5em; margin: 0 0 1.75em; }
-		.events-list .event-title .date { float: right; padding-top: 0.4em; }
+	.events-list .event-title { text-transform: uppercase; font-size: 1.6em;  padding-left: 0.5em; margin: 0 0 1.75em; }
+		.events-list .event-title .date { float: right; /*padding-top: 0.4em;*/ }
 
 .events-item { border-top: 3px solid #d8df50; margin: 1em 0; padding: 0.5em 0; height: 30em; overflow: hidden; }
 .events-item figure { width: 15em; float: left; margin: 0 3em 0 1em; }
@@ -151,7 +151,7 @@ section header h2 span { background: #000; padding: 0 0.25em; color: #fff; text-
 	
 .news-list { width: 22em; float: left; }
 .news-item { border-top: 3px solid #bcdfef; margin: 1em 0; padding: 0.5em 0; height: 30em; overflow: hidden; }
-.news-date { text-transform: uppercase; font-size: 1.2em; margin: 0.9em 0 1.75em; }
+.news-date { text-transform: uppercase; font-size: 1.2em; margin: 0.4em 0 1.75em; }
 .news-item h3 { text-transform: uppercase; font-size: 1.6em; margin: 2.1em 0 1.05em; font-weight: normal; line-height: 1em; }
 .news-item h3 a:hover { text-decoration: underline; }
 .news-item .read-more { color: #75200d; font-size: 1.1em; display: none; }
@@ -200,7 +200,7 @@ section header h2 span { background: #000; padding: 0 0.25em; color: #fff; text-
 .back-forward-links-list-item back,
 .back-forward-links-list-item forward{ width: 22px; height: 18px; }
 
-footer { background: #333; height: 5em; position: relative; bottom: 0; color: #fff; line-height: 2em; font-size: 1.1em; width: 100%; }
+footer { background: #333; height: 6em; position: fixed; bottom: 0; color: #fff; line-height: 6em; font-size: 1.1em; width: 100%; }
 footer .copy { float: left; width: 50%; }
 footer .dev { float: right; width: 50%; text-align: center; }
 footer a { color: #bcdfef; }
@@ -251,6 +251,7 @@ width: 100%;
 
 .rest-item .rest-content .back__age { font-size: 1.5em; padding: 1.55em 0 0; }
 .rest-item .rest-content .card__back .back__circle { margin: -6.2em 0 0 -6em; }
+.sep_new-content a { color: #3377aa; }
 /* ==========================================================================
    Media for html
    ========================================================================== */
@@ -267,12 +268,13 @@ width: 100%;
 @media (max-width: 767px) 
 
 	{
-	
+	footer { background: #333; height: 5em; position: relative; bottom: 0; color: #fff; line-height: 2em; font-size: 1.1em; width: 100%; }
 	html { font-size: .5625em; }
 	body { height: auto !important; }
 	.aquarium-body .menu-nav { left: 0; }	
 	section { position: relative; }		
 	#about { height: 100%; }
+	#news .container > h2 > span{ width: 12em; }
 	#skrollr-body > section header { width: 100%; }
 	.nav-containter { visibility: hidden; display: none; }	
 	#restaurant-info .menu-item:first-child a span { display: block; font-size: 1.3em; margin: 1em 0 0; }
@@ -368,6 +370,7 @@ width: 100%;
 	.container > h2 > span { font-size: 0.7em; }
 	#pool-info .container > h2,
 	#restaurant-info .container > h2 { margin: 1em 0 0 0; }
+	#news .container > h2 > span{ width: 11em; }
 	.event-text .tags { font-size: 1.05em; }
 	
 	.events-list { width: 20em; float: none; margin: 0 auto; }
@@ -412,14 +415,17 @@ width: 100%;
 	.news-item-rightside { float: none; width: 24em; }
 	.news-item-header { text-align: center; }
 	.news-bg { padding-bottom: 2em; }
+	.sep_new-content { font-size: 14px; }
+	.sep_new-content { width: 20em; }
+	.news-item-content { font-size: 14px; }
 	/* ============================================================	
 	 *  MENU	 
 	   ============================================================ */
 	  html.menu-html, body.menu-body-back { font-size:8px; width: 46em; }
-body.menu-body-back article.wrapper { width: 100%; }
+	body.menu-body-back article.wrapper { width: 100%; }
 	  .menu-body-back .menu-header>h2>span { border-color: #919191; color: #919191; }	
 	  ul.menu-nav-list { padding: 0; margin: 0; }
-.menu-content { width: 36em; margin: 0 .5em; }
+	.menu-content { width: 36em; margin: 0 .5em; }
 	  .menu-content-column1,
 	  .menu-content-column2 { width: 24em; }
 	  .menu-content-column1 .category-elem-body,
