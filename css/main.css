@@ -131,7 +131,7 @@ section header h2 span { background: #000; padding: 0 0.25em; color: #fff; text-
 /*#news, #restaurant-info { padding: 1em 0 4em; }*/
 
 .list-title { font-size: 1.4em; font-weight: bold; line-height: 1em; }
-	.list-title a { font-size: 0.7em; text-transform: uppercase; text-decoration: none; color: #717171; font-weight: normal; float: right; display: block; }
+	.list-title a { font-size: 0.7em; text-transform: uppercase; text-decoration: none; color: #717171; font-weight: normal; float: right; display: block; height: 1em; line-height: 1.8em; }
 	.list-title a:hover { color: #212121; }
 .events-list { width: 50em; float: left; margin-right: 2em;/* margin-left: 0em; */}
 	.events-list .event-title { text-transform: uppercase; font-size: 1.6em;  padding-left: 0.5em; margin: 0 0 1.75em; }
@@ -387,7 +387,7 @@ width: 100%;
 	.rest-item figure { width: 20em;}
 	.rest-item .rest-text { float: none; width: 20em; }
 	.rest-text h3 {text-align: center; }
-	
+	.list-title a {font-size: 0.5em; position: relative; left: .5em; line-height: 2.3em; }
 	
 	.rest-content figure img { display: block; margin: 0 auto; max-width: 100%; }
 	
