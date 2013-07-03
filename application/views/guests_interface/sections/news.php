@@ -46,7 +46,7 @@
 				<div class="news-date"><?=month_date($news[$i]['date_publish'])?></div>
 				<h3><a href="<?=site_url('news/'.$news[$i]['translit'].'?news='.$news[$i]['id']);?>" class=""><?=$news[$i]['title'];?></a></h3>
 				<p><?=$news[$i]['anonce']?></p>
-				<a class="read-more" href="#">Подробный фотоотчет</a>
+				<a class="read-more" href="<?=$news[$i]['photo_report'];?>">Подробный фотоотчет</a>
 			</div>
 		<?php endfor;?>
 		</div>

@@ -19,6 +19,9 @@
 	<div class="control-group">
 		<textarea rows="3" class="span9 valid-required" placeholder="Анонс новости" name="anonce"><?=$news['anonce'];?></textarea>
 	</div>
+	<div class="control-group">
+		<input type="text" class="span7 valid-required" name="photo_report" autocomplete="off" placeholder="Подробный фотоотчет" value="<?=$news['photo_report'];?>">
+	</div>
 	<div class="control-group clearfix">
 		<textarea rows="10" class="valid-required redactor" placeholder="Текс новости" name="content"><?=$news['content'];?></textarea>
 	</div>

@@ -173,7 +173,7 @@ class Ajax_interface extends MY_Controller{
 	private function ExecuteCreatingNews($post){
 		
 		/**************************************************************************************************************/
-		$news = array("title"=>$post['title'],"anonce"=>$post['anonce'],"content"=>$post['content'],'date_publish'=>preg_replace("/(\d+)\.(\w+)\.(\d+)/i","\$3-\$2-\$1",$post['date']));
+		$news = array("title"=>$post['title'],"photo_report"=>$post['photo_report'],"anonce"=>$post['anonce'],"content"=>$post['content'],'date_publish'=>preg_replace("/(\d+)\.(\w+)\.(\d+)/i","\$3-\$2-\$1",$post['date']));
 		/**************************************************************************************************************/
 		if($newsID = $this->insertItem(array('insert'=>$news,'translit'=>$news['title'],'model'=>'news'))):
 			return $newsID;
@@ -184,7 +184,7 @@ class Ajax_interface extends MY_Controller{
 	private function ExecuteUpdatingNews($id,$post){
 		
 		/**************************************************************************************************************/
-		$news = array("id"=>$id,"title"=>$post['title'],"anonce"=>$post['anonce'],"content"=>$post['content'],'translit'=>$post['title'],'date_publish'=>preg_replace("/(\d+)\.(\w+)\.(\d+)/i","\$3-\$2-\$1",$post['date']));
+		$news = array("id"=>$id,"title"=>$post['title'],"photo_report"=>$post['photo_report'],"anonce"=>$post['anonce'],"content"=>$post['content'],'translit'=>$post['title'],'date_publish'=>preg_replace("/(\d+)\.(\w+)\.(\d+)/i","\$3-\$2-\$1",$post['date']));
 		/**************************************************************************************************************/
 		$this->updateItem(array('update'=>$news,'translit'=>$news['title'],'model'=>'news'));
 		return TRUE;
