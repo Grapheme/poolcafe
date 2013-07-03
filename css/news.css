@@ -37,7 +37,7 @@ section.news {
 		.news-item-header { padding: .925em 0; font-size: 1.5em; color: #191919; }
 			.news-item-header-link { color: #000; text-decoration: none; text-transform: uppercase; line-height: 1.4; }
 			.news-item-header-link:hover { border-bottom: 2px solid black; }
-		.news-item-content { padding: .785em .375em; font-size: .85em; }
+		.news-item-content { padding: .785em 0; font-size: .85em; }
 		
 .news-item  h3  a { text-decoration: none; color: #313131; }
 .clear { clear: both; }
@@ -59,8 +59,10 @@ section.news {
 .sep_new-pict {
 	margin: 2.8125em auto;
 	text-align: center;
+	width: 14em;
 }
 .sep_new-pict img {
+	max-width: 100%;
 	display: block;
 	margin: 0 auto;
 	border-radius: 15em;
@@ -69,3 +71,4 @@ section.news {
 	width: 40em;
 	margin: 2.8125em auto;
 }
+.sep_new-content a { color: #3377aa; }

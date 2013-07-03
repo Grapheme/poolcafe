@@ -98,16 +98,16 @@ textarea {
    ========================================================================== */
 div.logo { margin: 1.3em 0; }
 .nav-light,
-.nav-dark { position: fixed; left: 60px; top: 0; z-index: 9999; height: 340px; overflow: hidden; }
+.nav-dark { position: fixed; left: 40px; top: 0; z-index: 9999; height: 340px; overflow: hidden; }
 .nav-containter { position: relative; }
 .navigationLinksList { margin: 2em 0 0 0; padding: 0; }
 .navigationLinksList .navigationLink { text-align: left; padding-left: 3em; }
 .nav-light .navigationLink a { display: block; width: 130px; margin: 0; padding: 0 0 0.55em 0; color: #FFF; font-size: 1.15em; font-weight: 500; text-decoration: none; outline: none;}
 .nav-dark .navigationLink a { display: block; width: 130px; margin: 0; padding: 0 0 0.55em 0;  color: #535353; font-size: 1.15em; font-weight: 500; text-decoration: none; outline: none;}
-.nav-light .logo { width: 130px; height: 162px; text-indent: -9999px; background: url('../img/white_logo.png') 0 60px no-repeat; }
-.nav-dark .logo { width: 130px; height: 162px; text-indent: -9999px; background: url('../img/color_logo.png') 0 60px no-repeat; }
+.nav-light .logo { width: 130px; height: 132px; text-indent: -9999px; background: url('../img/white_logo.png') 0 20px no-repeat; }
+.nav-dark .logo { width: 130px; height: 132px; text-indent: -9999px; background: url('../img/color_logo.png') 0 20px no-repeat; }
 .selected { border: 1px solid black; background: url('../img/anchor.png'); }
-.nav-dark .anchor, .nav-light .anchor { width: 20px; height: 21px; background: url('../img/anchor.png') no-repeat; position: fixed; top: 201px; left: 60px; } 
+.nav-dark .anchor, .nav-light .anchor { width: 20px; height: 21px; background: url('../img/anchor.png') no-repeat; position: fixed; top: 201px; left: 40px; } 
 
 /* ==========================================================================
    Main site styles
@@ -117,7 +117,7 @@ html, body { width: 100%; height: 100%; min-height: 100%; font: 12px "ff-meta-we
 body { overflow: auto; }
 
 /*section:first-child {opacity: 0.2;}*/
-#news { top: 2400px; }
+/*#news { top: 2400px; }*/
 
 #skrollr-body { min-height: 100%; position: relative; }
 #skrollr-body > section { min-height: 100%; width: 100%; background: #fff; overflow: hidden; position: fixed; }
@@ -131,11 +131,11 @@ section header h2 span { background: #000; padding: 0 0.25em; color: #fff; text-
 /*#news, #restaurant-info { padding: 1em 0 4em; }*/
 
 .list-title { font-size: 1.4em; font-weight: bold; line-height: 1em; }
-	.list-title a { font-size: 0.7em; text-transform: uppercase; text-decoration: none; color: #717171; font-weight: normal; float: right; display: block; }
+	.list-title a { font-size: 0.7em; text-transform: uppercase; text-decoration: none; color: #717171; font-weight: normal; float: right; display: block; height: 1em; line-height: 1.8em; }
 	.list-title a:hover { color: #212121; }
 .events-list { width: 50em; float: left; margin-right: 2em;/* margin-left: 0em; */}
-	.events-list .event-title { text-transform: uppercase; font-size: 1.6em; padding-left: 0.5em; margin: 0 0 1.75em; }
-		.events-list .event-title .date { float: right; padding-top: 0.4em; }
+	.events-list .event-title { text-transform: uppercase; font-size: 1.6em;  padding-left: 0.5em; margin: 0 0 1.75em; }
+		.events-list .event-title .date { float: right; /*padding-top: 0.4em;*/ }
 
 .events-item { border-top: 3px solid #d8df50; margin: 1em 0; padding: 0.5em 0; height: 30em; overflow: hidden; }
 .events-item figure { width: 15em; float: left; margin: 0 3em 0 1em; }
@@ -151,7 +151,7 @@ section header h2 span { background: #000; padding: 0 0.25em; color: #fff; text-
 	
 .news-list { width: 22em; float: left; }
 .news-item { border-top: 3px solid #bcdfef; margin: 1em 0; padding: 0.5em 0; height: 30em; overflow: hidden; }
-.news-date { text-transform: uppercase; font-size: 1.2em; margin: 0.9em 0 1.75em; }
+.news-date { text-transform: uppercase; font-size: 1.2em; margin: 0.4em 0 1.75em; }
 .news-item h3 { text-transform: uppercase; font-size: 1.6em; margin: 2.1em 0 1.05em; font-weight: normal; line-height: 1em; }
 .news-item h3 a:hover { text-decoration: underline; }
 .news-item .read-more { color: #75200d; font-size: 1.1em;}
@@ -177,7 +177,7 @@ section header h2 span { background: #000; padding: 0 0.25em; color: #fff; text-
 	height: 1.4em;
 }
 .current-link > div {
-	visibily: hidden;
+	visibility: hidden;
 }
 
 .menu-list { width: 22em; float: left; }
@@ -195,7 +195,7 @@ section header h2 span { background: #000; padding: 0 0.25em; color: #fff; text-
 #map-canvas { width: 100%; height: 735px; }
 .back-forward-links { width: 95px; height: 18px; margin: 0 auto; }
 .back-forward-links-list { width: 120px; padding: 0; }
-.back-forward-links-list-item { margin: 0 5px; float: left; width: 22px; }
+.back-forward-links-list-item { margin: 0 5px; float: left; width: 22px; height: 18px; }
 .back-forward-links-list-item mainmenu{ width: 18px; height: 18px; }
 .back-forward-links-list-item back,
 .back-forward-links-list-item forward{ width: 22px; height: 18px; }
@@ -251,26 +251,65 @@ width: 100%;
 
 .rest-item .rest-content .back__age { font-size: 1.5em; padding: 1.55em 0 0; }
 .rest-item .rest-content .card__back .back__circle { margin: -6.2em 0 0 -6em; }
+.sep_new-content a { color: #3377aa; }
 /* ==========================================================================
    Media for html
    ========================================================================== */
 
-
-@media (max-width : 1148px) 
-	
+@media (max-width: 1280px)
 	{
+		.nav-light, .nav-dark, .anchor { left: 0; }
+		.anchor { left: .6em !important; }
+	}
+@media (max-width: 1199px) 	
+	{
+		.nav-containter,.nav-light, .nav-dark, .anchor { visibility: hidden; display: none; }
 		.menu-content { width: 36em; }
 	}
+@media (max-width: 1025px)
+	{
+	footer { background: #333; height: 5em; position: relative; bottom: 0; color: #fff; line-height: 2em; font-size: 1.1em; width: 100%; }
+/* ===================================================================
+   Aquarium styles for iPad		
+   =================================================================== */
+	.aquarium-content .category-elem-name { width: 11em; }
+	section.aquarium { padding-left:0 ; padding-right: 0;  width: 32em;}		
+	.category-elem-name { width: 12em; }
+	.aquarium-body .menu-nav { left: -1em; }
 
-@media (max-width : 767px) 
+	.aquarium-content { width: 32em; }
+	section.aquarium { padding: 6.25em 0; }
+	.octopus-1 { position: relative; top: 20em; left: -15em; }
+	.octopus-2 { display: none; } 
+	
+	.aquarium-body .category-elem-name { width: 14em; }
+	.aquarium-body .category-elem-weight { width: 8.875em; }
+	.aquarium-body .category-elem-price { width: 5.525em; }
+/* ===================================================================
+   Menu styles for iPad
+   =================================================================== */
+	.menu-content-column1,
+	.menu-content-column2 { padding: 0; }
+	.menu-body .category-elem-name { width: 17em; }
+	.menu-body .category-elem-price { width: 6.525em; }
+	.kids-body .octopus-1 { left: -20em; }
+	
+/* ===================================================================
+   News styles for iPad	
+   =================================================================== */
+	section.news { width: 40em; }
+
+	}
+@media (max-width: 767px) 
 
 	{
-	
+	footer { background: #333; height: 5em; position: relative; bottom: 0; color: #fff; line-height: 2em; font-size: 1.1em; width: 100%; }
 	html { font-size: .5625em; }
 	body { height: auto !important; }
 	.aquarium-body .menu-nav { left: 0; }	
 	section { position: relative; }		
 	#about { height: 100%; }
+	#news .container > h2 > span{ width: 12em; }
 	#skrollr-body > section header { width: 100%; }
 	.nav-containter { visibility: hidden; display: none; }	
 	#restaurant-info .menu-item:first-child a span { display: block; font-size: 1.3em; margin: 1em 0 0; }
@@ -328,7 +367,7 @@ width: 100%;
 	  .menu-content-column1,
 	  .menu-content-column2 { width: 24em; float: none; padding: 0; font-size: 14px; }
 	  
-	  div.category-elem-name { width: 11em; }
+	  div.category-elem-name { width: 10em; }
 	  .category-elem-weight { margin-right: 1em; }
 	  .category-table {width: 26em; }
 	  .category-elem-price { font-size: .925em; }
@@ -338,8 +377,8 @@ width: 100%;
 	 *  AQUARIUM
 	 * 
 	 */
-	
-	section.aquarium { padding-left:0 ; padding-right: 0;  width: 26em;}
+	.aquarium-content .category-elem-name { width: 11em; }
+	section.aquarium { padding-left:0 ; padding-right: 0;  width: 24em;}
 	.octopus-1,
 	.octopus-2 { display: none; }
 	.category-elem-name { width: 12em; }
@@ -356,14 +395,17 @@ width: 100%;
 	body { height: auto !important; }
 		
 	section { position: relative; }	
-	#skrollr-body > section {position: relative; }
+	#skrollr-body > section { position: relative; }
+	#skrollr-body > section header { width: 85%; }
 	.nav-containter { visibility: hidden; display: none; }		
 	section .__fotorama img { position: absolute; top: 0px; } 
-	
-	
+	#restaurant-info .menu-item:first-child a span, .menu-item a span { font-size: 8px; }
+	.rest-item { width: 20em; }
 	.container { width: 20em; }
 	.container > h2 > span { font-size: 0.7em; }
-	
+	#pool-info .container > h2,
+	#restaurant-info .container > h2 { margin: 1em 0 0 0; }
+	#news .container > h2 > span{ width: 11em; }
 	.event-text .tags { font-size: 1.05em; }
 	
 	.events-list { width: 20em; float: none; margin: 0 auto; }
@@ -380,12 +422,12 @@ width: 100%;
 	.rest-item figure { width: 20em;}
 	.rest-item .rest-text { float: none; width: 20em; }
 	.rest-text h3 {text-align: center; }
-	
+	.list-title a {font-size: 0.5em; position: relative; left: .5em; line-height: 2.6em; }
 	
 	.rest-content figure img { display: block; margin: 0 auto; max-width: 100%; }
 	
 	
-	.news-list { width: 24em; float: none; }
+	.news-list { width: 20em; float: none; }
 	.news-item { height: 100%; }
 	.news-item h3 { text-align: center; }
 	section header h2 { font-size: 1em; line-height: 1.57em; font-weight: normal; }
@@ -408,14 +450,17 @@ width: 100%;
 	.news-item-rightside { float: none; width: 24em; }
 	.news-item-header { text-align: center; }
 	.news-bg { padding-bottom: 2em; }
+	.sep_new-content { font-size: 14px; }
+	.sep_new-content { width: 20em; }
+	.news-item-content { font-size: 14px; }
 	/* ============================================================	
 	 *  MENU	 
 	   ============================================================ */
-	  html.menu-html, body.menu-body-back { font-size:8px; }
-body.menu-body-back article.wrapper { width: 100%; }
+	  html.menu-html, body.menu-body-back { font-size:8px; width: 46em; }
+	body.menu-body-back article.wrapper { width: 100%; }
 	  .menu-body-back .menu-header>h2>span { border-color: #919191; color: #919191; }	
-	  ul.menu-nav-list { padding: 0; margin: 0; }
-.menu-content { width: 36em; margin: 0 .5em; }
+	 html.menu-html ul.menu-nav-list { padding: 0; margin: 0; font-size: 1.5em; }
+	.menu-content { width: 36em; margin: 0 .5em; }
 	  .menu-content-column1,
 	  .menu-content-column2 { width: 24em; }
 	  .menu-content-column1 .category-elem-body,
@@ -425,7 +470,7 @@ body.menu-body-back article.wrapper { width: 100%; }
 	 *  AQUARIUM	 
 	   ============================================================ */
 	  
-	html.aquarium-html, body.aquarium-body { font-size: 11px; }
+	html.aquarium-html, body.aquarium-body { font-size: 11px; width: 30em;}
 	.menu-nav-list { padding: 0; margin-left: 3em;}
 	.menu-header > h2 { font-size: 2.4em; }
 	section.aquarium { padding-left:0 ; padding-right: 0;  width: 26em;}
@@ -444,7 +489,7 @@ body.menu-body-back article.wrapper { width: 100%; }
 
 @media (max-width: 280px) {
 	
-	html, body { font-size: 9px; }
+	html, body { font-size: 7px; }
 	.nav-containter { visibility: hidden; }	
 	section { position: relative; }
 	.container { width: 24em; margin: 0 auto; }
@@ -452,7 +497,8 @@ body.menu-body-back article.wrapper { width: 100%; }
 	.news-list { width: 18em; float: none; margin: 0 auto; }
 	section header h2 { font-size: 1.5em; line-height: 1.57em; font-weight: normal; }
 	.rest-item figure { width: 18em; margin: 0 4em; max-width: 78%; height: 21em; }
-	
+	.rest-item { width: 20em; }
+
 	.menu-header > h2 { font-size: 2.2em; }
 	html.aquarium-html, body.aquarium-body { font-size: 8px; }
 	.menu-nav-list { padding: 0; margin-left: 1em;}
@@ -505,6 +551,8 @@ and (max-width : 1024px)
   	body { height: auto !important; }
 		
 	section { position: relative; }	
+	.news-bg section.news { width: 40em; }
+	div.news-item-rightside { width: 24.625em; }
 	#skrollr-body > section {position: relative; }
 	    .aquarium-body .menu-nav { left: 0; }
 		.logo-back-to-main { visibility: hidden; display: none;}
