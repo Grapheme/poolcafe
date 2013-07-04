@@ -266,40 +266,6 @@ width: 100%;
 		.nav-containter,.nav-light, .nav-dark, .anchor { visibility: hidden; display: none; }
 		.menu-content { width: 36em; }
 	}
-@media (max-width: 1025px)
-	{
-	footer { background: #333; height: 5em; position: relative; bottom: 0; color: #fff; line-height: 2em; font-size: 1.1em; width: 100%; }
-/* ===================================================================
-   Aquarium styles for iPad		
-   =================================================================== */
-	.aquarium-content .category-elem-name { width: 11em; }
-	section.aquarium { padding-left:0 ; padding-right: 0;  width: 32em;}		
-	.category-elem-name { width: 12em; }
-	.aquarium-body .menu-nav { left: -1em; }
-
-	.aquarium-content { width: 32em; }
-	section.aquarium { padding: 6.25em 0; }
-	.octopus-1 { position: relative; top: 20em; left: -15em; }
-	.octopus-2 { display: none; } 
-	
-	.aquarium-body .category-elem-name { width: 14em; }
-	.aquarium-body .category-elem-weight { width: 8.875em; }
-	.aquarium-body .category-elem-price { width: 5.525em; }
-/* ===================================================================
-   Menu styles for iPad
-   =================================================================== */
-	.menu-content-column1,
-	.menu-content-column2 { padding: 0; }
-	.menu-body .category-elem-name { width: 17em; }
-	.menu-body .category-elem-price { width: 6.525em; }
-	.kids-body .octopus-1 { left: -20em; }
-	
-/* ===================================================================
-   News styles for iPad	
-   =================================================================== */
-	section.news { width: 40em; }
-
-	}
 @media (max-width: 767px) 
 
 	{
@@ -367,8 +333,8 @@ width: 100%;
 	  .menu-content-column1,
 	  .menu-content-column2 { width: 24em; float: none; padding: 0; font-size: 14px; }
 	  
-	  div.category-elem-name { width: 10em; }
-	  .category-elem-weight { margin-right: 1em; }
+	  body.menu-body div.category-elem-name { width: 10em; }
+	  .category-elem-weight { margin-right: 1em; width: 5.5em; }
 	  .category-table {width: 26em; }
 	  .category-elem-price { font-size: .925em; }
 	  
@@ -456,16 +422,20 @@ width: 100%;
 	/* ============================================================	
 	 *  MENU	 
 	   ============================================================ */
-	  html.menu-html, body.menu-body-back { font-size:8px; width: 46em; }
+	  html.menu-html, body.menu-body-back { font-size:8px; width: 40em; }
 	body.menu-body-back article.wrapper { width: 100%; }
 	  .menu-body-back .menu-header>h2>span { border-color: #919191; color: #919191; }	
 	 html.menu-html ul.menu-nav-list { padding: 0; margin: 0; font-size: 1.5em; }
-	.menu-content { width: 36em; margin: 0 .5em; }
+	.menu-content { width: 39.5em; margin: 0 0 0 .5em; }
 	  .menu-content-column1,
-	  .menu-content-column2 { width: 24em; }
+	  .menu-content-column2 { width: 22.5em; padding: 0; }
+	  .category-table { width: 22.5em; }
 	  .menu-content-column1 .category-elem-body,
-	  .menu-content-column2 .category-elem-body{ padding: 0; width: 24em; }/*		  
-	  
+	  .menu-content-column2 .category-elem-body{ padding: 0; width: 22.5em; }		  
+	  .menu-content-column1 .category-elem-weight,
+	  .menu-content-column2 .category-elem-weight{ padding: 0; width: 5em; }
+	  .menu-content-column1 .category-elem-price,
+	  .menu-content-column2 .category-elem-price{ padding: 0; width: 5em; }
 	/* ============================================================	
 	 *  AQUARIUM	 
 	   ============================================================ */
@@ -476,8 +446,9 @@ width: 100%;
 	section.aquarium { padding-left:0 ; padding-right: 0;  width: 26em;}
 	.octopus-1,
 	.octopus-2 { display: none; }
-	.category-elem-name { width: 8em; }
+	.category-elem-name { width: 11em; }
 	.aquarium-body .menu-nav { left: -1em; }
+	.aquarium-body .category-table { width: 24.5em; }
 	.logo-back-to-main { visibility: hidden; display: none;}
 	
 	/* ============================================================	
@@ -547,7 +518,8 @@ and (max-width : 660px)
 and (min-width : 768px) 
 and (max-width : 1024px)
 
-  {
+  {html, body { font-size: 10px; }  
+
   	body { height: auto !important; }
 		
 	section { position: relative; }	
@@ -558,6 +530,36 @@ and (max-width : 1024px)
 		.logo-back-to-main { visibility: hidden; display: none;}
 		.nav-containter, .nav-dark { visibility: hidden; }	
 		.anchor { visibility: hidden; }
+footer { background: #333; height: 5em; position: relative; bottom: 0; color: #fff; line-height: 2em; font-size: 1.1em; width: 100%; }
+/* ===================================================================
+   Aquarium styles for iPad		
+   =================================================================== */
+	.aquarium-content .category-elem-name { width: 11em; }
+	section.aquarium { padding-left:0 ; padding-right: 0;  width: 32em;}		
+	.category-elem-name { width: 12em; }
+	.aquarium-body .menu-nav { left: -1em; }
+
+	.aquarium-content { width: 32em; }
+	section.aquarium { padding: 6.25em 0; }
+	.octopus-1 { position: relative; top: 20em; left: -15em; }
+	.octopus-2 { display: none; } 
+	
+	.aquarium-body .category-elem-name { width: 14em; }
+	.aquarium-body .category-elem-weight { width: 8.875em; }
+	.aquarium-body .category-elem-price { width: 5.525em; }
+/* ===================================================================
+   Menu styles for iPad
+   =================================================================== */
+	.menu-content-column1,
+	.menu-content-column2 { padding: 0; }
+	.menu-body .category-elem-name { width: 17em; }
+	.menu-body .category-elem-price { width: 6.525em; }
+	.kids-body .octopus-1 { left: -20em; }
+	
+/* ===================================================================
+   News styles for iPad	
+   =================================================================== */
+	section.news { width: 40em; }
 }
 @media only screen 
 and (min-width : 768px) 
