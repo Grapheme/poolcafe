@@ -166,7 +166,9 @@
 					if(parentID == 0){
 						$("ul.ul-parent li:last").before(response.responseText);
 						$("ul.ul-parent").find("button.edit-category-menu:last").on('click',function(){wrapTitle(this);});
-						$("ul.ul-parent").find("button.remove-category-menu:last").on('click',function(){deleteTitle(this);});
+						$("ul.ul-parent").find("button.remove-category-menu:last").on('click',function(){
+							if(confirmUser()){deleteTitle(this);}
+						});
 						$("span.view-subcategory:last").on('click',function(){showSubCategory(this);});
 						$("ul.ul-children:last").find('button.save-category-menu:last').on('click',function(){
 							if($(this).siblings('input.input-title').emptyValue() == false){

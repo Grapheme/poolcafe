@@ -80,7 +80,9 @@ class Guests_interface extends MY_Controller{
 	public function aquarium(){
 		
 		$this->load->helper('text');
+		$this->load->model('group');
 		$pagevar = array(
+			'nav_menu' => $this->group->getAll('number'),
 			'menu' => array()
 		);
 		if($manuAllCategories = $this->getMenuByCategories(3)):
@@ -92,7 +94,9 @@ class Guests_interface extends MY_Controller{
 	public function menu(){
 		
 		$this->load->helper('text');
+		$this->load->model('group');
 		$pagevar = array(
+			'nav_menu' => $this->group->getAll(),
 			'menu' => array()
 		);
 		if($manuAllCategories = $this->getMenuByCategories(1)):
@@ -104,7 +108,9 @@ class Guests_interface extends MY_Controller{
 	public function wineCard(){
 		
 		$this->load->helper('text');
+		$this->load->model('group');
 		$pagevar = array(
+			'nav_menu' => $this->group->getAll(),
 			'menu' => array()
 		);
 		if($manuAllCategories = $this->getMenuByCategories(2)):
