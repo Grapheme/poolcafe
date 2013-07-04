@@ -51,5 +51,6 @@
 	<?php $this->load->view("admin_interface/includes/scripts");?>
 
 <script type="text/javascript" src="<?=site_url('js/libs/bootstrap.js');?>"></script>
+<script type="text/javascript" src="<?=site_url('js/cabinet/admin.js');?>"></script>
 </body>
 </html>

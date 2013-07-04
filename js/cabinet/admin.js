@@ -5,6 +5,12 @@
 (function($){
 	var mainOptions = {target: null,beforeSubmit: mt.ajaxBeforeSubmit,success: mt.ajaxSuccessSubmit,dataType:'json',type:'post'};
 	/*-------------------------------------------------------------------- */
+	$(".confirm-user").click(function(event){
+		if(!confirmUser()){
+			event.stopPropagation();
+			event.preventDefault();
+		}
+	})
 	$("form.form-signup-admin .btn-submit").click(function(event){
 		event.stopPropagation();
 		var _form = $("form.form-signup-admin");
@@ -48,7 +54,9 @@
 		}
 	});
 	$("button.remove-category-menu").click(function(){
-		deleteTitle(this);
+		if(confirmUser()){
+			deleteTitle(this);
+		}
 	})
 	$("span.view-subcategory").click(function(){
 		showSubCategory(this);
@@ -78,23 +86,25 @@
 		return false;
 	});
 	$("button.remove-product-menu").click(function(){
-		var _this = this;
-		var itemID = $(this).attr('data-item');
-		var action = $(this).parents('table').attr('data-action');
-		$.ajax({
-			url: action,type: 'POST',dataType: 'json',data:{'id':itemID},
-			beforeSend: function(){
-				$("div.result-request").html('');
-			},
-			success: function(response,textStatus,xhr){
-				if(response.status){
-					$(_this).parents('tr').remove();
-				}else{
-					$("div.result-request").html(response.responseText);
-				}
-			},
-			error: function(xhr,textStatus,errorThrown){}
-		});
+		if(confirmUser()){
+			var _this = this;
+			var itemID = $(this).attr('data-item');
+			var action = $(this).parents('table').attr('data-action');
+			$.ajax({
+				url: action,type: 'POST',dataType: 'json',data:{'id':itemID},
+				beforeSend: function(){
+					$("div.result-request").html('');
+				},
+				success: function(response,textStatus,xhr){
+					if(response.status){
+						$(_this).parents('tr').remove();
+					}else{
+						$("div.result-request").html(response.responseText);
+					}
+				},
+				error: function(xhr,textStatus,errorThrown){}
+			});
+		}
 	});
 	function showSubCategory(element){
 		$(element).siblings('ul.ul-children').toggleClass('hidden');
@@ -194,5 +204,8 @@
 			},
 			error: function(xhr,textStatus,errorThrown){}
 		});
+	}
+	function confirmUser(){
+		return confirm('Вы действительно хотите удалить');
 	}
 })(window.jQuery);
