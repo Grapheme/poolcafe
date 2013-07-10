@@ -10,20 +10,17 @@
 						</div>
 						<div class="card__back">
 							<div class="back__circle">
-								<div class="back__age">От 1500 руб</div>
-								<div class="back__time"><strong>500 руб. депозит</strong></div>
-								<div class="back__price">на кухню и бар.</div>
+								<?=$contents[15]['content'];?>
 							</div>
 						</div>
 					</figure>
 					<div class="rest-text">
-						<h3>Открытый <strong>основной</strong> бассейн</h3>
+						<h3><?=$contents[12]['content'];?></h3>
 						<p>
-							В основном бассейне протяженностью 38 метров можно отдохнуть в джакузи или в водном баре. 
-							Вода в бассейне подогревается и поддерживает комфортную температуру в течение всего сезона. 
+							<?=$contents[13]['content'];?>
 						</p>
 						<div class="tags">
-							Бассейн / Развлечения / Pool Cafe
+							<?=$contents[14]['content'];?>
 						</div>
 					</div>
 				</div>
@@ -36,20 +33,17 @@
 						</div>
 						<div class="card__back">
 							<div class="back__circle">
-								<div class="back__age">В выходные</div>
-								<div class="back__time"><strong>работает</strong></div>
-								<div class="back__price">аниматор</div>
+								<?=$contents[19]['content'];?>
 							</div>
 						</div>
 					</figure>
 					<div class="rest-text">
-						<h3><strong>Детский</strong> бассейн</h3>
+						<h3><?=$contents[16]['content'];?></h3>
 						<p>
-							Детский бассейн порадует маленький гостей увлекательной водной горкой. Для детей также организована 
-							игровая площадка с песочницей, аттракционами и увлекательной анимацией. 
+							<?=$contents[17]['content'];?>
 						</p>
 						<div class="tags">
-							Детский бассейн / Водные горки / Аттракционы
+							<?=$contents[18]['content'];?>
 						</div>
 					</div>
 				</div>
@@ -72,10 +66,10 @@
 		<div class="clear"> </div>
 		<div class="pool-temperature clearfix">
 			<div class="column air">
-				t 30 ° <span>воздуха</span>
+				<?=$contents[20]['content'];?>
 			</div>
 			<div class="column water">
-				t 25 ° <span>воды</span>
+				<?=$contents[21]['content'];?>
 			</div>
 		</div>
 	</div>

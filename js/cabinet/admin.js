@@ -106,6 +106,27 @@
 			});
 		}
 	});
+	$("button.btn-content-submit").click(function(){
+		var _this = this;
+		var itemID = $(this).attr('data-id');
+		var text = $('textarea[data-id="'+itemID+'"]').val().trim();
+		$.ajax({
+			url: mt.baseURL+'save-page-content',type: 'POST',dataType: 'json',data:{'id':itemID,'text':text},
+			beforeSend: function(){
+				$(_this).addClass('loading');
+			},
+			success: function(response,textStatus,xhr){
+				$(_this).removeClass('loading');
+				if(response.status){
+					$(_this).html('Сохранено').addClass('btn-success');
+				}
+			},
+			error: function(xhr,textStatus,errorThrown){
+				$(_this).removeClass('loading');
+			}
+		});
+	});
+	
 	function showSubCategory(element){
 		$(element).siblings('ul.ul-children').toggleClass('hidden');
 	}

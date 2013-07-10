@@ -8,6 +8,7 @@ $route['404_override'] = '';
 $route['login-in'] = "ajax_interface/loginIn";
 $route['valid/exist-email'] = "ajax_interface/existEmail";
 $route['redactor/upload'] = "ajax_interface/redactorUploadImage";
+$route['save-page-content'] = "ajax_interface/savePageContent";
 /**************** remove items ********************/
 $route['remove/project'] = "ajax_interface/removeItems";
 /******************load view ********************/
@@ -55,3 +56,5 @@ $route[ADMIN_START_PAGE.'/categories'] = "admin_interface/categories";
 $route[ADMIN_START_PAGE.'/menu'] = "admin_interface/menu";
 $route[ADMIN_START_PAGE.'/menu/add'] = "admin_interface/addProductMenu";
 $route[ADMIN_START_PAGE.'/menu/edit'] = "admin_interface/editProductMenu";
+
+$route[ADMIN_START_PAGE.'/pages'] = "admin_interface/pages";

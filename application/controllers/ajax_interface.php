@@ -241,6 +241,24 @@ class Ajax_interface extends MY_Controller{
 	}
 
 	/* -------------------------------------------------------------- */
+	
+	public function savePageContent(){
+		
+		if(!$this->input->is_ajax_request()):
+			show_error('В доступе отказано');
+		endif;
+		$json_request = array('status'=>FALSE,'responseText'=>'');
+		if($this->postDataValidation('content') === FALSE):
+			$json_request['responseText'] = $this->load->view('html/validation-errors',array('alert_header'=>'Неверно заполнены обязательные поля'),TRUE);
+			echo json_encode($json_request);
+			return FALSE;
+		endif;
+		$this->load->model('pages');
+		$json_request['status'] = $this->pages->updateField($this->input->post('id'),'content',$this->input->post('text'));
+		echo json_encode($json_request);
+	}
+	
+	/* -------------------------------------------------------------- */
 
 	public function saveGroup(){
 		

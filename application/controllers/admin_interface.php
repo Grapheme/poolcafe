@@ -22,6 +22,13 @@ class Admin_interface extends MY_Controller{
 		);
 		$this->load->view("admin_interface/cabinet/control-panel",$pagevar);
 	}
+	
+	public function pages(){
+		
+		$this->load->model('pages');
+		$this->load->view("admin_interface/cabinet/pages",array('contents'=>$this->pages->getAll()));
+	}
+	
 	/********************************************* news *********************************************************/
 	public function news(){
 		

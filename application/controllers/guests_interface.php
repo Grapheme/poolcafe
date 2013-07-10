@@ -13,8 +13,9 @@ class Guests_interface extends MY_Controller{
 	public function index(){
 		
 		$this->load->helper('date');
-		$this->load->model(array('news','events'));
+		$this->load->model(array('news','events','pages'));
 		$pagevar = array(
+			'contents'=>$this->pages->getAll(),
 			'news' => $this->news->limit(2,0),
 			'events' => $this->events->limit(2,0)
 		);
@@ -80,10 +81,11 @@ class Guests_interface extends MY_Controller{
 	public function aquarium(){
 		
 		$this->load->helper('text');
-		$this->load->model('group');
+		$this->load->model(array('group','pages'));
 		$pagevar = array(
 			'nav_menu' => $this->group->getAll('number'),
-			'menu' => array()
+			'menu' => array(),
+			'contents'=>$this->pages->getAll()
 		);
 		if($manuAllCategories = $this->getMenuByCategories(3)):
 			$pagevar['menu'] = $this->clearingEmptyCategories($manuAllCategories);
@@ -121,12 +123,14 @@ class Guests_interface extends MY_Controller{
 	
 	public function kids(){
 		
-		$this->load->view("guests_interface/kids");
+		$this->load->model('pages');
+		$this->load->view("guests_interface/kids",array('contents'=>$this->pages->getAll()));
 	}
 
 	public function poolRules(){
 		
-		$this->load->view("guests_interface/pool-rules");
+		$this->load->model('pages');
+		$this->load->view("guests_interface/pool-rules",array('contents'=>$this->pages->getAll()));
 	}
 	
 	private function getMenuByCategories($group){

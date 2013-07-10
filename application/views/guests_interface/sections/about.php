@@ -1,8 +1,7 @@
 <section id="about" class="slider" data-0="top:0%;" data-2000="top:-100%;" style="z-index:9998;" data-menu="light" >
 	<header>
 		<h2>
-			<span>Шезлонги, пальмы, бассейн, курортная атмосфера <br/>
-				&nbsp;&mdash; все это st.tropez</span>
+			<span><?=$contents[0]['content'];?></span>
 		</h2>
 	</header>
 	<div class="__fotorama">
