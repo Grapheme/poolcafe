@@ -26,7 +26,7 @@
 					<?php $this->load->view("guests_interface/includes/nav-menu");?>
 					<div class="aquarium-content">
 						<div class="aquarium-content">
-							<h3 class="aquarium-content-header"> <?=$contents[27]['content'];?></h3>
+							<h3 class="aquarium-content-header"><?=$contents[27]['content'];?></h3>
 							<?php $this->load->view("html/writeMenuColumn",array('start'=>0,'stop'=>count($menu)));?>
 						</div>
 					</div>

@@ -58,3 +58,4 @@ $route[ADMIN_START_PAGE.'/menu/add'] = "admin_interface/addProductMenu";
 $route[ADMIN_START_PAGE.'/menu/edit'] = "admin_interface/editProductMenu";
 
 $route[ADMIN_START_PAGE.'/pages'] = "admin_interface/pages";
+$route[ADMIN_START_PAGE.'/resources'] = "admin_interface/pagesResources";

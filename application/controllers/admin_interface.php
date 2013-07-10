@@ -29,6 +29,12 @@ class Admin_interface extends MY_Controller{
 		$this->load->view("admin_interface/cabinet/pages",array('contents'=>$this->pages->getAll()));
 	}
 	
+	public function pagesResources(){
+		
+		$this->load->model('page_resources');
+		$this->load->view("admin_interface/cabinet/page-resources",array('contents'=>$this->page_resources->getAll()));
+	}
+	
 	/********************************************* news *********************************************************/
 	public function news(){
 		
