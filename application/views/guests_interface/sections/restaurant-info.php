@@ -5,7 +5,7 @@
 			<li class="rest-item">
 				<div class="rest-content clearfix">
 					<figure>
-						<img class="avatar" src="<?=base_url('img/menu/3.jpg');?>" alt="Свежие морепродукты" />
+						<img class="avatar" src="<?=base_url($resources4[0]['resource']);?>" alt="Свежие морепродукты" />
 					</figure>
 					<div class="rest-text">
 						<h3><?=$contents[2]['content'];?></h3>
@@ -21,7 +21,7 @@
 			<li class="rest-item">
 				<div class="rest-content clearfix">
 					<figure>
-						<img class="avatar" src="<?=base_url('img/menu/4.jpg');?>" alt="Францзуское вино" />
+						<img class="avatar" src="<?=base_url($resources5[0]['resource']);?>" alt="Францзуское вино" />
 					</figure>
 					<div class="rest-text">
 						<h3><?=$contents[5]['content'];?></h3>
@@ -37,7 +37,7 @@
 			<li class="rest-item">
 				<div class="rest-content clearfix">
 					<figure>
-						<img class="avatar" src="<?=base_url('img/menu/1.jpg');?>" alt="Блюда на гриле" />
+						<img class="avatar" src="<?=base_url($resources6[0]['resource']);?>" alt="Блюда на гриле" />
 					</figure>
 					<div class="rest-text">
 						<h3><?=$contents[8]['content'];?></h3>

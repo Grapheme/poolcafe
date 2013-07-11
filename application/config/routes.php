@@ -2,6 +2,7 @@
 
 $route['default_controller'] = "guests_interface";
 $route['404_override'] = '';
+$route['tech-update'] = 'guests_interface/techUpdate';
 
 /*************************************************** AJAX INTRERFACE ***********************************************/
 /******************guest interface ********************/

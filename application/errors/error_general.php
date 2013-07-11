@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Error</title>
+<title>Сайт не работает</title>
 <style type="text/css">
 
 ::selection{ background-color: #E13300; color: white; }
@@ -55,7 +55,7 @@ p {
 </head>
 <body>
 	<div id="container">
-		<h1><?php echo $heading; ?></h1>
+		<!--<h1><?=$heading; ?></h1>-->
 		<?php echo $message; ?>
 	</div>
 </body>

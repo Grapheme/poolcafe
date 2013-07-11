@@ -5,9 +5,8 @@
 		</h2>
 	</header>
 	<div class="__fotorama">
-		<img src="<?=base_url('img/pool/01.jpg');?>" alt="St.Tropez" />
-		<img src="<?=base_url('img/pool/02.jpg');?>" alt="St.Tropez" />
-		<img src="<?=base_url('img/pool/03.jpg');?>" alt="St.Tropez" />
-		<img src="<?=base_url('img/pool/04.jpg');?>" alt="St.Tropez" />
+	<?php for($i=0;$i<count($resources3);$i++):?>
+		<img src="<?=base_url($resources3[$i]['resource']);?>" alt="St.Tropez" />
+	<?php endfor;?>
 	</div>
 </section>

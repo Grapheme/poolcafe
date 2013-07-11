@@ -280,7 +280,7 @@ class Ajax_interface extends MY_Controller{
 		endif;
 		$json_request = array('status'=>FALSE,'responseText'=>'','responsePhotoSrc'=>'');
 		$uploadPath = getcwd().'/download/';
-		//if($this->imageManupulation($_FILES['file']['tmp_name'],'width',TRUE,1980,1345)):
+		if($this->CropToSquare(array('filepath'=>$_FILES['file']['tmp_name'],'edgeSize'=>500))):
 			$fileName = $this->uploadSingleImage($uploadPath);
 			$this->load->model('page_resources');
 			if($resourceInfo = $this->page_resources->getWhere(NULL,array('page'=>$this->input->get('id')))):
@@ -288,7 +288,7 @@ class Ajax_interface extends MY_Controller{
 			endif;
 			$json_request['responsePhotoSrc'] = $this->savePageSingleResource($fileName);
 			$json_request['status'] = TRUE;
-		//endif;
+		endif;
 		echo json_encode($json_request);
 	}
 	

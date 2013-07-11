@@ -6,7 +6,7 @@
 				<div class="rest-content clearfix">
 					<figure class="card">
 						<div class="card__front">
-							<img class="avatar" src="<?=base_url('img/pool/category-1.jpg');?>" alt="Открытый основной бассейн" />
+							<img class="avatar" src="<?=base_url($resources7[0]['resource']);?>" alt="Открытый основной бассейн" />
 						</div>
 						<div class="card__back">
 							<div class="back__circle">
@@ -29,7 +29,7 @@
 				<div class="rest-content clearfix">
 					<figure class="card">
 						<div class="card__front">
-							<img class="avatar" src="<?=base_url('img/pool/category-2.jpg');?>" alt="Детский бассейн" />
+							<img class="avatar" src="<?=base_url($resources8[0]['resource']);?>" alt="Детский бассейн" />
 						</div>
 						<div class="card__back">
 							<div class="back__circle">

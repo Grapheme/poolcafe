@@ -8,16 +8,33 @@ class Guests_interface extends MY_Controller{
 	function __construct(){
 
 		parent::__construct();
+		
+		/*if(uri_string() != 'tech-update'):
+			redirect('tech-update');
+		endif;*/
+	}
+	
+	public function techUpdate(){
+		
+		show_error('Сайт временно недоступен.');
 	}
 	
 	public function index(){
 		
 		$this->load->helper('date');
-		$this->load->model(array('news','events','pages'));
+		$this->load->model(array('news','events','pages','page_resources'));
 		$pagevar = array(
 			'contents'=>$this->pages->getAll(),
 			'news' => $this->news->limit(2,0),
-			'events' => $this->events->limit(2,0)
+			'events' => $this->events->limit(2,0),
+			'resources1'=>$this->page_resources->getWhere(NULL,array('page'=>1),TRUE),
+			'resources2'=>$this->page_resources->getWhere(NULL,array('page'=>2),TRUE),
+			'resources3'=>$this->page_resources->getWhere(NULL,array('page'=>3),TRUE),
+			'resources4'=>$this->page_resources->getWhere(NULL,array('page'=>4),TRUE),
+			'resources5'=>$this->page_resources->getWhere(NULL,array('page'=>5),TRUE),
+			'resources6'=>$this->page_resources->getWhere(NULL,array('page'=>6),TRUE),
+			'resources7'=>$this->page_resources->getWhere(NULL,array('page'=>7),TRUE),
+			'resources8'=>$this->page_resources->getWhere(NULL,array('page'=>8),TRUE)
 		);
 		$category = array('Концерт','Выставка','Другое');
 		for($i=0;$i<count($pagevar['events']);$i++):
