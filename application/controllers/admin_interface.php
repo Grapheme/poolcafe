@@ -32,7 +32,18 @@ class Admin_interface extends MY_Controller{
 	public function pagesResources(){
 		
 		$this->load->model('page_resources');
-		$this->load->view("admin_interface/cabinet/page-resources",array('contents'=>$this->page_resources->getAll()));
+		if($this->input->get('mode') == 'slideshow'):
+			$pagevar = array(
+				'resources1'=>$this->page_resources->getWhere(NULL,array('page'=>1),TRUE),
+				'resources2'=>$this->page_resources->getWhere(NULL,array('page'=>2),TRUE),
+				'resources3'=>$this->page_resources->getWhere(NULL,array('page'=>3),TRUE)
+			);
+		elseif($this->input->get('mode') == 'single'):
+			$pagevar = array(
+				'resources'=>$this->page_resources->getWhere(NULL,array('page'=>$this->input->get('id')),TRUE),
+			);
+		endif;
+		$this->load->view("admin_interface/cabinet/page-resources",$pagevar);
 	}
 	
 	/********************************************* news *********************************************************/

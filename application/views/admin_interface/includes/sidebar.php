@@ -8,6 +8,6 @@
 		<li><a href="<?=site_url(ADMIN_START_PAGE.'/menu');?>">Меню</a></li>
 		<li class="nav-header">КОНТЕНТ</li>
 		<li><a href="<?=site_url(ADMIN_START_PAGE.'/pages');?>">Страницы</a></li>
-		<li><a href="<?=site_url(ADMIN_START_PAGE.'/resources');?>"> Изображения</a></li>
+		<li><a href="<?=site_url(ADMIN_START_PAGE.'/resources?mode=slideshow');?>"> Изображения</a></li>
 	</ul>
 </div>

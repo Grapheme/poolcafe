@@ -126,7 +126,12 @@
 			}
 		});
 	});
-	
+	$("select.select-resources-part").change(function(){
+		var part = $(this).val();
+		var action = $("div.div-form-action").attr('data-action');
+		action = getClearURL(action)+'?id='+part;
+		$("div.div-form-action").attr('data-action',action);
+	})
 	function showSubCategory(element){
 		$(element).siblings('ul.ul-children').toggleClass('hidden');
 	}
@@ -230,5 +235,9 @@
 	}
 	function confirmUser(){
 		return confirm('Вы действительно хотите удалить');
+	}
+	
+	function getClearURL(action){
+		return action.replace(/\?id=(\d*)/,'');
 	}
 })(window.jQuery);

@@ -258,6 +258,85 @@ class Ajax_interface extends MY_Controller{
 		echo json_encode($json_request);
 	}
 	
+	public function pageUploadResources(){
+		
+		if(!$this->input->is_ajax_request() && !$this->input->get_request_header('X-file-name',TRUE)):
+			show_error('В доступе отказано');
+		endif;
+		$json_request = array('status'=>FALSE,'responseText'=>'','responsePhotoSrc'=>'');
+		$uploadPath = getcwd().'/download/';
+		//if($this->imageManupulation($_FILES['file']['tmp_name'],'width',TRUE,1980,1345)):
+			$fileName = $this->uploadSingleImage($uploadPath);
+			$json_request['responsePhotoSrc'] = $this->savePageResource($fileName);
+			$json_request['status'] = TRUE;
+		//endif;
+		echo json_encode($json_request);
+	}
+	
+	public function pageUploadSingleResources(){
+		
+		if(!$this->input->is_ajax_request() && !$this->input->get_request_header('X-file-name',TRUE)):
+			show_error('В доступе отказано');
+		endif;
+		$json_request = array('status'=>FALSE,'responseText'=>'','responsePhotoSrc'=>'');
+		$uploadPath = getcwd().'/download/';
+		//if($this->imageManupulation($_FILES['file']['tmp_name'],'width',TRUE,1980,1345)):
+			$fileName = $this->uploadSingleImage($uploadPath);
+			$this->load->model('page_resources');
+			if($resourceInfo = $this->page_resources->getWhere(NULL,array('page'=>$this->input->get('id')))):
+				$this->deleteResource($resourceInfo['id']);
+			endif;
+			$json_request['responsePhotoSrc'] = $this->savePageSingleResource($fileName);
+			$json_request['status'] = TRUE;
+		//endif;
+		echo json_encode($json_request);
+	}
+	
+	public function removePageResource(){
+		
+		if(!$this->input->is_ajax_request()):
+			show_error('В доступе отказано');
+		endif;
+		$json_request = array('status'=>FALSE,'responseText'=>'');
+		if($this->input->post('resourceID') != FALSE):
+			$this->deleteResource($this->input->post('resourceID'));
+			$json_request['status'] = TRUE;
+		endif;
+		echo json_encode($json_request);
+	}
+	
+	private function savePageResource($resource){
+		
+		$resourceData = array("page"=>$this->input->get('id'),"resource"=>'download/'.$resource);
+		/**************************************************************************************************************/
+		if($resourceID = $this->insertItem(array('insert'=>$resourceData,'model'=>'page_resources'))):
+			$html = '<img class="img-rounded" src="'.site_url($resourceData['resource']).'" alt="" />';
+			$html .= '<a href="#" data-resource-id="'.$resourceID.'" class="delete-resource-item">&times;</a>';
+			return $html;
+		else:
+			return '';
+		endif;
+	}
+	
+	private function savePageSingleResource($resource){
+		
+		$resourceData = array("page"=>$this->input->get('id'),"resource"=>'download/'.$resource);
+		/**************************************************************************************************************/
+		if($resourceID = $this->insertItem(array('insert'=>$resourceData,'model'=>'page_resources'))):
+			return site_url($resourceData['resource']);
+		else:
+			return '';
+		endif;
+	}
+	
+	private function deleteResource($resourceID){
+		
+		$this->load->model('page_resources');
+		$resourcePath = getcwd().'/'.$this->page_resources->value($resourceID,'resource');
+		$this->page_resources->delete($resourceID);
+		$this->filedelete($resourcePath);
+	}
+	
 	/* -------------------------------------------------------------- */
 
 	public function saveGroup(){

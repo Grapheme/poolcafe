@@ -11,8 +11,11 @@ $route['redactor/upload'] = "ajax_interface/redactorUploadImage";
 $route['save-page-content'] = "ajax_interface/savePageContent";
 /**************** remove items ********************/
 $route['remove/project'] = "ajax_interface/removeItems";
-/******************load view ********************/
+/******************resources ********************/
 
+$route['page-resources/upload/resource'] = "ajax_interface/pageUploadResources";
+$route['page-resources/remove/resource'] = "ajax_interface/removePageResource";
+$route['page-resources/upload/single-resource'] = "ajax_interface/pageUploadSingleResources";
 /*********** news ***************/
 $route[ADMIN_START_PAGE.'/news/insert'] = "ajax_interface/insertNews";
 $route[ADMIN_START_PAGE.'/news/update/:num'] = "ajax_interface/updateNews";

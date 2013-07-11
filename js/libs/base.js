@@ -161,13 +161,11 @@ mt.deleteResource = function(_this){
 	if(confirm('Вы уверены, что хотите удалить?') == false){
 		return false;
 	}
-	var action = $(_this).parents('ul.resources-items').attr('data-action');
+	var action = $(_this).parents('ul').attr('data-action');
 	var resourceID = $(_this).attr('data-resource-id').trim();
 	$.ajax({
 		url: action,data: {'resourceID':resourceID},type: 'POST',dataType: 'json',
-		beforeSend: function(){
-			$(_this).html('<img class="wait-request" src="'+mt.baseURL+'img/loading.gif">');
-		},
+		beforeSend: function(){},
 		success: function(data,textStatus,xhr){
 			if(data.status){
 				$(_this).parents('li').remove();
@@ -175,9 +173,7 @@ mt.deleteResource = function(_this){
 				$(_this).html('&times;');
 			}
 		},
-		error: function(xhr,textStatus,errorThrown){
-			$(_this).html('&times;');
-		}
+		error: function(xhr,textStatus,errorThrown){$(_this).html('&times;');}
 	});
 }
 $.fn.exists = function(){

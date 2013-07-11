@@ -141,45 +141,6 @@ class MY_Controller extends CI_Controller{
 		echo $image;
 	}
 	
-	public function loadResource(){
-		
-		$resource = NULL;
-		if($this->input->get('resource_id') != FALSE && is_numeric($this->input->get('resource_id'))):
-			switch($this->uri->segment(1)):
-				case 'portfolio': 
-					$this->load->model('users_portfolio');
-					$record = $this->users_portfolio->getWhere($this->input->get('resource_id'));
-					break;
-				case 'project-lesson':
-					$this->load->model('project_lesson_resources');
-					if($record = $this->project_lesson_resources->getWhere($this->input->get('resource_id'))):
-						if($this->isMyCourse($record['course']) != FALSE):
-							$record['account'] = $this->account['id'];
-						elseif($this->account['group'] == ADMIN_GROUP_VALUE):
-							$this->load->model('courses');
-							$record['account'] = $this->courses->value($record['course'],'account');
-						elseif($result = $this->isMySubscribeInCourses(array($record))):
-							if(isset($result[0]['subscribes']) && $result[0]['subscribes'] == TRUE):
-								$this->load->model('courses');
-								$record['account'] = $this->courses->value($record['course'],'account');
-							else:
-								$record = NULL;
-							endif;
-						endif;
-					endif;
-					break;
-			endswitch;
-			if(!is_null($record) && isset($record)):
-				$resource = file_get_contents(getcwd().'/diskspace/user'.$record['account'].'/'.$record['resource']);
-			endif;
-		endif;
-		if(is_null($resource)):
-			$resource = file_get_contents(NO_IMAGE);
-		endif;
-		header('Content-type: image/gif');
-		echo $resource;
-	}
-	
 	public function imageManupulation($filePath,$dim = 'width',$ratio = TRUE,$width = 60,$height = 60){
 		
 		$this->load->library('image_lib');
