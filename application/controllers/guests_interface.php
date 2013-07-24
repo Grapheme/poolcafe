@@ -9,14 +9,6 @@ class Guests_interface extends MY_Controller{
 
 		parent::__construct();
 		
-		/*if(uri_string() != 'tech-update'):
-			redirect('tech-update');
-		endif;*/
-	}
-	
-	public function techUpdate(){
-		
-		show_error('Сайт временно недоступен.');
 	}
 	
 	public function index(){
@@ -133,6 +125,20 @@ class Guests_interface extends MY_Controller{
 			'menu' => array()
 		);
 		if($manuAllCategories = $this->getMenuByCategories(2)):
+			$pagevar['menu'] = $this->clearingEmptyCategories($manuAllCategories);
+		endif;
+		$this->load->view("guests_interface/wine-card",$pagevar);
+	}
+	
+	public function bar(){
+		
+		$this->load->helper('text');
+		$this->load->model('group');
+		$pagevar = array(
+			'nav_menu' => $this->group->getAll(),
+			'menu' => array()
+		);
+		if($manuAllCategories = $this->getMenuByCategories(4)):
 			$pagevar['menu'] = $this->clearingEmptyCategories($manuAllCategories);
 		endif;
 		$this->load->view("guests_interface/wine-card",$pagevar);

@@ -177,7 +177,7 @@ class Admin_interface extends MY_Controller{
 	
 	public function menu(){
 		
-		if($this->input->get('group') === FALSE || !is_numeric($this->input->get('group')) || $this->input->get('group') > 3):
+		if($this->input->get('group') === FALSE || !is_numeric($this->input->get('group')) || $this->input->get('group') > 4):
 			redirect(ADMIN_START_PAGE.'/menu?group=1');
 		endif;
 		$this->load->model('group');

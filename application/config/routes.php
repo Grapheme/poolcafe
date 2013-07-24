@@ -2,7 +2,6 @@
 
 $route['default_controller'] = "guests_interface";
 $route['404_override'] = '';
-$route['tech-update'] = 'guests_interface/techUpdate';
 
 /*************************************************** AJAX INTRERFACE ***********************************************/
 /******************guest interface ********************/
@@ -40,6 +39,7 @@ $route['aquarium'] = "guests_interface/aquarium";
 $route['menu'] = "guests_interface/menu";
 $route['kids'] = "guests_interface/kids";
 $route['wine-card'] = "guests_interface/wineCard";
+$route['bar'] = "guests_interface/bar";
 $route['pool-rules'] = "guests_interface/poolRules";
 
 /********** loading resources *************/
