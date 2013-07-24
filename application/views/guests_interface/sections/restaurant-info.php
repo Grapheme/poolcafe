@@ -61,7 +61,7 @@
 			<div class="menu-item">
 				<a href="<?=site_url('wine-card');?>">
 					<img src="<?=base_url('img/menu/category-2.png');?>" alt="Винная карта" />
-					<span>Ресторан&amp;Бар</span>
+					<span>Винная карта</span>
 				</a>
 			</div>
 			<div class="menu-item">

@@ -2,7 +2,7 @@ var st = st || {};
 st.init = function() {
 	st.wh = $(window).height();
 	$('section.slider').height(st.wh);
-	$('#map-canvas').height(st.wh - 70);
+	$('#map-canvas').height(st.wh - 140);
 	st.news_wh = $('#news').height();
 	st.rest_wh = $('#restaurant-info').height();
 	st.pool_wh = $('#pool-info').height();

@@ -13,6 +13,7 @@ $(function(){
 		cropToFit: true,
 		width: '100%',
 		height: st.wh,
+		preload: 2,
 		arrowNext: '<div class="arrows right_arrow"></div>',
 		arrowPrev: '<div class="arrows left_arrow"></div>'
 	});

@@ -26,7 +26,7 @@ body {
     font-size: 1em;
     line-height: 1.4;
 }
-
+a:link {text-decoration: none; color: #353535;}
 /*
  * Remove text-shadow in selection highlight: h5bp.com/i
  * These selection rule sets have to be separate.
@@ -119,7 +119,7 @@ body { overflow: auto; }
 /*section:first-child {opacity: 0.2;}*/
 /*#news { top: 2400px; }*/
 
-#skrollr-body { min-height: 100%; position: relative; }
+#skrollr-body { min-height: 100%; position: relative; overflow-x: hidden; }
 #skrollr-body > section { min-height: 100%; width: 100%; background: #fff; overflow: hidden; position: fixed; }
 #skrollr-body > section header { width:64em; position: absolute; top: 2em; right: 2em; z-index: 99; text-align: right; }
 #skrollr-body > #contacts header { top: 12.5em; }
@@ -203,7 +203,7 @@ section header h2 span { background: #000; padding: 0 0.25em; color: #fff; text-
 footer { background: #333; height: 6em; position: fixed; bottom: 0; color: #fff; line-height: 6em; font-size: 1.1em; width: 100%; }
 footer .copy { float: left; width: 50%; }
 footer .dev { float: right; width: 50%; text-align: center; }
-footer a { color: #bcdfef; }
+footer a.dev-link { color: #bcdfef !important; border-bottom: 1px solid; line-height: 1.2em; display: inline-block; }
 
 /* ==========================================================================
    Fotorama styles
@@ -276,7 +276,8 @@ width: 100%;
 	section { position: relative; }		
 	#about { height: 100%; }
 	#news .container > h2 > span{ width: 12em; }
-	#skrollr-body > section header { width: 100%; }
+	#map-canvas { height: 15em !important; }
+	#skrollr-body > section header { width:90%; }
 	.nav-containter { visibility: hidden; display: none; }	
 	#restaurant-info .menu-item:first-child a span { display: block; font-size: 1.3em; margin: 1em 0 0; }
 	.menu-item a img { height: 11em; }
@@ -343,6 +344,7 @@ width: 100%;
 	 *  AQUARIUM
 	 * 
 	 */
+	.aquarium-content-header { font-size: 2em; }
 	.aquarium-content .category-elem-name { width: 11em; }
 	section.aquarium { padding-left:0 ; padding-right: 0;  width: 24em;}
 	.octopus-1,
