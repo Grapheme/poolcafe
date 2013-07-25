@@ -50,7 +50,7 @@
 		),
 		'content' =>array(
 			array('field'=>'id','label'=>'ID','rules'=>'required|integer|trim'),
-			array('field'=>'text','label'=>'Контент','rules'=>'required|trim')
+			array('field'=>'text','label'=>'Контент','rules'=>'trim')
 		)
 	);
 ?>
