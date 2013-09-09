@@ -1,3 +1,7 @@
+<?php
+	$config =&get_config();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,14 +22,14 @@
 				width: 201px;
 				height: 77px;
 				margin: 0 auto;
-				background: url(img/error404/where_st.png);
+				background: url(<?=$config['base_url'];?>img/error404/where_st.png);
 			}
 			.num404 {
 				position: relative;
 				width: 639px;
 				height: 343px;
 				margin: 0 auto;
-				background: url(img/error404/error.png);
+				background: url(<?=$config['base_url'];?>img/error404/error.png);
 			}
 			.back-to-main {
 				position: absolute;
@@ -69,7 +73,7 @@
 		<div class="where-san-tropez"></div>
 		<div class="num404">
 			<div class="back-to-main">
-				<a href="/">вернуться на главную</a>
+				<a href="<?=$config['base_url'];?>">вернуться на главную</a>
 			</div>
 			
 			<div class="grandies">

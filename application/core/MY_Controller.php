@@ -295,7 +295,7 @@ class MY_Controller extends CI_Controller{
 				$config['remove_spaces'] = TRUE;
 				$config['overwrite'] = TRUE;
 				$config['max_size'] = 5120;
-				$config['file_name'] = preg_replace('/.+(.)(\.)+/',random_string('nozero',12)."\$2",$_FILES['file']['name']);
+				$config['file_name'] = random_string('nozero',12).'.'.substr(strrchr($_FILES['file']['name'], '.'),1);
 				$this->upload->initialize($config);
 				$this->upload->do_upload('file');
 			endif;
