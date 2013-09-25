@@ -75,7 +75,70 @@ class Ajax_interface extends MY_Controller{
 	}
 
 	/********************************************* admin interface *******************************************************/
+	public function insertCategoryMenu(){
+		
+		if(!$this->input->is_ajax_request()):
+			show_error('В доступе отказано');
+		endif;
+		$json_request = array('status'=>FALSE,'responseText'=>'','redirect'=>site_url(ADMIN_START_PAGE));
+		if($categoryID = $this->ExecuteCreatingCategory($this->input->post(NULL,TRUE))):
+			$json_request['status'] = TRUE;
+			if($this->input->get('category') === FALSE):
+				$json_request['responseText'] = 'Категория добавлена';
+				$json_request['redirect'] = site_url(ADMIN_START_PAGE.'/categories/menu?group='.$this->input->get('group'));
+			else:
+				$json_request['responseText'] = 'Подкатегория добавлена';
+				$json_request['redirect'] = site_url(ADMIN_START_PAGE.'/categories/sub-menu?category='.$this->input->get('category'));
+			endif;
+		endif;
+		echo json_encode($json_request);
+	}
 	
+	public function updateCategoryMenu(){
+		
+		if(!$this->input->is_ajax_request()):
+			show_error('В доступе отказано');
+		endif;
+		$json_request = array('status'=>FALSE,'responseText'=>'','redirect'=>site_url(ADMIN_START_PAGE));
+		if($this->ExecuteUpdatingCategory($this->input->get('id'),$this->input->post(NULL,TRUE))):
+			$json_request['status'] = TRUE;
+			if($this->input->get('category') === FALSE):
+				$json_request['responseText'] = 'Категория cохранена';
+				$json_request['redirect'] = site_url(ADMIN_START_PAGE.'/categories/menu?group='.$this->input->post('group'));
+			else:
+				$json_request['responseText'] = 'Подкатегория cохранена';
+				$json_request['redirect'] = site_url(ADMIN_START_PAGE.'/categories/sub-menu?category='.$this->input->get('category'));
+			endif;
+		endif;
+		echo json_encode($json_request);
+	}
+	
+	public function removeCategory(){
+		
+		if(!$this->input->is_ajax_request()):
+			show_error('В доступе отказано');
+		endif;
+		$json_request = array('status'=>FALSE,'responseText'=>'');
+		$this->load->model('categories');
+		$this->categories->delete($this->input->post('id'));
+		$json_request['status'] = TRUE;
+		echo json_encode($json_request);
+	}
+	
+	private function ExecuteCreatingCategory($post){
+		
+		$post['group'] = $this->input->get('group');
+		return $this->insertItem(array('insert'=>$post,'model'=>'categories'));
+	}
+
+	private function ExecuteUpdatingCategory($id,$post){
+		
+		$post['id'] = $id;
+		$this->updateItem(array('update'=>$post,'model'=>'categories'));
+		return TRUE;
+	}
+	
+	/*********************************************************************************************************************/
 	public function insertNews(){
 		
 		if(!$this->input->is_ajax_request()):

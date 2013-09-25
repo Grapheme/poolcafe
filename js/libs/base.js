@@ -5,6 +5,7 @@
 var mt = mt || {};
 mt.baseURL = window.location.protocol+'//'+window.location.hostname+'/';
 mt.currentURL = window.location.href;
+mt.getBaseURL = function(url){return mt.baseURL+url;}
 mt.isValidEmailAddress = function(emailAddress){
 	var pattern = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
 	if(emailAddress == ''){
@@ -215,6 +216,27 @@ $.fn.hideToolTip = function(){
 				$(this).removeAttr('role').tooltip('destroy');
 			}
 	});
+}
+$.fn.formSubmitInServer = function(){
+	var _form = this;
+	var options = {
+		target: null,dataType:'json',type:'post',
+		beforeSubmit: mt.ajaxBeforeSubmit,
+		success: function(response,status,xhr,jqForm){
+			mt.ajaxSuccessSubmit(response,status,xhr,jqForm);
+			if(response.status == true){
+				if(response.responseText != ''){
+					$("div.div-form-operation").after('<div class="msg-alert">'+response.responseText+'</div>');
+				}
+				if(response.redirect !== false){
+					mt.redirect(response.redirect);
+				}
+			}else{
+				$("div.div-form-operation").after('<div class="msg-alert error">'+response.responseText+'</div>');
+			}
+		}
+	}
+	setTimeout(function(){$(_form).ajaxSubmit(options);},500);
 }
 $(function(){
 	$(".no-clickable").click(function(event){event.preventDefault();});

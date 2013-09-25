@@ -158,7 +158,7 @@ class Admin_interface extends MY_Controller{
 		);
 		$this->load->view("admin_interface/cabinet/profile",$pagevar);
 	}
-	/********************************************* menu ********************************************************/
+	/***************************************** categories menu **************************************************/
 	public function categories(){
 		
 		$this->load->model('group');
@@ -175,6 +175,90 @@ class Admin_interface extends MY_Controller{
 		$this->load->view("admin_interface/menu/categories",$pagevar);
 	}
 	
+	public function categoriesGroup(){
+		
+		$this->load->model('group');
+		$pagevar = array(
+			'group' => $this->group->getAll(),
+		);
+		$this->session->set_userdata('backpath',site_url(uri_string()));
+		$this->load->view("admin_interface/menu/categories-group",$pagevar);
+	}
+	
+	public function categoriesMenu(){
+		
+		$this->load->model(array('group','categories'));
+		$pagevar = array(
+			'group' => $this->group->getAll(),
+			'categories' => array()
+		);
+		if($this->input->get('group') === FALSE || !is_numeric($this->input->get('group'))):
+			$pagevar['categories'] = $this->getParentsCategoriesMenu();
+		else:
+			$pagevar['categories'] = $this->categories->getWhere(NULL,array('group'=>$this->input->get('group')),TRUE);
+		endif;
+		$this->session->set_userdata('backpath',site_url(uri_string()));
+		$this->load->view("admin_interface/menu/categories-menu",$pagevar);
+	}
+	
+	public function addCategoryMenu(){
+		
+		$this->load->model('group');
+		$this->load->helper('form');
+		$pagevar = array(
+			'group' => $this->group->getAll()
+		);
+		$this->load->view("admin_interface/menu/add-category-menu",$pagevar);
+	}
+	
+	public function editCategoryMenu(){
+		
+		$this->load->model(array('group','categories'));
+		$this->load->helper('form');
+		$pagevar = array(
+			'group' => $this->group->getAll(),
+			'category' => $this->categories->getWhere($this->input->get('id'))
+		);
+		$this->load->view("admin_interface/menu/edit-category-menu",$pagevar);
+	}
+	
+	public function categoriesSubMenu(){
+		
+		$this->load->model('categories');
+		$pagevar = array(
+			'categories' => $this->getParentsCategoriesMenu(),
+			'sub_categories' => array()
+		);
+		if($this->input->get('category') === FALSE || !is_numeric($this->input->get('category'))):
+			$pagevar['sub_categories'] = $this->categories->getWhere(NULL,array('parent >'=>0),TRUE);
+		else:
+			$pagevar['sub_categories'] = $this->categories->getWhere(NULL,array('parent'=>$this->input->get('category')),TRUE);
+		endif;
+		$this->session->set_userdata('backpath',site_url(uri_string()));
+		$this->load->view("admin_interface/menu/categories-sub-menu",$pagevar);
+	}
+
+	public function addCategorySubMenu(){
+		
+		$this->load->helper('form');
+		$pagevar = array(
+			'categories' => $this->getParentsCategoriesMenu(),
+		);
+		$this->load->view("admin_interface/menu/add-sub-category-menu",$pagevar);
+	}
+	
+	public function editCategorySubMenu(){
+		
+		$this->load->model('categories');
+		$this->load->helper('form');
+		$pagevar = array(
+			'categories' => $this->getParentsCategoriesMenu(),
+			'category' => $this->categories->getWhere($this->input->get('id'))
+		);
+		$this->load->view("admin_interface/menu/edit-category-sub-menu",$pagevar);
+	}
+	
+	/********************************************* menu ********************************************************/
 	public function menu(){
 		
 		if($this->input->get('group') === FALSE || !is_numeric($this->input->get('group')) || $this->input->get('group') > 4):

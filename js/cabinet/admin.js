@@ -3,6 +3,28 @@
  */
 
 (function($){
+	
+	$("button.btn-submit").click(function(){
+		var _form = $(this).parents('form');
+		$(this).addClass('loading');
+		$(_form).formSubmitInServer();
+	})
+	$("button.remove-item").click(function(){
+		var _this = this;
+		var itemID = $(this).attr('data-item');
+		var action = $(this).parents('table').attr('data-action');
+		$.ajax({
+			url: action,type: 'POST',dataType: 'json',data:{'id':itemID},
+			beforeSend: function(){
+				return confirm('Удалить запись?');
+			},
+			success: function(response,textStatus,xhr){
+				if(response.status){$(_this).parents('tr').remove();}
+			},
+			error: function(xhr,textStatus,errorThrown){}
+		});
+	});
+	/*-------------------------------------------------------------------- */
 	var mainOptions = {target: null,beforeSubmit: mt.ajaxBeforeSubmit,success: mt.ajaxSuccessSubmit,dataType:'json',type:'post'};
 	/*-------------------------------------------------------------------- */
 	$(".confirm-user").click(function(event){
@@ -58,28 +80,28 @@
 			deleteTitle(this);
 		}
 	})
-	$("span.view-subcategory").click(function(){
+	$("span.view-subcategory").dblclick(function(){
 		showSubCategory(this);
 	});
 	$("select.select-group").change(function(){
-		var url = mt.currentURL.replace(/group=(\d+)/,'group='+$(this).val());
+		var url = mt.currentURL.replace(/group=(\d+)?/,'group='+$(this).val());
 		mt.redirect(url);
 	});
 	$("select.select-parents-categories").change(function(){
-		var url = mt.currentURL.replace(/(&category=(\d+)|&subcategory=(\d+))/g,'');
+		var url = mt.currentURL.replace(/(&category=(\d+)?|&subcategory=(\d+)?)/g,'');
 		if($(this).emptyValue() == false){
 			url = url+'&category='+$(this).val();
 		}
 		mt.redirect(url);
 	});
 	$("select.select-subcategories").change(function(){
-		var url = mt.currentURL.replace(/&subcategory=(\d+)/,'');
+		var url = mt.currentURL.replace(/&subcategory=(\d+)?/,'');
 		if($(this).emptyValue() == false){
 			url = url+'&subcategory='+$(this).val();
 		}
 		mt.redirect(url);
 	});
-	$("form.form-manage-menu .btn-submit").click(function(){
+	$("form.form-manage-menu .btn-img-submit").click(function(){
 		var _form = $("form.form-manage-menu");
 		$(this).addClass('loading');
 		setTimeout(function(){$(_form).ajaxSubmit(uploadImage.singlePhotoOption);},500);

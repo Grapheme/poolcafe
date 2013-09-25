@@ -39,3 +39,6 @@ div.loading { background: url('../../img/dots-white.gif') center 20px no-repeat 
 		padding-right: 5px;
 	}
 }
+span.view-subcategory{
+	cursor: pointer;
+}

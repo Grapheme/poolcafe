@@ -22,7 +22,7 @@
 	</div>
 	<div class="div-form-operation">
 	<?php if($this->input->get('category') !== FALSE && $this->input->get('product') !== FALSE):?>
-		<button type="submit" value="" name="submit" class="btn btn-submit no-clickable btn-loading">Сохранить товар</button>
+		<button type="submit" value="" name="submit" class="btn btn-img-submit no-clickable btn-loading">Сохранить товар</button>
 	<?php else:?>
 		<span class="label label-important">Выбирите категорию</span>
 	<?php endif;?>

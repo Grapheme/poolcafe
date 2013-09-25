@@ -18,6 +18,6 @@
 		<textarea rows="2" class="span9" placeholder="Описание" name="description"></textarea>
 	</div>
 	<div class="div-form-operation">
-		<button type="submit" value="" name="submit" class="btn btn-submit no-clickable btn-loading">Создать товар</button>
+		<button type="submit" value="" name="submit" class="btn btn-img-submit no-clickable btn-loading">Создать товар</button>
 	</div>
 <?= form_close(); ?>

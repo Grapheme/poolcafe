@@ -4,6 +4,10 @@ $route['default_controller'] = "guests_interface";
 $route['404_override'] = '';
 
 /*************************************************** AJAX INTRERFACE ***********************************************/
+/******************admin interface ********************/
+$route[ADMIN_START_PAGE.'/category/menu/insert'] = "ajax_interface/insertCategoryMenu";
+$route[ADMIN_START_PAGE.'/category/menu/update'] = "ajax_interface/updateCategoryMenu";
+$route[ADMIN_START_PAGE.'/category/remove'] = "ajax_interface/removeCategory";
 /******************guest interface ********************/
 $route['login-in'] = "ajax_interface/loginIn";
 $route['valid/exist-email'] = "ajax_interface/existEmail";
@@ -12,7 +16,6 @@ $route['save-page-content'] = "ajax_interface/savePageContent";
 /**************** remove items ********************/
 $route['remove/project'] = "ajax_interface/removeItems";
 /******************resources ********************/
-
 $route['page-resources/upload/resource'] = "ajax_interface/pageUploadResources";
 $route['page-resources/remove/resource'] = "ajax_interface/removePageResource";
 $route['page-resources/upload/single-resource'] = "ajax_interface/pageUploadSingleResources";
@@ -41,7 +44,6 @@ $route['kids'] = "guests_interface/kids";
 $route['wine-card'] = "guests_interface/wineCard";
 $route['bar'] = "guests_interface/bar";
 $route['pool-rules'] = "guests_interface/poolRules";
-
 /********** loading resources *************/
 $route['loadimage/:any/:num'] = "guests_interface/loadimage";
 /*************************************************** ADMIN INTRERFACE ***********************************************/
@@ -57,6 +59,16 @@ $route[ADMIN_START_PAGE.'/events/delete/:num'] = "admin_interface/deleteEvent";
 $route[ADMIN_START_PAGE.'/events(\/:any)*?'] = "admin_interface/events";
 
 $route[ADMIN_START_PAGE.'/categories'] = "admin_interface/categories";
+$route[ADMIN_START_PAGE.'/categories/group'] = "admin_interface/categoriesGroup";
+
+$route[ADMIN_START_PAGE.'/categories/menu'] = "admin_interface/categoriesMenu";
+$route[ADMIN_START_PAGE.'/categories/menu/add'] = "admin_interface/addCategoryMenu";
+$route[ADMIN_START_PAGE.'/categories/menu/edit'] = "admin_interface/editCategoryMenu";
+
+$route[ADMIN_START_PAGE.'/categories/sub-menu'] = "admin_interface/categoriesSubMenu";
+$route[ADMIN_START_PAGE.'/categories/sub-menu/add'] = "admin_interface/addCategorySubMenu";
+$route[ADMIN_START_PAGE.'/categories/sub-menu/edit'] = "admin_interface/editCategorySubMenu";
+
 $route[ADMIN_START_PAGE.'/menu'] = "admin_interface/menu";
 $route[ADMIN_START_PAGE.'/menu/add'] = "admin_interface/addProductMenu";
 $route[ADMIN_START_PAGE.'/menu/edit'] = "admin_interface/editProductMenu";
