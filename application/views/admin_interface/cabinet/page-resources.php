@@ -28,6 +28,14 @@
 					<li <?=($this->input->get('mode') == 'single')?'class="active"':'';?>><a href="<?=site_url(ADMIN_START_PAGE.'/resources?mode=single&id=4')?>">Одиночные</a></li>
 				</ul>
 			<?php if($this->input->get('mode') == 'slideshow'):?>
+				<p class="text-info">Выберите место загрузки:</p>
+				<select autocomplete="off" class="select-resources-part" name="resources-part">
+					<option value="1">Главная</option>
+					<option value="2">Ресторан</option>
+					<option value="3">Бассейн</option>
+				</select><br/>
+				<?=$this->load->view('html/zone-upload-file',array('action'=>site_url('page-resources/upload/resource?id=1')));?>
+				<p>&nbsp;</p>
 				<div class="clearfix">
 					<h4>Главная</h4>
 					<ul class="resources-items-id1" data-action="<?=site_url('page-resources/remove/resource?id=1');?>">
@@ -51,7 +59,7 @@
 					</ul>
 				</div>
 				<div class="clearfix">
-					<h4>Басейн</h4>
+					<h4>Бассейн</h4>
 					<ul class="resources-items-id3" data-action="<?=site_url('page-resources/remove/resource?id=3');?>">
 					<?php for($i=0;$i<count($resources3);$i++):?>
 						<li class="span2">
@@ -61,13 +69,6 @@
 					<?php endfor;?>
 					</ul>
 				</div>
-				<p class="text-info">Выбирите место загрузки:</p>
-				<select autocomplete="off" class="select-resources-part" name="resources-part">
-					<option value="1">Главная</option>
-					<option value="2">Ресторан</option>
-					<option value="3">Басейн</option>
-				</select><br/>
-				<?=$this->load->view('html/zone-upload-file',array('action'=>site_url('page-resources/upload/resource?id=1')));?>
 			<?php endif;?>
 			<?php if($this->input->get('mode') == 'single'):?>
 				<ul class="nav nav-pills">
