@@ -161,7 +161,7 @@ class Ajax_interface extends MY_Controller{
 		$json_request = array('status'=>FALSE,'responseText'=>'','redirect'=>site_url(ADMIN_START_PAGE));
 		if($this->ExecuteUpdatingCategoryGroup($this->input->get('id'),$this->input->post(NULL,TRUE))):
 			$json_request['status'] = TRUE;
-			$json_request['responseText'] = 'Подкатегория cохранена';
+			$json_request['responseText'] = 'Группа cохранена';
 			$json_request['redirect'] = site_url(ADMIN_START_PAGE.'/categories/group');
 		endif;
 		echo json_encode($json_request);
