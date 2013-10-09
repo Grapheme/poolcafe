@@ -14,13 +14,17 @@ class Admin_interface extends MY_Controller{
 	}
 	
 	/******************************************** cabinet *******************************************************/
-	
 	public function control_panel(){
 		
 		$pagevar = array(
 		
 		);
 		$this->load->view("admin_interface/cabinet/control-panel",$pagevar);
+	}
+	
+	public function changePassword(){
+		
+		$this->load->view("admin_interface/cabinet/profile");
 	}
 	
 	public function pages(){

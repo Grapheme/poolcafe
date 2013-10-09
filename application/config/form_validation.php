@@ -11,6 +11,11 @@
 			array('field'=>'content','label'=>'Текст новости','rules'=>'required|trim'),
 			array('field'=>'date','label'=>'Дата','rules'=>'required|trim')
 		),
+		'password' =>array(
+			array('field'=>'oldpassword','label'=>'Cтарый пароль','rules'=>'required|min_length[6]|trim'),
+			array('field'=>'password','label'=>'Новый пароль','rules'=>'required|min_length[6]|trim'),
+			array('field'=>'confirm','label'=>'Повтор пароля','rules'=>'required|min_length[6]|matches[password]|trim')
+		),
 		'event' =>array(
 			array('field'=>'category','label'=>'Категория','rules'=>'required|trim'),
 			array('field'=>'title','label'=>'Название','rules'=>'required|trim'),

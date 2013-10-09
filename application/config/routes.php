@@ -5,6 +5,8 @@ $route['404_override'] = '';
 
 /*************************************************** AJAX INTRERFACE ***********************************************/
 /******************admin interface ********************/
+$route[ADMIN_START_PAGE.'/password-save'] = "ajax_interface/adminSavePassword";
+
 $route[ADMIN_START_PAGE.'/category/menu/insert'] = "ajax_interface/insertCategoryMenu";
 $route[ADMIN_START_PAGE.'/category/menu/update'] = "ajax_interface/updateCategoryMenu";
 $route[ADMIN_START_PAGE.'/category/remove'] = "ajax_interface/removeCategory";
@@ -50,6 +52,8 @@ $route['pool-rules'] = "guests_interface/poolRules";
 $route['loadimage/:any/:num'] = "guests_interface/loadimage";
 /*************************************************** ADMIN INTRERFACE ***********************************************/
 $route[ADMIN_START_PAGE] = "admin_interface/control_panel";
+$route[ADMIN_START_PAGE.'/password'] = "admin_interface/changePassword";
+
 $route[ADMIN_START_PAGE.'/news/edit/:num'] = "admin_interface/editNews";
 $route[ADMIN_START_PAGE.'/news/add'] = "admin_interface/addNews";
 $route[ADMIN_START_PAGE.'/news/delete/:num'] = "admin_interface/deleteNews";

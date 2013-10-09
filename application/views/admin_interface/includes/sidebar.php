@@ -12,5 +12,7 @@
 		<li class="nav-header">КОНТЕНТ</li>
 		<li><a href="<?=site_url(ADMIN_START_PAGE.'/pages');?>">Страницы</a></li>
 		<li><a href="<?=site_url(ADMIN_START_PAGE.'/resources?mode=slideshow');?>"> Изображения</a></li>
+		<li class="nav-header">Кабинет</li>
+		<li><a href="<?=site_url(ADMIN_START_PAGE.'/password');?>">Смена пароля</a></li>
 	</ul>
 </div>

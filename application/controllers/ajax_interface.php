@@ -59,7 +59,7 @@ class Ajax_interface extends MY_Controller{
 				if($user['active']):
 					$account = json_encode(array('id'=>$user['id']));
 					$this->session->set_userdata(array('logon'=>md5($this->input->post('login')),'account'=>$account));
-					$json_request['redirect'] = site_url(ADMIN_START_PAGE);
+					$json_request['redirect'] = site_url(ADMIN_START_PAGE.'/pages');
 					$json_request['status'] = TRUE;
 				else:
 					$json_request['responseText'] = 'Аккаунт не активирован';
@@ -73,6 +73,36 @@ class Ajax_interface extends MY_Controller{
 		echo json_encode($json_request);
 	}
 	/********************************************* admin interface *******************************************************/
+	public function adminSavePassword(){
+		
+		if(!$this->input->is_ajax_request() && $this->loginstatus === FALSE):
+			show_error('В доступе отказано');
+		endif;
+		$json_request = array('status'=>FALSE,'responseText'=>'','redirect'=>FALSE);
+		if($this->postDataValidation('password')):
+			if($this->validOldPassword($this->input->post('oldpassword'))):
+				$this->accounts->updateField($this->account['id'],'password',md5($this->input->post('password')));
+				$json_request['redirect'] = site_url(ADMIN_START_PAGE.'/pages');
+				$json_request['status'] = TRUE;
+				$json_request['responseText'] = 'Пароль сохранен';
+			else:
+				$json_request['responseText'] = 'Не верный старый пароль';
+			endif;
+		else:
+			$json_request['responseText'] = $this->load->view('html/validation-errors',array('alert_header'=>FALSE),TRUE);
+		endif;
+		echo json_encode($json_request);
+	}
+	
+	public function validOldPassword($password = ''){
+		
+		if($this->accounts->getWhere(NULL,array('id'=>$this->account['id'],'password'=>md5($password)))):
+			return TRUE;
+		endif;
+		return FALSE;
+	}
+	/* ------------------------------------- */
+	
 	public function insertCategoryMenu(){
 		
 		if(!$this->input->is_ajax_request()):
@@ -156,7 +186,6 @@ class Ajax_interface extends MY_Controller{
 		$this->updateItem(array('update'=>$post,'model'=>'group'));
 		return TRUE;
 	}
-	
 	/*********************************************************************************************************************/
 	public function insertNews(){
 		
