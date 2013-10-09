@@ -32,18 +32,20 @@
 				<table class="table table-bordered table-striped table-hover table-condensed" data-action="<?=site_url(ADMIN_START_PAGE.'/category/remove');?>">
 					<thead>
 						<tr>
-							<th class="span6">Название</th>
 							<th class="span2"></th>
+							<th class="span5">Название</th>
+							<th class="span1">№ п.п.</th>
 						</tr>
 					</thead>
 					<tbody>
 					<?php for($i=0;$i<count($sub_categories);$i++):?>
 						<tr>
-							<td><?=$sub_categories[$i]['title'];?></td>
 							<td>
 								<a href="<?=site_url(ADMIN_START_PAGE.'/categories/sub-menu/edit?id='.$sub_categories[$i]['id'].'&category='.$sub_categories[$i]['parent'])?>" class="btn btn-link" ><i class="icon-edit"></i></a>
 								<button data-item="<?=$sub_categories[$i]['id'];?>" class="btn btn-link remove-item"><i class="icon-remove"></i></button>
 							</td>
+							<td><?=$sub_categories[$i]['title'];?></td>
+							<td><?=$sub_categories[$i]['sort'];?></td>
 						</tr>
 					<?php endfor;?>
 					</tbody>
