@@ -48,7 +48,6 @@ class Ajax_interface extends MY_Controller{
 		echo stripslashes(json_encode($file));
 	}
 	/******************************************** guests interface *******************************************************/
-	
 	public function loginIn(){
 		
 		if(!$this->input->is_ajax_request()):
@@ -73,7 +72,6 @@ class Ajax_interface extends MY_Controller{
 		endif;
 		echo json_encode($json_request);
 	}
-
 	/********************************************* admin interface *******************************************************/
 	public function insertCategoryMenu(){
 		
@@ -125,6 +123,20 @@ class Ajax_interface extends MY_Controller{
 		echo json_encode($json_request);
 	}
 	
+	public function updateCategoryGroup(){
+		
+		if(!$this->input->is_ajax_request()):
+			show_error('В доступе отказано');
+		endif;
+		$json_request = array('status'=>FALSE,'responseText'=>'','redirect'=>site_url(ADMIN_START_PAGE));
+		if($this->ExecuteUpdatingCategoryGroup($this->input->get('id'),$this->input->post(NULL,TRUE))):
+			$json_request['status'] = TRUE;
+			$json_request['responseText'] = 'Подкатегория cохранена';
+			$json_request['redirect'] = site_url(ADMIN_START_PAGE.'/categories/group');
+		endif;
+		echo json_encode($json_request);
+	}
+	
 	private function ExecuteCreatingCategory($post){
 		
 		$post['group'] = $this->input->get('group');
@@ -135,6 +147,13 @@ class Ajax_interface extends MY_Controller{
 		
 		$post['id'] = $id;
 		$this->updateItem(array('update'=>$post,'model'=>'categories'));
+		return TRUE;
+	}
+	
+	private function ExecuteUpdatingCategoryGroup($id,$post){
+		
+		$post['id'] = $id;
+		$this->updateItem(array('update'=>$post,'model'=>'group'));
 		return TRUE;
 	}
 	

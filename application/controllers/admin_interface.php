@@ -185,6 +185,16 @@ class Admin_interface extends MY_Controller{
 		$this->load->view("admin_interface/menu/categories-group",$pagevar);
 	}
 	
+	public function categoriesEditGroup(){
+		
+		$this->load->model('group');
+		$this->load->helper('form');
+		$pagevar = array(
+			'group' => $this->group->getWhere($this->input->get('id'))
+		);
+		$this->load->view("admin_interface/menu/edit-category-group",$pagevar);
+	}
+	
 	public function categoriesMenu(){
 		
 		$this->load->model(array('group','categories'));

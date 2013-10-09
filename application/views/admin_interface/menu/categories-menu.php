@@ -19,7 +19,7 @@
 			<div class="span9">
 				<ul class="breadcrumb">
 					<li><a href="<?=site_url(ADMIN_START_PAGE);?>">Панель управления</a> <span class="divider">/</span></li>
-					<li class="active">Меню<span class="divider">/</span></li>
+					<li><a href="<?=site_url(ADMIN_START_PAGE.'/categories/group');?>">Категории (Группы)</a> <span class="divider">/</span></li>
 					<li class="active">Категории меню</li>
 				</ul>
 				<div class="clear"></div>
@@ -31,18 +31,20 @@
 				<table class="table table-bordered table-striped table-hover table-condensed" data-action="<?=site_url(ADMIN_START_PAGE.'/category/remove');?>">
 					<thead>
 						<tr>
-							<th class="span6">Название</th>
 							<th class="span2"></th>
+							<th class="span5">Название</th>
+							<th class="span1">№ п.п.</th>
 						</tr>
 					</thead>
 					<tbody>
 					<?php for($i=0;$i<count($categories);$i++):?>
 						<tr>
-							<td><?=$categories[$i]['title'];?></td>
 							<td>
 								<a href="<?=site_url(ADMIN_START_PAGE.'/categories/menu/edit?id='.$categories[$i]['id'])?>" class="btn btn-link" ><i class="icon-edit"></i></a>
 								<button data-item="<?=$categories[$i]['id'];?>" class="btn btn-link remove-item"><i class="icon-remove"></i></button>
 							</td>
+							<td><a href="<?=site_url(ADMIN_START_PAGE.'/categories/sub-menu?category='.$categories[$i]['id'])?>"><?=$categories[$i]['title'];?></a></td>
+							<td><?=$categories[$i]['sort'];?></td>
 						</tr>
 					<?php endfor;?>
 					</tbody>

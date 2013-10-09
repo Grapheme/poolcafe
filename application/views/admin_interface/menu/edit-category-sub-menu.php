@@ -19,7 +19,8 @@
 			<div class="span9">
 				<ul class="breadcrumb">
 					<li><a href="<?=site_url(ADMIN_START_PAGE);?>">Панель управления</a> <span class="divider">/</span></li>
-					<li class="active">Меню<span class="divider">/</span></li>
+					<li><a href="<?=site_url(ADMIN_START_PAGE.'/categories/group');?>">Категории (Группы)</a> <span class="divider">/</span></li>
+					<li><a href="<?=site_url(ADMIN_START_PAGE.'/categories/menu');?>">Категории меню</a> <span class="divider">/</span></li>
 					<li><a href="<?=site_url(ADMIN_START_PAGE.'/categories/sub-menu');?>">Подкатегории меню</a><span class="divider">/</span></li>
 					<li class="active">Редактирование подкатегории</li>
 				</ul>

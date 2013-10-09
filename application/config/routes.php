@@ -8,6 +8,8 @@ $route['404_override'] = '';
 $route[ADMIN_START_PAGE.'/category/menu/insert'] = "ajax_interface/insertCategoryMenu";
 $route[ADMIN_START_PAGE.'/category/menu/update'] = "ajax_interface/updateCategoryMenu";
 $route[ADMIN_START_PAGE.'/category/remove'] = "ajax_interface/removeCategory";
+
+$route[ADMIN_START_PAGE.'/category/group/update'] = "ajax_interface/updateCategoryGroup";
 /******************guest interface ********************/
 $route['login-in'] = "ajax_interface/loginIn";
 $route['valid/exist-email'] = "ajax_interface/existEmail";
@@ -60,6 +62,9 @@ $route[ADMIN_START_PAGE.'/events(\/:any)*?'] = "admin_interface/events";
 
 $route[ADMIN_START_PAGE.'/categories'] = "admin_interface/categories";
 $route[ADMIN_START_PAGE.'/categories/group'] = "admin_interface/categoriesGroup";
+$route[ADMIN_START_PAGE.'/categories/group/edit'] = "admin_interface/categoriesEditGroup";
+
+$route[ADMIN_START_PAGE.'/categories/menu'] = "admin_interface/categoriesMenu";
 
 $route[ADMIN_START_PAGE.'/categories/menu'] = "admin_interface/categoriesMenu";
 $route[ADMIN_START_PAGE.'/categories/menu/add'] = "admin_interface/addCategoryMenu";

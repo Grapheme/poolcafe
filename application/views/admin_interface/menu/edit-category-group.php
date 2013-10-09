@@ -19,14 +19,12 @@
 			<div class="span9">
 				<ul class="breadcrumb">
 					<li><a href="<?=site_url(ADMIN_START_PAGE);?>">Панель управления</a> <span class="divider">/</span></li>
-					<li><a href="<?=site_url(ADMIN_START_PAGE.'/categories/group');?>">Категории (Группы)</a> <span class="divider">/</span></li>
-					<li><a href="<?=site_url(ADMIN_START_PAGE.'/categories/menu');?>">Категории меню</a> <span class="divider">/</span></li>
-					<li><a href="<?=site_url(ADMIN_START_PAGE.'/categories/sub-menu');?>">Податегории меню</a><span class="divider">/</span></li>
-					<li class="active">Добавление подкатегории</li>
+					<li><a href="<?=site_url(ADMIN_START_PAGE.'/categories/group');?>">Категории (Группы)</a><span class="divider">/</span></li>
+					<li class="active">Редактирование группы</li>
 				</ul>
 				<div class="clear"></div>
 				<div class="result-request"></div>
-				<?php $this->load->view('admin_interface/forms/categories/add-sub-category-menu');?>
+				<?php $this->load->view('admin_interface/forms/categories/edit-category-group');?>
 				<div class="clear"></div>
 			</div>
 		</div>

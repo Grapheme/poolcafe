@@ -19,21 +19,35 @@
 			<div class="span9">
 				<ul class="breadcrumb">
 					<li><a href="<?=site_url(ADMIN_START_PAGE);?>">Панель управления</a> <span class="divider">/</span></li>
-					<li class="active">Меню<span class="divider">/</span></li>
 					<li class="active">Категории (Группы)</li>
 				</ul>
 				<div class="clear"></div>
 				<div class="result-request"></div>
 			<?php if(!empty($group)):?>
 				<h2>Группы меню</h2>
-				<ul class="ul-parent" data-action="<?=site_url(ADMIN_START_PAGE.'/save-group')?>">
-				<?php for($i=0;$i<count($group);$i++):?>
-					<li data-item="<?=$group[$i]['id'];?>">
-						<span class="title"><?=$group[$i]['title'];?></span>
-						<button class="btn btn-link edit-group-menu"><i class="icon-edit"></i></button>
-					</li>
-				<?php endfor;?>
-				</ul>
+				
+				<table class="table table-bordered table-striped table-hover table-condensed" data-action="<?=site_url(ADMIN_START_PAGE.'/save-group')?>">
+					<thead>
+						<tr>
+							<th class="span1"></th>
+							<th class="span6">Название</th>
+							<th class="span1">№ п.п.</th>
+						</tr>
+					</thead>
+					<tbody>
+					<?php for($i=0;$i<count($group);$i++):?>
+						<tr>
+							<td>
+								<a href="<?=site_url(ADMIN_START_PAGE.'/categories/group/edit?id='.$group[$i]['id'])?>" class="btn btn-link" ><i class="icon-edit"></i></a>
+							</td>
+							<td class="menu-title">
+								<a href="<?=site_url(ADMIN_START_PAGE.'/categories/menu?group='.$group[$i]['id'])?>"><?=$group[$i]['title'];?></a>
+							</td>
+							<td class="menu-title"><?=$group[$i]['number'];?></td>
+						</tr>
+					<?php endfor;?>
+					</tbody>
+				</table>
 			<?php else:?>
 				<div class="msg-alert">Список групп меню пуст</div>
 			<?php endif;?>

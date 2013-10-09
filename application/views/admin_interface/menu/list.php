@@ -18,8 +18,7 @@
 			</div>
 			<div class="span9">
 				<ul class="breadcrumb">
-					<li><a href="<?=site_url(ADMIN_START_PAGE);?>">Панель управления</a> <span class="divider">/</span></li>
-					<li class="active">Меню</li>
+					<li><a href="<?=site_url(ADMIN_START_PAGE);?>">Панель управления</a></li>
 				</ul>
 				<div class="clear"></div>
 				<div class="result-request"></div>
