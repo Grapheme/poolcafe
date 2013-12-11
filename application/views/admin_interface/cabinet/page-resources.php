@@ -38,7 +38,7 @@
 				<p>&nbsp;</p>
 				<div class="clearfix">
 					<h4>Главная</h4>
-					<ul class="resources-items-id1" data-action="<?=site_url('page-resources/remove/resource?id=1');?>">
+					<ul class="resources-items resources-items-id1" data-action="<?=site_url('page-resources/remove/resource?id=1');?>">
 					<?php for($i=0;$i<count($resources1);$i++):?>
 						<li class="span2">
 							<img class="img-rounded" src="<?=site_url($resources1[$i]['resource'])?>" alt="">
@@ -49,7 +49,7 @@
 				</div>
 				<div class="clearfix">
 					<h4>Ресторан</h4>
-					<ul class="resources-items-id2" data-action="<?=site_url('page-resources/remove/resource?id=2');?>">
+					<ul class="resources-items resources-items-id2" data-action="<?=site_url('page-resources/remove/resource?id=2');?>">
 					<?php for($i=0;$i<count($resources2);$i++):?>
 						<li class="span2">
 							<img class="img-rounded" src="<?=site_url($resources2[$i]['resource'])?>" alt="">
@@ -60,7 +60,7 @@
 				</div>
 				<div class="clearfix">
 					<h4>Бассейн</h4>
-					<ul class="resources-items-id3" data-action="<?=site_url('page-resources/remove/resource?id=3');?>">
+					<ul class="resources-items resources-items-id3" data-action="<?=site_url('page-resources/remove/resource?id=3');?>">
 					<?php for($i=0;$i<count($resources3);$i++):?>
 						<li class="span2">
 							<img class="img-rounded" src="<?=site_url($resources3[$i]['resource'])?>" alt="">

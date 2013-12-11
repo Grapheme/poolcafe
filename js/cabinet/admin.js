@@ -66,6 +66,7 @@
 		setTimeout(function(){$(_form).ajaxSubmit(uploadImage.singlePhotoOption);},500);
 		return false;
 	});
+	$("button.edit-group-menu").click(function(){wrapTitle(this);});
 	$("button.edit-category-menu").click(function(){wrapTitle(this);});
 	$("button.save-category-menu").click(function(){
 		if($(this).siblings('input.input-title').emptyValue() == false){
